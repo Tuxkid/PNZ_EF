@@ -287,6 +287,7 @@ git add .
 git commit
 git remote add origin https://github.com/Tuxkid/PNZ_EF.git 
 git push -u origin master
+e566ca7278b3acd9b5868af5258823c13dd5b899
 
 
 
