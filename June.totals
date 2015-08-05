@@ -1,0 +1,58 @@
+   Gtotal              legend
+1     819           LTMB|1*|1
+2     881           LTMB|1*|2
+3     847           LTMB|1*|3
+4     810           LTMB|2*|1
+5     678           LTMB|2*|2
+6     634           LTMB|2*|3
+7     602           LTMB|3*|1
+8     525           LTMB|3*|2
+9     588           LTMB|3*|3
+10    613 LTMB|Female adult|1
+11    694 LTMB|Female adult|2
+12    667 LTMB|Female adult|3
+13     42    LTMB|Male 3/4*|1
+14     43    LTMB|Male 3/4*|2
+15     54    LTMB|Male 3/4*|3
+16     33   LTMB|Male adult|1
+17     78   LTMB|Male adult|2
+18     59   LTMB|Male adult|3
+19     11     WAA|5th alate|1
+20      3     WAA|5th alate|2
+21      3     WAA|5th alate|3
+22     64   WAA|5th instars|1
+23     72   WAA|5th instars|2
+24     72   WAA|5th instars|3
+25    407 WAA|Early instars|1
+26    348 WAA|Early instars|2
+27    348 WAA|Early instars|3
+28    368  WAA|Late instars|1
+29    466  WAA|Late instars|2
+30    466  WAA|Late instars|3
+31    923         GHT|Adult|1
+32    908         GHT|Adult|2
+33    808         GHT|Adult|3
+34    434        GHT|Larvae|1
+35    489        GHT|Larvae|2
+36    452        GHT|Larvae|3
+37     37         GHT|Pupae|1
+38     25         GHT|Pupae|2
+39     26         GHT|Pupae|3
+40    307            SJS|1*|1
+41    352            SJS|1*|2
+42    515            SJS|1*|3
+43    411     SJS|2* female|1
+44    442     SJS|2* female|2
+45    379     SJS|2* female|3
+46    152       SJS|2* male|1
+47    233       SJS|2* male|2
+48    270       SJS|2* male|3
+49    366            SJS|3*|1
+50    482            SJS|3*|2
+51    454            SJS|3*|3
+52     67     SJS|3* mature|1
+53    214     SJS|3* mature|2
+54    283     SJS|3* mature|3
+55    102       SJS|Crawler|1
+56    157       SJS|Crawler|2
+57    348       SJS|Crawler|3

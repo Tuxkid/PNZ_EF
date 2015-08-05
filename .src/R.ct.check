@@ -1,0 +1,65 @@
+  Listing of: ct.check
+  Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
+Last updated: 18/06/2015 
+**************************************
+
+ct.check <-
+structure(function(xx = ab.june15Off,  bit = 2)
+{
+### Purpose:- check what constant exponent is needed for a C-T product
+### ----------------------------------------------------------------------
+### Modified from:- 
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 17 Jun 2015, 16:17
+### ----------------------------------------------------------------------
+### Revisions:-
+
+  ab <- xx[[bit]]
+  legs <- ab$legend
+  use <- grep("LBAM", legs)
+##   use <- grep("2h", legs[use])
+  lcs <- ab$lt
+  rownames(lcs) <- legs
+  use.lcs <- lcs[use,]
+  use.df <- as.data.frame(use.lcs)
+  row.ids <- getbit(rownames(use.df), " ", 2) 
+  use.df <- within(use.df, Stage <- getbit(row.ids,  "\\|", 1))
+  use.df <- within(use.df, temp <- getbit(row.ids,  "\\|", 2))
+  use.df <- within(use.df, duration <- getbit(row.ids,  "\\|", 3))
+  use.df <- within(use.df, Temp <- as.numeric(gsub("°C", "", temp)))
+  use.df <- within(use.df, Duration <- as.numeric(gsub("h", "", duration)))
+  if(bit == 1){ # 3 replicates available
+      use.df <- within(use.df, rep <- getbit(row.ids,  "\\|", 4))
+      use.df <- within(use.df, Rep <- as.numeric(rep))
+    }
+  use.temps <- c(5, 15)
+  use.df <- use.df %>% filter(Temp %in% use.temps)
+  
+  egg.df <- use.df %>% filter(Stage == "ME")
+  fifth.df <- use.df %>% filter(Stage == "5*")
+
+  egg15.df <- egg.df %>% filter(Temp == 15)
+  fifth5.df <- fifth.df %>% filter(Temp == 5)
+  fifth15.df <- fifth.df %>% filter(Temp == 15)
+### Three lots to check out
+  dfs <- c("egg15.df", "fifth15.df", "fifth5.df")
+  exps <- seq(.5, 1.5, length = 100)
+
+  for(d in dfs){
+    out.df <- NULL
+    d.df <- get(d)
+    for(m in exps){
+      ## First the LC99s
+      d.df <- within(d.df, CT <- Duration * `99`^m)
+      out.d <- d.df %>% select(duration, Duration, CT)
+      out.d$m <- m
+      out.df <- rbind(out.df, out.d)
+    }
+##    browser()
+    print(xyplot(CT ~ m, data = out.df, groups = duration, type = "l",
+                 main = with(d.df, paste(Stage, temp)[1]),
+                 auto.key = list(space = "right", type = "l")) )
+  }
+}, comment = "18/06/2015")

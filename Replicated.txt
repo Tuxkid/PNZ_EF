@@ -1,0 +1,482 @@
+Species	Lifestage	Efg	Efppm	CO2	Rep	Sample	Duration	DATassess	Live	Dead	Moribund	Total
+Apple leaf curling midge	Diapausing larvae	Control	0	0	1	1	4	6	24	10	37	71
+Apple leaf curling midge	Diapausing larvae	Control	0	0	1	2	4	6	29	6	21	56
+Apple leaf curling midge	Diapausing larvae	0	2136.4	18.89	1	1	4	6	13	18	28	59
+Apple leaf curling midge	Diapausing larvae	1	12062.99	11.09	1	1	4	6	8	18	29	55
+Apple leaf curling midge	Diapausing larvae	1.5	18204.88	15.36	1	1	4	6	2	17	29	48
+Apple leaf curling midge	Diapausing larvae	2	22569.24	19.31	1	1	4	6	13	15	32	60
+Apple leaf curling midge	Diapausing larvae	2.5	18781.68	8.45	1	1	4	6	4	6	34	44
+Apple leaf curling midge	Diapausing larvae	3	37977.99	17.65	1	1	4	6	0	30	20	50
+Apple leaf curling midge	Diapausing larvae	3.5	40798.87	20.17	1	1	4	6	0	16	31	47
+Apple leaf curling midge	Diapausing larvae	Control	0.00	0.00	2	1	4	6	30	5	14	49
+Apple leaf curling midge	Diapausing larvae	0	962.20	21.34	2	1	4	6	28	7	15	50
+Apple leaf curling midge	Diapausing larvae	1	13626.36	6.89	2	1	4	6	14	16	23	53
+Apple leaf curling midge	Diapausing larvae	1.5	19798.08	9.98	2	1	4	6	8	9	30	47
+Apple leaf curling midge	Diapausing larvae	2	23718.60	15.43	2	1	4	6	0	15	35	50
+Apple leaf curling midge	Diapausing larvae	2.5	29196.40	15.68	2	1	4	6	1	25	19	45
+Apple leaf curling midge	Diapausing larvae	3	34452.57	18.45	2	1	4	6	0	19	40	59
+Apple leaf curling midge	Diapausing larvae	3.5	37160.44	21.79	2	1	4	6	0	10	41	51
+Apple leaf curling midge	Diapausing larvae	Control	0.00	0.00	3	1	4	6	8	16	31	55
+Apple leaf curling midge	Diapausing larvae	0	2147.12	30.68	3	1	4	6	20	19	17	56
+Apple leaf curling midge	Diapausing larvae	1	11790.73	14.83	3	1	4	6	4	22	31	57
+Apple leaf curling midge	Diapausing larvae	1.5	15646.95	17.52	3	1	4	6	23	11	20	54
+Apple leaf curling midge	Diapausing larvae	2	21203.27	22.83	3	1	4	6	1	22	30	53
+Apple leaf curling midge	Diapausing larvae	2.5	24645.03	26.96	3	1	4	7	11	12	36	59
+Apple leaf curling midge	Diapausing larvae	3	31025.59	30.20	3	1	4	7	3	13	37	53
+Apple leaf curling midge	Diapausing larvae	3.5	36169.54	29.78	3	1	4	7	4	22	40	66
+Apple leaf curling midge	Diapausing larvae	Control	0.00	0.00	4	1	4	7	32	6	15	53
+Apple leaf curling midge	Diapausing larvae	0	2562.28	30.07	4	1	4	7	6	10	32	48
+Apple leaf curling midge	Diapausing larvae	1	12449.52	11.33	4	1	4	7	23	8	22	53
+Apple leaf curling midge	Diapausing larvae	1.5	20451.58	17.32	4	1	4	7	7	10	35	52
+Apple leaf curling midge	Diapausing larvae	2	22050.85	30.64	4	1	4	7	12	15	28	55
+Apple leaf curling midge	Diapausing larvae	2.5	27231.68	23.90	4	1	4	7	1	13	36	50
+Apple leaf curling midge	Diapausing larvae	3	32183.91	27.20	4	1	4	7	2	20	29	51
+Apple leaf curling midge	Diapausing larvae	3.5	35225.62	30.52	4	1	4	7	4	25	22	51
+Onion thrips	Larvae	Control	0.00	0.00	1	1	1	1	3	0	0	3
+Onion thrips	Pupae	Control	0.00	0.00	1	1	1	1	24	0	0	24
+Onion thrips	Adult	Control	0.00	0.00	1	1	1	1	41	0	0	41
+Onion thrips	Larvae	0	166.87	14.98	1	1	1	1	5	6	0	11
+Onion thrips	Pupae	0	166.87	14.98	1	1	1	1	12	2	0	14
+Onion thrips	Adult	0	166.87	14.98	1	1	1	1	32	10	0	42
+Onion thrips	Larvae	0.1	738	1.17	1	1	1	1	29	2	0	31
+Onion thrips	Pupae	0.1	738	1.17	1	1	1	1	9	11	0	20
+Onion thrips	Adult	0.1	738	1.17	1	1	1	1	22	28	0	50
+Onion thrips	Larvae	0.2	1519.95	1.83	1	1	1	1	15	25	0	40
+Onion thrips	Pupae	0.2	1519.95	1.83	1	1	1	1	5	17	0	22
+Onion thrips	Adult	0.2	1519.95	1.83	1	1	1	1	0	32	0	32
+Onion thrips	Larvae	0.3	2410.75	3.06	1	1	1	1	0	32	0	32
+Onion thrips	Pupae	0.3	2410.75	3.06	1	1	1	1	0	9	0	9
+Onion thrips	Adult	0.3	2410.75	3.06	1	1	1	1	1	47	0	48
+Onion thrips	Larvae	0.6	4968.44	5.92	1	1	1	1	0	24	0	24
+Onion thrips	Pupae	0.6	4968.44	5.92	1	1	1	1	0	22	0	22
+Onion thrips	Adult	0.6	4968.44	5.92	1	1	1	1	0	36	0	36
+Onion thrips	Larvae	1.2	9999.94	10.87	1	1	1	1	0	26	0	26
+Onion thrips	Pupae	1.2	9999.94	10.87	1	1	1	1	0	9	0	9
+Onion thrips	Adult	1.2	9999.94	10.87	1	1	1	1	0	39	0	39
+Onion thrips	Larvae	1.7	13009.74	16.8	1	1	1	1	0	38	0	38
+Onion thrips	Pupae	1.7	13009.74	16.8	1	1	1	1	0	18	0	18
+Onion thrips	Adult	1.7	13009.74	16.8	1	1	1	1	0	25	0	25
+Onion thrips	Larvae	Control	0	0	2	1	1	1	7	2	0	9
+Onion thrips	Pupae	Control	0	0	2	1	1	1	11	1	0	12
+Onion thrips	Adult	Control	0	0	2	1	1	1	22	6	0	28
+Onion thrips	Larvae	0	133.76	11.94	2	1	1	1	14	0	0	14
+Onion thrips	Pupae	0	133.76	11.94	2	1	1	1	15	0	0	15
+Onion thrips	Adult	0	133.76	11.94	2	1	1	1	38	2	0	40
+Onion thrips	Larvae	0.1	732.85	1.1	2	1	1	1	9	3	0	12
+Onion thrips	Pupae	0.1	732.85	1.1	2	1	1	1	10	4	0	14
+Onion thrips	Adult	0.1	732.85	1.1	2	1	1	1	16	14	0	30
+Onion thrips	Larvae	0.2	1983.26	2.13	2	1	1	1	1	16	0	17
+Onion thrips	Pupae	0.2	1983.26	2.13	2	1	1	1	1	21	0	22
+Onion thrips	Adult	0.2	1983.26	2.13	2	1	1	1	0	42	0	42
+Onion thrips	Larvae	0.3	2181.2	2.89	2	1	1	1	3	34	0	37
+Onion thrips	Pupae	0.3	2181.2	2.89	2	1	1	1	6	17	0	23
+Onion thrips	Adult	0.3	2181.2	2.89	2	1	1	1	0	29	0	29
+Onion thrips	Larvae	0.6	4238.8	5.7	2	1	1	1	0	21	0	21
+Onion thrips	Pupae	0.6	4238.8	5.7	2	1	1	1	0	11	0	11
+Onion thrips	Adult	0.6	4238.8	5.7	2	1	1	1	0	43	0	43
+Onion thrips	Larvae	1.2	9045.21	11.84	2	1	1	1	0	25	0	25
+Onion thrips	Pupae	1.2	9045.21	11.84	2	1	1	1	0	24	0	24
+Onion thrips	Adult	1.2	9045.21	11.84	2	1	1	1	0	37	0	37
+Onion thrips	Larvae	1.7	12512.6	14.73	2	1	1	1	0	18	0	18
+Onion thrips	Pupae	1.7	12512.6	14.73	2	1	1	1	0	21	0	21
+Onion thrips	Adult	1.7	12512.6	14.73	2	1	1	1	0	42	0	42
+Onion thrips	Larvae	Control	0	0	3	1	1	1	0	1	0	1
+Onion thrips	Pupae	Control	0	0	3	1	1	1	9	1	0	10
+Onion thrips	Adult	Control	0	0	3	1	1	1	17	10	0	27
+Onion thrips	Larvae	0	79.03	14.1	3	1	1	1	16	2	0	18
+Onion thrips	Pupae	0	79.03	14.1	3	1	1	1	7	2	0	9
+Onion thrips	Adult	0	79.03	14.1	3	1	1	1	24	6	0	30
+Onion thrips	Larvae	0.1	764.33	1.15	3	1	1	1	34	9	0	43
+Onion thrips	Pupae	0.1	764.33	1.15	3	1	1	1	6	13	0	19
+Onion thrips	Adult	0.1	764.33	1.15	3	1	1	1	9	21	0	30
+Onion thrips	Larvae	0.2	1412.98	1.68	3	1	1	1	0	19	0	19
+Onion thrips	Pupae	0.2	1412.98	1.68	3	1	1	1	2	20	0	22
+Onion thrips	Adult	0.2	1412.98	1.68	3	1	1	1	0	30	0	30
+Onion thrips	Larvae	0.3	2377.45	2.82	3	1	1	1	0	22	0	22
+Onion thrips	Pupae	0.3	2377.45	2.82	3	1	1	1	0	5	0	5
+Onion thrips	Adult	0.3	2377.45	2.82	3	1	1	1	0	47	0	47
+Onion thrips	Larvae	0.6	5058.65	4.43	3	1	1	1	0	32	0	32
+Onion thrips	Pupae	0.6	5058.65	4.43	3	1	1	1	0	18	0	18
+Onion thrips	Adult	0.6	5058.65	4.43	3	1	1	1	0	45	0	45
+Onion thrips	Larvae	1.2	9713.44	10.78	3	1	1	1	0	21	0	21
+Onion thrips	Pupae	1.2	9713.44	10.78	3	1	1	1	0	12	0	12
+Onion thrips	Adult	1.2	9713.44	10.78	3	1	1	1	0	36	0	36
+Onion thrips	Larvae	1.7	12567.43	14.92	3	1	1	1	0	3	0	3
+Onion thrips	Pupae	1.7	12567.43	14.92	3	1	1	1	0	11	0	11
+Onion thrips	Adult	1.7	12567.43	14.92	3	1	1	1	0	29	0	29
+Onion thrips	Larvae	Control	0	0	4	1	1	1	4	2	0	6
+Onion thrips	Pupae	Control	0	0	4	1	1	1	24	6	0	30
+Onion thrips	Adult	Control	0	0	4	1	1	1	28	5	0	33
+Onion thrips	Larvae	0	65.74	13.24	4	1	1	1	2	0	0	2
+Onion thrips	Pupae	0	65.74	13.24	4	1	1	1	9	0	0	9
+Onion thrips	Adult	0	65.74	13.24	4	1	1	1	25	2	0	27
+Onion thrips	Larvae	0.1	744.22	1.05	4	1	1	1	17	2	0	19
+Onion thrips	Pupae	0.1	744.22	1.05	4	1	1	1	11	4	0	15
+Onion thrips	Adult	0.1	744.22	1.05	4	1	1	1	24	16	0	40
+Onion thrips	Larvae	0.2	1700.26	1.87	4	1	1	1	3	21	0	24
+Onion thrips	Pupae	0.2	1700.26	1.87	4	1	1	1	1	9	0	10
+Onion thrips	Adult	0.2	1700.26	1.87	4	1	1	1	0	47	0	47
+Onion thrips	Larvae	0.3	2258.48	2.78	4	1	1	1	0	10	0	10
+Onion thrips	Pupae	0.3	2258.48	2.78	4	1	1	1	0	13	0	13
+Onion thrips	Adult	0.3	2258.48	2.78	4	1	1	1	0	43	0	43
+Onion thrips	Larvae	0.6	4681.6	5.84	4	1	1	1	0	20	0	20
+Onion thrips	Pupae	0.6	4681.6	5.84	4	1	1	1	0	15	0	15
+Onion thrips	Adult	0.6	4681.6	5.84	4	1	1	1	0	36	0	36
+Onion thrips	Larvae	1.2	8942.68	10.95	4	1	1	1	0	40	0	40
+Onion thrips	Pupae	1.2	8942.68	10.95	4	1	1	1	0	19	0	19
+Onion thrips	Adult	1.2	8942.68	10.95	4	1	1	1	0	31	0	31
+Onion thrips	Larvae	1.7	11191.01	14.4	4	1	1	1	0	27	0	27
+Onion thrips	Pupae	1.7	11191.01	14.4	4	1	1	1	0	33	0	33
+Onion thrips	Adult	1.7	11191.01	14.4	4	1	1	1	0	25	0	25
+Obscure mealybugs	1st instar	Control	0	0	1	1	1	2	83	0	0	83
+Obscure mealybugs	2nd instar	Control	0	0	1	1	1	2	62	0	0	62
+Obscure mealybugs	3rd instar	Control	0	0	1	1	1	2	36	1	0	37
+Obscure mealybugs	2/3rd instar male 	Control	0	0	1	1	1	2	1	0	0	1
+Obscure mealybugs	Mature female	Control	0	0	1	1	1	2	61	0	0	61
+Obscure mealybugs	Mature male	Control	0	0	1	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	0	166.87	14.98	1	1	1	2	102	2	0	104
+Obscure mealybugs	2nd instar	0	166.87	14.98	1	1	1	2	41	6	0	47
+Obscure mealybugs	3rd instar	0	166.87	14.98	1	1	1	2	88	14	0	102
+Obscure mealybugs	2/3rd instar male 	0	166.87	14.98	1	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0	166.87	14.98	1	1	1	2	38	10	0	48
+Obscure mealybugs	Mature male	0	166.87	14.98	1	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	0.1	738	1.17	1	1	1	2	48	2	0	50
+Obscure mealybugs	2nd instar	0.1	738	1.17	1	1	1	2	51	1	0	52
+Obscure mealybugs	3rd instar	0.1	738	1.17	1	1	1	2	94	13	0	107
+Obscure mealybugs	2/3rd instar male 	0.1	738	1.17	1	1	1	2	2	0	0	2
+Obscure mealybugs	Mature female	0.1	738	1.17	1	1	1	2	43	3	0	46
+Obscure mealybugs	Mature male	0.1	738	1.17	1	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	0.2	1519.95	1.83	1	1	1	2	9	1	0	10
+Obscure mealybugs	2nd instar	0.2	1519.95	1.83	1	1	1	2	33	3	0	36
+Obscure mealybugs	3rd instar	0.2	1519.95	1.83	1	1	1	2	29	2	0	31
+Obscure mealybugs	2/3rd instar male 	0.2	1519.95	1.83	1	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.2	1519.95	1.83	1	1	1	2	51	6	0	57
+Obscure mealybugs	Mature male	0.2	1519.95	1.83	1	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	0.3	2410.75	3.06	1	1	1	2	12	14	0	26
+Obscure mealybugs	2nd instar	0.3	2410.75	3.06	1	1	1	2	17	20	0	37
+Obscure mealybugs	3rd instar	0.3	2410.75	3.06	1	1	1	2	57	15	0	72
+Obscure mealybugs	2/3rd instar male 	0.3	2410.75	3.06	1	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.3	2410.75	3.06	1	1	1	2	96	9	0	105
+Obscure mealybugs	Mature male	0.3	2410.75	3.06	1	1	1	2	0	1	0	1
+Obscure mealybugs	1st instar	0.6	4968.44	5.92	1	1	1	2	3	57	0	60
+Obscure mealybugs	2nd instar	0.6	4968.44	5.92	1	1	1	2	11	35	0	46
+Obscure mealybugs	3rd instar	0.6	4968.44	5.92	1	1	1	2	41	61	0	102
+Obscure mealybugs	2/3rd instar male 	0.6	4968.44	5.92	1	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.6	4968.44	5.92	1	1	1	2	17	36	0	53
+Obscure mealybugs	Mature male	0.6	4968.44	5.92	1	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	1.2	9999.94	10.87	1	1	1	2	0	14	0	14
+Obscure mealybugs	2nd instar	1.2	9999.94	10.87	1	1	1	2	0	60	0	60
+Obscure mealybugs	3rd instar	1.2	9999.94	10.87	1	1	1	2	0	41	0	41
+Obscure mealybugs	2/3rd instar male 	1.2	9999.94	10.87	1	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	1.2	9999.94	10.87	1	1	1	2	0	58	0	58
+Obscure mealybugs	Mature male	1.2	9999.94	10.87	1	1	1	2	0	2	0	2
+Obscure mealybugs	1st instar	1.7	13009.74	16.8	1	1	1	2	0	30	0	30
+Obscure mealybugs	2nd instar	1.7	13009.74	16.8	1	1	1	2	0	68	0	68
+Obscure mealybugs	3rd instar	1.7	13009.74	16.8	1	1	1	2	0	61	0	61
+Obscure mealybugs	2/3rd instar male 	1.7	13009.74	16.8	1	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	1.7	13009.74	16.8	1	1	1	2	0	13	0	13
+Obscure mealybugs	Mature male	1.7	13009.74	16.8	1	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	Control	0	0	2	1	1	2	84	11	0	95
+Obscure mealybugs	2nd instar	Control	0	0	2	1	1	2	55	1	0	56
+Obscure mealybugs	3rd instar	Control	0	0	2	1	1	2	98	3	0	101
+Obscure mealybugs	2/3rd instar male 	Control	0	0	2	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	Control	0	0	2	1	1	2	49	3	0	52
+Obscure mealybugs	Mature male	Control	0	0	2	1	1	2	0	8	0	8
+Obscure mealybugs	1st instar	0	133.76	11.94	2	1	1	2	152	0	0	152
+Obscure mealybugs	2nd instar	0	133.76	11.94	2	1	1	2	72	4	0	76
+Obscure mealybugs	3rd instar	0	133.76	11.94	2	1	1	2	100	1	0	101
+Obscure mealybugs	2/3rd instar male 	0	133.76	11.94	2	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0	133.76	11.94	2	1	1	2	87	0	0	87
+Obscure mealybugs	Mature male	0	133.76	11.94	2	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	0.1	732.85	1.1	2	1	1	2	13	0	0	13
+Obscure mealybugs	2nd instar	0.1	732.85	1.1	2	1	1	2	81	3	0	84
+Obscure mealybugs	3rd instar	0.1	732.85	1.1	2	1	1	2	62	4	0	66
+Obscure mealybugs	2/3rd instar male 	0.1	732.85	1.1	2	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.1	732.85	1.1	2	1	1	2	36	5	0	41
+Obscure mealybugs	Mature male	0.1	732.85	1.1	2	1	1	2	0	2	0	2
+Obscure mealybugs	1st instar	0.2	1983.26	2.13	2	1	1	2	23	3	0	26
+Obscure mealybugs	2nd instar	0.2	1983.26	2.13	2	1	1	2	43	5	0	48
+Obscure mealybugs	3rd instar	0.2	1983.26	2.13	2	1	1	2	80	2	0	82
+Obscure mealybugs	2/3rd instar male 	0.2	1983.26	2.13	2	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.2	1983.26	2.13	2	1	1	2	52	5	0	57
+Obscure mealybugs	Mature male	0.2	1983.26	2.13	2	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	0.3	2181.2	2.89	2	1	1	2	29	32	0	61
+Obscure mealybugs	2nd instar	0.3	2181.2	2.89	2	1	1	2	29	27	0	56
+Obscure mealybugs	3rd instar	0.3	2181.2	2.89	2	1	1	2	96	20	0	116
+Obscure mealybugs	2/3rd instar male 	0.3	2181.2	2.89	2	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.3	2181.2	2.89	2	1	1	2	55	14	0	69
+Obscure mealybugs	Mature male	0.3	2181.2	2.89	2	1	1	2	0	1	0	1
+Obscure mealybugs	1st instar	0.6	4238.8	5.7	2	1	1	2	0	13	0	13
+Obscure mealybugs	2nd instar	0.6	4238.8	5.7	2	1	1	2	5	73	0	78
+Obscure mealybugs	3rd instar	0.6	4238.8	5.7	2	1	1	2	14	31	0	45
+Obscure mealybugs	2/3rd instar male 	0.6	4238.8	5.7	2	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.6	4238.8	5.7	2	1	1	2	37	49	0	86
+Obscure mealybugs	Mature male	0.6	4238.8	5.7	2	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	1.2	9045.21	11.84	2	1	1	2	0	102	0	102
+Obscure mealybugs	2nd instar	1.2	9045.21	11.84	2	1	1	2	0	85	0	85
+Obscure mealybugs	3rd instar	1.2	9045.21	11.84	2	1	1	2	5	97	0	102
+Obscure mealybugs	2/3rd instar male 	1.2	9045.21	11.84	2	1	1	2	0	14	0	14
+Obscure mealybugs	Mature female	1.2	9045.21	11.84	2	1	1	2	0	1	0	1
+Obscure mealybugs	Mature male	1.2	9045.21	11.84	2	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	1.7	12512.6	14.73	2	1	1	2	0	57	0	57
+Obscure mealybugs	2nd instar	1.7	12512.6	14.73	2	1	1	2	0	63	0	63
+Obscure mealybugs	3rd instar	1.7	12512.6	14.73	2	1	1	2	0	44	0	44
+Obscure mealybugs	2/3rd instar male 	1.7	12512.6	14.73	2	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	1.7	12512.6	14.73	2	1	1	2	0	116	0	116
+Obscure mealybugs	Mature male	1.7	12512.6	14.73	2	1	1	2	0	1	0	1
+Obscure mealybugs	1st instar	Control	0	0	3	1	1	2	11	0	0	11
+Obscure mealybugs	2nd instar	Control	0	0	3	1	1	2	62	0	0	62
+Obscure mealybugs	3rd instar	Control	0	0	3	1	1	2	100	0	0	100
+Obscure mealybugs	2/3rd instar male 	Control	0	0	3	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	Control	0	0	3	1	1	2	46	0	0	46
+Obscure mealybugs	Mature male	Control	0	0	3	1	1	2	3	0	0	3
+Obscure mealybugs	1st instar	0	79.03	14.1	3	1	1	2	74	2	0	76
+Obscure mealybugs	2nd instar	0	79.03	14.1	3	1	1	2	57	1	0	58
+Obscure mealybugs	3rd instar	0	79.03	14.1	3	1	1	2	96	4	0	100
+Obscure mealybugs	2/3rd instar male 	0	79.03	14.1	3	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0	79.03	14.1	3	1	1	2	45	0	0	45
+Obscure mealybugs	Mature male	0	79.03	14.1	3	1	1	2	1	0	0	1
+Obscure mealybugs	1st instar	0.1	764.33	1.15	3	1	1	2	23	3	0	26
+Obscure mealybugs	2nd instar	0.1	764.33	1.15	3	1	1	2	68	0	0	68
+Obscure mealybugs	3rd instar	0.1	764.33	1.15	3	1	1	2	106	1	0	107
+Obscure mealybugs	2/3rd instar male 	0.1	764.33	1.15	3	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.1	764.33	1.15	3	1	1	2	54	2	0	56
+Obscure mealybugs	Mature male	0.1	764.33	1.15	3	1	1	2	4	0	0	4
+Obscure mealybugs	1st instar	0.2	1421.98	1.68	3	1	1	2	20	54	0	74
+Obscure mealybugs	2nd instar	0.2	1421.98	1.68	3	1	1	2	56	9	0	65
+Obscure mealybugs	3rd instar	0.2	1421.98	1.68	3	1	1	2	46	1	0	47
+Obscure mealybugs	2/3rd instar male 	0.2	1421.98	1.68	3	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.2	1421.98	1.68	3	1	1	2	89	11	0	100
+Obscure mealybugs	Mature male	0.2	1421.98	1.68	3	1	1	2	1	4	0	5
+Obscure mealybugs	1st instar	0.3	2377.45	2.82	3	1	1	2	5	22	0	27
+Obscure mealybugs	2nd instar	0.3	2377.45	2.82	3	1	1	2	32	52	0	84
+Obscure mealybugs	3rd instar	0.3	2377.45	2.82	3	1	1	2	84	6	0	90
+Obscure mealybugs	2/3rd instar male 	0.3	2377.45	2.82	3	1	1	2	0	6	0	6
+Obscure mealybugs	Mature female	0.3	2377.45	2.82	3	1	1	2	37	16	0	53
+Obscure mealybugs	Mature male	0.3	2377.45	2.82	3	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	0.6	5058.65	4.43	3	1	1	2	0	23	0	23
+Obscure mealybugs	2nd instar	0.6	5058.65	4.43	3	1	1	2	4	97	0	101
+Obscure mealybugs	3rd instar	0.6	5058.65	4.43	3	1	1	2	9	94	1	104
+Obscure mealybugs	2/3rd instar male 	0.6	5058.65	4.43	3	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.6	5058.65	4.43	3	1	1	2	17	53	0	70
+Obscure mealybugs	Mature male	0.6	5058.65	4.43	3	1	1	2	0	3	0	3
+Obscure mealybugs	1st instar	1.2	9713.44	10.78	3	1	1	2	4	98	0	102
+Obscure mealybugs	2nd instar	1.2	9713.44	10.78	3	1	1	2	0	100	0	100
+Obscure mealybugs	3rd instar	1.2	9713.44	10.78	3	1	1	2	0	100	0	100
+Obscure mealybugs	2/3rd instar male 	1.2	9713.44	10.78	3	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	1.2	9713.44	10.78	3	1	1	2	0	101	0	101
+Obscure mealybugs	Mature male	1.2	9713.44	10.78	3	1	1	2	0	9	0	9
+Obscure mealybugs	1st instar	1.7	12567.43	14.92	3	1	1	2	0	50	0	50
+Obscure mealybugs	2nd instar	1.7	12567.43	14.92	3	1	1	2	0	102	0	102
+Obscure mealybugs	3rd instar	1.7	12567.43	14.92	3	1	1	2	0	100	0	100
+Obscure mealybugs	2/3rd instar male 	1.7	12567.43	14.92	3	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	1.7	12567.43	14.92	3	1	1	2	0	73	0	73
+Obscure mealybugs	Mature male	1.7	12567.43	14.92	3	1	1	2	0	7	0	7
+Obscure mealybugs	1st instar	Control	0	0	4	1	1	2	101	0	0	101
+Obscure mealybugs	2nd instar	Control	0	0	4	1	1	2	39	0	0	39
+Obscure mealybugs	3rd instar	Control	0	0	4	1	1	2	100	0	0	100
+Obscure mealybugs	2/3rd instar male 	Control	0	0	4	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	Control	0	0	4	1	1	2	102	3	0	105
+Obscure mealybugs	Mature male	Control	0	0	4	1	1	2	1	3	0	4
+Obscure mealybugs	1st instar	0	65.74	13.24	4	1	1	2	35	1	0	36
+Obscure mealybugs	2nd instar	0	65.74	13.24	4	1	1	2	54	0	0	54
+Obscure mealybugs	3rd instar	0	65.74	13.24	4	1	1	2	102	3	0	105
+Obscure mealybugs	2/3rd instar male 	0	65.74	13.24	4	1	1	2	1	0	0	1
+Obscure mealybugs	Mature female	0	65.74	13.24	4	1	1	2	64	3	0	67
+Obscure mealybugs	Mature male	0	65.74	13.24	4	1	1	2	2	1	0	3
+Obscure mealybugs	1st instar	0.1	744.22	1.05	4	1	1	2	45	2	0	47
+Obscure mealybugs	2nd instar	0.1	744.22	1.05	4	1	1	2	47	1	0	48
+Obscure mealybugs	3rd instar	0.1	744.22	1.05	4	1	1	2	101	2	0	103
+Obscure mealybugs	2/3rd instar male 	0.1	744.22	1.05	4	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.1	744.22	1.05	4	1	1	2	7	2	0	9
+Obscure mealybugs	Mature male	0.1	744.22	1.05	4	1	1	2	0	0	0	0
+Obscure mealybugs	1st instar	0.2	1700.26	1.87	4	1	1	2	14	5	0	19
+Obscure mealybugs	2nd instar	0.2	1700.26	1.87	4	1	1	2	47	11	0	58
+Obscure mealybugs	3rd instar	0.2	1700.26	1.87	4	1	1	2	69	3	0	72
+Obscure mealybugs	2/3rd instar male 	0.2	1700.26	1.87	4	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.2	1700.26	1.87	4	1	1	2	58	3	0	61
+Obscure mealybugs	Mature male	0.2	1700.26	1.87	4	1	1	2	0	1	0	1
+Obscure mealybugs	1st instar	0.3	2258.48	2.78	4	1	1	2	0	8	0	8
+Obscure mealybugs	2nd instar	0.3	2258.48	2.78	4	1	1	2	23	74	0	97
+Obscure mealybugs	3rd instar	0.3	2258.48	2.78	4	1	1	2	63	5	0	68
+Obscure mealybugs	2/3rd instar male 	0.3	2258.48	2.78	4	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.3	2258.48	2.78	4	1	1	2	67	6	0	73
+Obscure mealybugs	Mature male	0.3	2258.48	2.78	4	1	1	2	0	2	0	2
+Obscure mealybugs	1st instar	0.6	4681.6	5.84	4	1	1	2	0	43	0	43
+Obscure mealybugs	2nd instar	0.6	4681.6	5.84	4	1	1	2	2	28	0	30
+Obscure mealybugs	3rd instar	0.6	4681.6	5.84	4	1	1	2	10	29	0	39
+Obscure mealybugs	2/3rd instar male 	0.6	4681.6	5.84	4	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	0.6	4681.6	5.84	4	1	1	2	62	38	0	100
+Obscure mealybugs	Mature male	0.6	4681.6	5.84	4	1	1	2	0	2	0	2
+Obscure mealybugs	1st instar	1.2	8942.68	10.95	4	1	1	2	0	101	0	101
+Obscure mealybugs	2nd instar	1.2	8942.68	10.95	4	1	1	2	0	7	0	7
+Obscure mealybugs	3rd instar	1.2	8942.68	10.95	4	1	1	2	4	96	0	100
+Obscure mealybugs	2/3rd instar male 	1.2	8942.68	10.95	4	1	1	2	0	1	0	1
+Obscure mealybugs	Mature female	1.2	8942.68	10.95	4	1	1	2	0	29	1	30
+Obscure mealybugs	Mature male	1.2	8942.68	10.95	4	1	1	2	0	1	0	1
+Obscure mealybugs	1st instar	1.7	11191.01	14.4	4	1	1	2	0	100	0	100
+Obscure mealybugs	2nd instar	1.7	11191.01	14.4	4	1	1	2	0	100	0	100
+Obscure mealybugs	3rd instar	1.7	11191.01	14.4	4	1	1	2	0	104	0	104
+Obscure mealybugs	2/3rd instar male 	1.7	11191.01	14.4	4	1	1	2	0	0	0	0
+Obscure mealybugs	Mature female	1.7	11191.01	14.4	4	1	1	2	0	100	0	100
+Obscure mealybugs	Mature male	1.7	11191.01	14.4	4	1	1	2	0	4	0	4
+Latania scale	Crawler	Control	0	0	1	1	1	7	91	12	0	103
+Latania scale	1st instar	Control	0	0	1	1	1	7	98	2	0	100
+Latania scale	2nd instar	Control	0	0	1	1	1	7	100	0	0	100
+Latania scale	3rd instar	Control	0	0	1	1	1	7	102	0	0	102
+Latania scale	Mature female	Control	0	0	1	1	1	7	99	1	0	100
+Latania scale	Crawler	0	166.87	14.98	1	1	1	7	119	0	0	119
+Latania scale	1st instar	0	166.87	14.98	1	1	1	7	43	58	0	101
+Latania scale	2nd instar	0	166.87	14.98	1	1	1	7	84	17	0	101
+Latania scale	3rd instar	0	166.87	14.98	1	1	1	7	97	3	0	100
+Latania scale	Mature female	0	166.87	14.98	1	1	1	7	13	0	0	13
+Latania scale	Crawler	0.1	738	1.17	1	1	1	7	92	27	0	119
+Latania scale	1st instar	0.1	738	1.17	1	1	1	7	9	3	92	104
+Latania scale	2nd instar	0.1	738	1.17	1	1	1	7	95	7	0	102
+Latania scale	3rd instar	0.1	738	1.17	1	1	1	7	100	0	0	100
+Latania scale	Mature female	0.1	738	1.17	1	1	1	7	102	0	0	102
+Latania scale	Crawler	0.2	1519.95	1.83	1	1	1	7	0	100	0	100
+Latania scale	1st instar	0.2	1519.95	1.83	1	1	1	7	0	102	0	102
+Latania scale	2nd instar	0.2	1519.95	1.83	1	1	1	7	47	36	23	106
+Latania scale	3rd instar	0.2	1519.95	1.83	1	1	1	7	63	34	3	100
+Latania scale	Mature female	0.2	1519.95	1.83	1	1	1	7	0	0	0	0
+Latania scale	Crawler	0.3	2410.75	3.06	1	1	1	7	4	114	0	118
+Latania scale	1st instar	0.3	2410.75	3.06	1	1	1	7	0	100	0	100
+Latania scale	2nd instar	0.3	2410.75	3.06	1	1	1	7	0	100	5	105
+Latania scale	3rd instar	0.3	2410.75	3.06	1	1	1	7	4	97	7	108
+Latania scale	Mature female	0.3	2410.75	3.06	1	1	1	7	0	6	0	6
+Latania scale	Crawler	0.6	4968.44	5.92	1	1	1	7	0	119	0	119
+Latania scale	1st instar	0.6	4968.44	5.92	1	1	1	7	0	100	0	100
+Latania scale	2nd instar	0.6	4968.44	5.92	1	1	1	7	0	96	12	108
+Latania scale	3rd instar	0.6	4968.44	5.92	1	1	1	7	0	98	2	100
+Latania scale	Mature female	0.6	4968.44	5.92	1	1	1	7	0	10	0	10
+Latania scale	Crawler	1.2	9999.94	10.87	1	1	1	7	0	100	0	100
+Latania scale	1st instar	1.2	9999.94	10.87	1	1	1	7	0	100	0	100
+Latania scale	2nd instar	1.2	9999.94	10.87	1	1	1	7	0	100	0	100
+Latania scale	3rd instar	1.2	9999.94	10.87	1	1	1	7	0	100	0	100
+Latania scale	Mature female	1.2	9999.94	10.87	1	1	1	7	0	8	0	8
+Latania scale	Crawler	1.7	13009.74	16.8	1	1	1	7	0	100	0	100
+Latania scale	1st instar	1.7	13009.74	16.8	1	1	1	7	0	101	0	101
+Latania scale	2nd instar	1.7	13009.74	16.8	1	1	1	7	0	99	2	101
+Latania scale	3rd instar	1.7	13009.74	16.8	1	1	1	7	0	100	7	107
+Latania scale	Mature female	1.7	13009.74	16.8	1	1	1	7	0	40	0	40
+Latania scale	Crawler	Control	0	0	2	1	1	7	98	3	0	101
+Latania scale	1st instar	Control	0	0	2	1	1	7	96	5	0	101
+Latania scale	2nd instar	Control	0	0	2	1	1	7	100	2	0	102
+Latania scale	3rd instar	Control	0	0	2	1	1	7	99	1	0	100
+Latania scale	Mature female	Control	0	0	2	1	1	7	15	8	0	23
+Latania scale	Crawler	0	133.76	11.94	2	1	1	7	83	17	0	100
+Latania scale	1st instar	0	133.76	11.94	2	1	1	7	100	2	0	102
+Latania scale	2nd instar	0	133.76	11.94	2	1	1	7	103	0	0	103
+Latania scale	3rd instar	0	133.76	11.94	2	1	1	7	100	0	0	100
+Latania scale	Mature female	0	133.76	11.94	2	1	1	7	100	0	0	100
+Latania scale	Crawler	0.1	732.85	1.1	2	1	1	7	5	0	0	5
+Latania scale	1st instar	0.1	732.85	1.1	2	1	1	7	0	79	0	79
+Latania scale	2nd instar	0.1	732.85	1.1	2	1	1	7	23	28	0	51
+Latania scale	3rd instar	0.1	732.85	1.1	2	1	1	7	98	9	6	113
+Latania scale	Mature female	0.1	732.85	1.1	2	1	1	7	9	0	0	9
+Latania scale	Crawler	0.2	1983.26	2.13	2	1	1	7	28	83	0	111
+Latania scale	1st instar	0.2	1983.26	2.13	2	1	1	7	0	74	28	102
+Latania scale	2nd instar	0.2	1983.26	2.13	2	1	1	7	0	4	84	88
+Latania scale	3rd instar	0.2	1983.26	2.13	2	1	1	7	0	11	92	103
+Latania scale	Mature female	0.2	1983.26	2.13	2	1	1	7	0	9	93	102
+Latania scale	Crawler	0.3	2181.2	2.89	2	1	1	7	2	67	0	69
+Latania scale	1st instar	0.3	2181.2	2.89	2	1	1	7	0	100	0	100
+Latania scale	2nd instar	0.3	2181.2	2.89	2	1	1	7	1	54	47	102
+Latania scale	3rd instar	0.3	2181.2	2.89	2	1	1	7	2	80	19	101
+Latania scale	Mature female	0.3	2181.2	2.89	2	1	1	7	0	0	0	0
+Latania scale	Crawler	0.6	4238.8	5.7	2	1	1	7	0	100	0	100
+Latania scale	1st instar	0.6	4238.8	5.7	2	1	1	7	0	100	0	100
+Latania scale	2nd instar	0.6	4238.8	5.7	2	1	1	7	0	100	0	100
+Latania scale	3rd instar	0.6	4238.8	5.7	2	1	1	7	0	100	3	103
+Latania scale	Mature female	0.6	4238.8	5.7	2	1	1	7	0	0	0	0
+Latania scale	Crawler	1.2	9045.21	11.84	2	1	1	7	0	100	0	100
+Latania scale	1st instar	1.2	9045.21	11.84	2	1	1	7	0	100	0	100
+Latania scale	2nd instar	1.2	9045.21	11.84	2	1	1	7	0	90	11	101
+Latania scale	3rd instar	1.2	9045.21	11.84	2	1	1	7	0	97	7	104
+Latania scale	Mature female	1.2	9045.21	11.84	2	1	1	7	0	27	0	27
+Latania scale	Crawler	1.7	12512.6	14.73	2	1	1	7	0	100	0	100
+Latania scale	1st instar	1.7	12512.6	14.73	2	1	1	7	0	100	0	100
+Latania scale	2nd instar	1.7	12512.6	14.73	2	1	1	7	0	100	0	100
+Latania scale	3rd instar	1.7	12512.6	14.73	2	1	1	7	0	100	0	100
+Latania scale	Mature female	1.7	12512.6	14.73	2	1	1	7	0	9	0	9
+Latania scale	Crawler	Control	0	0	3	1	1	7	56	47	0	103
+Latania scale	1st instar	Control	0	0	3	1	1	7	8	95	0	103
+Latania scale	2nd instar	Control	0	0	3	1	1	7	47	54	0	101
+Latania scale	3rd instar	Control	0	0	3	1	1	7	48	53	0	101
+Latania scale	Mature female	Control	0	0	3	1	1	7	30	65	0	95
+Latania scale	Crawler	0	79.03	14.1	3	1	1	7	54	49	0	103
+Latania scale	1st instar	0	79.03	14.1	3	1	1	7	87	22	0	109
+Latania scale	2nd instar	0	79.03	14.1	3	1	1	7	83	22	0	105
+Latania scale	3rd instar	0	79.03	14.1	3	1	1	7	105	6	0	111
+Latania scale	Mature female	0	79.03	14.1	3	1	1	7	1	1	0	2
+Latania scale	Crawler	0.1	764.33	1.15	3	1	1	7	33	70	0	103
+Latania scale	1st instar	0.1	764.33	1.15	3	1	1	7	9	91	0	100
+Latania scale	2nd instar	0.1	764.33	1.15	3	1	1	7	60	40	0	100
+Latania scale	3rd instar	0.1	764.33	1.15	3	1	1	7	63	38	0	101
+Latania scale	Mature female	0.1	764.33	1.15	3	1	1	7	9	7	0	16
+Latania scale	Crawler	0.2	1421.98	1.68	3	1	1	7	67	90	0	157
+Latania scale	1st instar	0.2	1421.98	1.68	3	1	1	7	37	71	0	108
+Latania scale	2nd instar	0.2	1421.98	1.68	3	1	1	7	3	99	0	102
+Latania scale	3rd instar	0.2	1421.98	1.68	3	1	1	7	54	48	2	104
+Latania scale	Mature female	0.2	1421.98	1.68	3	1	1	7	3	3	1	7
+Latania scale	Crawler	0.3	2377.45	2.82	3	1	1	7	33	67	0	100
+Latania scale	1st instar	0.3	2377.45	2.82	3	1	1	7	10	90	0	100
+Latania scale	2nd instar	0.3	2377.45	2.82	3	1	1	7	29	38	35	102
+Latania scale	3rd instar	0.3	2377.45	2.82	3	1	1	7	9	46	45	100
+Latania scale	Mature female	0.3	2377.45	2.82	3	1	1	7	6	28	12	46
+Latania scale	Crawler	0.6	5058.65	4.43	3	1	1	7	0	100	0	100
+Latania scale	1st instar	0.6	5058.65	4.43	3	1	1	7	0	100	0	100
+Latania scale	2nd instar	0.6	5058.65	4.43	3	1	1	7	0	100	0	100
+Latania scale	3rd instar	0.6	5058.65	4.43	3	1	1	7	0	100	0	100
+Latania scale	Mature female	0.6	5058.65	4.43	3	1	1	7	0	49	0	49
+Latania scale	Crawler	1.2	9713.44	10.78	3	1	1	7	0	101	0	101
+Latania scale	1st instar	1.2	9713.44	10.78	3	1	1	7	0	100	0	100
+Latania scale	2nd instar	1.2	9713.44	10.78	3	1	1	7	0	99	2	101
+Latania scale	3rd instar	1.2	9713.44	10.78	3	1	1	7	0	95	5	100
+Latania scale	Mature female	1.2	9713.44	10.78	3	1	1	7	0	36	0	36
+Latania scale	Crawler	1.7	12567.43	14.92	3	1	1	7	0	102	0	102
+Latania scale	1st instar	1.7	12567.43	14.92	3	1	1	7	0	100	0	100
+Latania scale	2nd instar	1.7	12567.43	14.92	3	1	1	7	0	101	0	101
+Latania scale	3rd instar	1.7	12567.43	14.92	3	1	1	7	0	100	0	100
+Latania scale	Mature female	1.7	12567.43	14.92	3	1	1	7	0	17	4	21
+Latania scale	Crawler	Control	0	0	4	1	1	7	71	29	0	100
+Latania scale	1st instar	Control	0	0	4	1	1	7	76	27	0	103
+Latania scale	2nd instar	Control	0	0	4	1	1	7	92	10	0	102
+Latania scale	3rd instar	Control	0	0	4	1	1	7	101	1	0	102
+Latania scale	Mature female	Control	0	0	4	1	1	7	22	0	0	22
+Latania scale	Crawler	0	65.74	13.24	4	1	1	7	56	59	0	115
+Latania scale	1st instar	0	65.74	13.24	4	1	1	7	31	73	0	104
+Latania scale	2nd instar	0	65.74	13.24	4	1	1	7	83	21	0	104
+Latania scale	3rd instar	0	65.74	13.24	4	1	1	7	91	9	0	100
+Latania scale	Mature female	0	65.74	13.24	4	1	1	7	27	1	0	28
+Latania scale	Crawler	0.1	744.22	1.05	4	1	1	7	1	16	0	17
+Latania scale	1st instar	0.1	744.22	1.05	4	1	1	7	52	56	0	108
+Latania scale	2nd instar	0.1	744.22	1.05	4	1	1	7	70	33	0	103
+Latania scale	3rd instar	0.1	744.22	1.05	4	1	1	7	98	4	0	102
+Latania scale	Mature female	0.1	744.22	1.05	4	1	1	7	1	0	0	1
+Latania scale	Crawler	0.2	1700.26	1.87	4	1	1	7	2	100	0	102
+Latania scale	1st instar	0.2	1700.26	1.87	4	1	1	7	0	100	0	100
+Latania scale	2nd instar	0.2	1700.26	1.87	4	1	1	7	17	83	0	100
+Latania scale	3rd instar	0.2	1700.26	1.87	4	1	1	7	34	56	12	102
+Latania scale	Mature female	0.2	1700.26	1.87	4	1	1	7	6	96	4	106
+Latania scale	Crawler	0.3	2258.48	2.78	4	1	1	7	0	100	0	100
+Latania scale	1st instar	0.3	2258.48	2.78	4	1	1	7	0	101	0	101
+Latania scale	2nd instar	0.3	2258.48	2.78	4	1	1	7	0	102	1	103
+Latania scale	3rd instar	0.3	2258.48	2.78	4	1	1	7	0	103	0	103
+Latania scale	Mature female	0.3	2258.48	2.78	4	1	1	7	0	0	2	2
+Latania scale	Crawler	0.6	4681.6	5.84	4	1	1	7	0	103	0	103
+Latania scale	1st instar	0.6	4681.6	5.84	4	1	1	7	0	100	0	100
+Latania scale	2nd instar	0.6	4681.6	5.84	4	1	1	7	2	66	34	102
+Latania scale	3rd instar	0.6	4681.6	5.84	4	1	1	7	12	11	44	67
+Latania scale	Mature female	0.6	4681.6	5.84	4	1	1	7	0	0	0	0
+Latania scale	Crawler	1.2	8942.68	10.95	4	1	1	7	0	100	0	100
+Latania scale	1st instar	1.2	8942.68	10.95	4	1	1	7	0	100	0	100
+Latania scale	2nd instar	1.2	8942.68	10.95	4	1	1	7	0	100	0	100
+Latania scale	3rd instar	1.2	8942.68	10.95	4	1	1	7	0	64	0	64
+Latania scale	Mature female	1.2	8942.68	10.95	4	1	1	7	0	2	0	2
+Latania scale	Crawler	1.7	11191.01	14.4	4	1	1	7	0	114	0	114
+Latania scale	1st instar	1.7	11191.01	14.4	4	1	1	7	0	101	0	101
+Latania scale	2nd instar	1.7	11191.01	14.4	4	1	1	7	0	101	4	105
+Latania scale	3rd instar	1.7	11191.01	14.4	4	1	1	7	0	96	3	99
+Latania scale	Mature female	1.7	11191.01	14.4	4	1	1	7	0	0	0	0

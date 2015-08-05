@@ -1,0 +1,17 @@
+Why we need files on the disk/s in Asset MTA-D-424089.
+
+Much of the information is available elsewhere, but a few gigabytes
+pertaining to 5 years of datamining work are not stored anywhere else.
+A fair proportion of the input data and of output graphs could be
+available, but the code linking them is not.
+
+It would be desirable to restore all of the /home/hrapgc/ directory
+which contains a number of configuration files.  If that's not
+possible, the most important is the /home/hrapgc/Rstuff/ directory
+(and its subdirectories).
+
+Other subdirectories of /home/ are not necessary.
+
+
+
+

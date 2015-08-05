@@ -1,0 +1,80 @@
+glean.june <- function(choice = 1)
+{
+### Purpose:- June 2014 EF data
+### ----------------------------------------------------------------------
+### Modified from:- glean.repdA
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 11 Jul 2014, 13:29
+### ----------------------------------------------------------------------
+### Revisions:- 
+  species <- unique(june.df$Species)
+  species.abbr <- c("LTMB", "WAA", "GHT", "SJS")
+ june.df <- june.df[june.df$Efg != "Control",]
+  june.df <- within(june.df, Efppm[is.na(Efppm)] <- 0)
+  june.df <- june.df[, -8]
+### Separate into 4 dataframes
+  ltmb.df <- june.df[june.df$Species == "Longtailed Mealybug",]
+  ltmb.df <- df.sort(ltmb.df, c("Efppm", "Rep", "Lifestage"))
+  ltmb.df <- within(ltmb.df, Live <- Live + Moribund)
+  ltmb.df$Species <- "LTMB"
+
+  waa.df <- june.df[june.df$Species == "Wooly Apple Aphid",]
+  waa.df <- df.sort(waa.df, c("Efppm", "Rep", "Lifestage"))
+  waa.df <- within(waa.df, Live <- Live + Moribund)
+  waa.df$Species <- "WAA"
+
+  ght.df <- june.df[june.df$Species == "Greenhouse thrips",]
+  ght.df <- within(ght.df, Live <- Live + Moribund)
+  ght.df <- df.sort(ght.df, c("Efppm", "Rep", "Lifestage"))
+  ght.df$Species <- "GHT"
+
+  sjs.df <- june.df[june.df$Species == "San Jose Scale",]
+  sjs.df <- df.sort(sjs.df, c("Efppm", "Rep", "Lifestage"))
+  sjs.df <- within(sjs.df, Dead <- Dead + Moribund)
+  sjs.df$Species <- "SJS"
+
+
+### add back into one dataframe
+  use.df <- rbind(ltmb.df, waa.df, ght.df, sjs.df)
+
+with(use.df, table(Lifestage))  
+## Check if there's any difference between "Controls"
+  if(FALSE){
+  test.control <- function(dff){
+    dff <- dff[dff$Efppm == 0,]
+    dff <- within(dff, Efg <- factor(Efg))
+    dff <- within(dff, Mort <- round(Dead/Total * 100))
+    browser()
+browser()
+    ditchM <- grep("Male", dff$Lifestage)
+    dff <- dff[-ditchM,]
+    spec.glm <- glm(cbind(Dead, Live) ~ Lifestage + Efg, data = dff,
+                    family = quasibinomial)
+    anova(spec.glm, test = "Chi")
+browser()
+  }
+
+test.control(ltmb.df)
+test.control(waa.df)
+test.control(ght.df)
+test.control(sjs.df)
+browser()
+  
+}  
+  ### The a normal glean function
+  idset <- with(use.df, make.id(Efppm))
+  cutx <- NULL
+  leg.brief <- with(use.df, unique(paste(Species, Lifestage, Rep, sep= "|")))
+  maint <- "Mortality of various pests in ethyl formate after one hour"
+  xlabels <- c(0, 0)
+  xaxtitle <- "Dose (%)"
+  with(use.df,
+       list(id = idset, times = Efppm, total = unlist(Dead) + unlist(Live),
+            dead = Dead, 
+            cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
+            legend = leg.brief, xlabels = xlabels, takelog = FALSE))
+
+  
+}

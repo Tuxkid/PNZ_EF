@@ -1,0 +1,185 @@
+Duration	Efg	Efppm	Assessed (DAT)	Species	Lifestage	Live	Dead	Total
+3	Control		1	Onion thrips	Larvae	26	5	31
+3	Control		1	Onion thrips	Pupae	16	0	16
+3	Control		1	Onion thrips	Adults	16	2	18
+3	0	7.37	1	Onion thrips	Larvae	9	2	11
+3	0	7.37	1	Onion thrips	Pupae	3	2	5
+3	0	7.37	1	Onion thrips	Adults	13	12	25
+3	2	355.5	1	Onion thrips	Larvae	1	4	5
+3	2	355.5	1	Onion thrips	Pupae	3	4	7
+3	2	355.5	1	Onion thrips	Adults	23	10	33
+3	5	1472.93	1	Onion thrips	Larvae	0	17	17
+3	5	1472.93	1	Onion thrips	Pupae	0	16	16
+3	5	1472.93	1	Onion thrips	Adults	0	39	39
+3	10	2851.55	1	Onion thrips	Larvae	0	20	20
+3	10	2851.55	1	Onion thrips	Pupae	0	17	17
+3	10	2851.55	1	Onion thrips	Adults	0	31	31
+3	20	6028.96	1	Onion thrips	Larvae	0	24	24
+3	20	6028.96	1	Onion thrips	Pupae	0	5	5
+3	20	6028.96	1	Onion thrips	Adults	0	32	32
+3	40	12209.18	1	Onion thrips	Larvae	0	24	24
+3	40	12209.18	1	Onion thrips	Pupae	0	15	15
+3	40	12209.18	1	Onion thrips	Adults	0	28	28
+3	60	17487.51	1	Onion thrips	Larvae	0	16	16
+3	60	17487.51	1	Onion thrips	Pupae	0	10	10
+3	60	17487.51	1	Onion thrips	Adults	0	15	15
+3	Control		3	Mealybug	1 instar	20	0	20
+3	Control		3	Mealybug	2 instar	89	2	91
+3	Control		3	Mealybug	3instar	100	3	103
+3	Control		3	Mealybug	Female adult	53	3	56
+3	Control		3	Mealybug	Male adult	0	0	0
+3	0	7.37	3	Mealybug	1 instar	95	10	105
+3	0	7.37	3	Mealybug	2 instar	96	7	103
+3	0	7.37	3	Mealybug	3instar	100	3	103
+3	0	7.37	3	Mealybug	Female adult	102	0	102
+3	0	7.37	3	Mealybug	Male adult	5	4	9
+3	2	355.5	3	Mealybug	1 instar	90	10	100
+3	2	355.5	3	Mealybug	2 instar	83	17	100
+3	2	355.5	3	Mealybug	3instar	99	1	100
+3	2	355.5	3	Mealybug	Female adult	28	2	30
+3	2	355.5	3	Mealybug	Male adult	2	3	5
+3	5	1472.93	3	Mealybug	1 instar	41	60	101
+3	5	1472.93	3	Mealybug	2 instar	54	36	90
+3	5	1472.93	3	Mealybug	3instar	99	2	101
+3	5	1472.93	3	Mealybug	Female adult	115	2	117
+3	5	1472.93	3	Mealybug	Male adult	1	4	5
+3	10	2851.55	3	Mealybug	1 instar	1	102	103
+3	10	2851.55	3	Mealybug	2 instar	0	100	100
+3	10	2851.55	3	Mealybug	3instar	0	100	100
+3	10	2851.55	3	Mealybug	Female adult	1	97	98
+3	10	2851.55	3	Mealybug	Male adult	0	6	6
+3	20	6028.96	3	Mealybug	1 instar	1	71	72
+3	20	6028.96	3	Mealybug	2 instar	0	100	100
+3	20	6028.96	3	Mealybug	3instar	1	100	101
+3	20	6028.96	3	Mealybug	Female adult	0	28	28
+3	20	6028.96	3	Mealybug	Male adult	0	12	12
+3	40	12209.18	3	Mealybug	1 instar	0	103	103
+3	40	12209.18	3	Mealybug	2 instar	0	100	100
+3	40	12209.18	3	Mealybug	3instar	0	101	101
+3	40	12209.18	3	Mealybug	Female adult	0	89	89
+3	40	12209.18	3	Mealybug	Male adult	0	6	6
+3	60	17487.51	3	Mealybug	1 instar	0	64	64
+3	60	17487.51	3	Mealybug	2 instar	0	100	100
+3	60	17487.51	3	Mealybug	3instar	1	99	100
+3	60	17487.51	3	Mealybug	Female adult	0	38	38
+3	60	17487.51	3	Mealybug	Male adult	0	5	5
+3	Control		6	ALCM	Diapausing larvae	25	5	30
+3	0	7.37	6	ALCM	Diapausing larvae	29	7	36
+3	2	355.50	6	ALCM	Diapausing larvae	22	9	31
+3	5	1472.93	6	ALCM	Diapausing larvae	27	4	31
+3	10	2851.55	6	ALCM	Diapausing larvae	23	6	29
+3	20	6028.96	6	ALCM	Diapausing larvae	29	10	39
+3	40	12209.18	6	ALCM	Diapausing larvae	23	13	36
+3	60	17487.51	6	ALCM	Diapausing larvae	23	6	29
+3	Control		7	San Jose	Crawler	2	0	2
+3	Control		7	San Jose	white cap 1*	53	2	55
+3	Control		7	San Jose	Black cap 1*	45	4	49
+3	Control		7	San Jose	2* Female	12	1	13
+3	Control		7	San Jose	2* male	0	0	0
+3	Control		7	San Jose	3* female	9	3	12
+3	Control		7	San Jose	Male pupa	18	1	19
+3	Control		7	San Jose	Mature female	4	1	5
+3	Control		7	San Jose	Mature male	0	1	1
+3	0	7.37	7	San Jose	Crawler	0	0	0
+3	0	7.37	7	San Jose	white cap 1*	65	2	67
+3	0	7.37	7	San Jose	Black cap 1*	44	4	48
+3	0	7.37	7	San Jose	2* Female	12	2	14
+3	0	7.37	7	San Jose	2* male	0	0	0
+3	0	7.37	7	San Jose	3* female	1	1	2
+3	0	7.37	7	San Jose	Male pupa	19	1	20
+3	0	7.37	7	San Jose	Mature female	2	0	2
+3	0	7.37	7	San Jose	Mature male	0	0	0
+3	2	355.5	7	San Jose	Crawler	1	0	1
+3	2	355.5	7	San Jose	white cap 1*	7	12	19
+3	2	355.5	7	San Jose	Black cap 1*	11	19	30
+3	2	355.5	7	San Jose	2* Female	0	0	0
+3	2	355.5	7	San Jose	2* male	0	0	0
+3	2	355.5	7	San Jose	3* female	1	1	2
+3	2	355.5	7	San Jose	Male pupa	11	5	16
+3	2	355.5	7	San Jose	Mature female	2	3	5
+3	2	355.5	7	San Jose	Mature male	0	0	0
+3	5	1472.93	7	San Jose	Crawler	0	0	0
+3	5	1472.93	7	San Jose	white cap 1*	1	15	16
+3	5	1472.93	7	San Jose	Black cap 1*	3	26	29
+3	5	1472.93	7	San Jose	2* Female	0	3	3
+3	5	1472.93	7	San Jose	2* male	0	0	0
+3	5	1472.93	7	San Jose	3* female	0	1	1
+3	5	1472.93	7	San Jose	Male pupa	0	5	5
+3	5	1472.93	7	San Jose	Mature female	1	0	1
+3	5	1472.93	7	San Jose	Mature male	0	0	0
+3	10	2851.55	7	San Jose	Crawler	0	0	0
+3	10	2851.55	7	San Jose	white cap 1*	1	7	8
+3	10	2851.55	7	San Jose	Black cap 1*	0	29	29
+3	10	2851.55	7	San Jose	2* Female	0	11	11
+3	10	2851.55	7	San Jose	2* male	1	1	2
+3	10	2851.55	7	San Jose	3* female	1	0	1
+3	10	2851.55	7	San Jose	Male pupa	0	0	0
+3	10	2851.55	7	San Jose	Mature female	0	1	1
+3	10	2851.55	7	San Jose	Mature male	0	0	0
+3	20	6028.96	7	San Jose	Crawler	0	0	0
+3	20	6028.96	7	San Jose	white cap 1*	0	13	13
+3	20	6028.96	7	San Jose	Black cap 1*	0	35	35
+3	20	6028.96	7	San Jose	2* Female	0	5	5
+3	20	6028.96	7	San Jose	2* male	0	0	0
+3	20	6028.96	7	San Jose	3* female	0	2	2
+3	20	6028.96	7	San Jose	Male pupa	0	0	0
+3	20	6028.96	7	San Jose	Mature female	1	0	1
+3	20	6028.96	7	San Jose	Mature male	0	0	0
+3	40	12209.18	7	San Jose	Crawler	0	0	0
+3	40	12209.18	7	San Jose	white cap 1*	0	15	15
+3	40	12209.18	7	San Jose	Black cap 1*	0	25	25
+3	40	12209.18	7	San Jose	2* Female	0	10	10
+3	40	12209.18	7	San Jose	2* male	0	1	1
+3	40	12209.18	7	San Jose	3* female	0	1	1
+3	40	12209.18	7	San Jose	Male pupa	0	2	2
+3	40	12209.18	7	San Jose	Mature female	0	2	2
+3	40	12209.18	7	San Jose	Mature male	0	0	0
+3	60	17487.51	7	San Jose	Crawler	0	0	0
+3	60	17487.51	7	San Jose	white cap 1*	0	6	6
+3	60	17487.51	7	San Jose	Black cap 1*	0	29	29
+3	60	17487.51	7	San Jose	2* Female	0	1	1
+3	60	17487.51	7	San Jose	2* male	0	0	0
+3	60	17487.51	7	San Jose	3* female	0	0	0
+3	60	17487.51	7	San Jose	Male pupa	0	4	4
+3	60	17487.51	7	San Jose	Mature female	0	1	1
+3	60	17487.51	7	San Jose	Mature male	0	0	0
+3	Control		7	Latania scale	Crawler	31	76	107
+3	Control		7	Latania scale	1 instar	101	2	103
+3	Control		7	Latania scale	2 instar	98	3	101
+3	Control		7	Latania scale	3 instar	97	5	102
+3	Control		7	Latania scale	Mature female	20	0	20
+3	0	7.37	7	Latania scale	Crawler	5	95	100
+3	0	7.37	7	Latania scale	1 instar	71	29	100
+3	0	7.37	7	Latania scale	2 instar	85	15	100
+3	0	7.37	7	Latania scale	3 instar	79	0	79
+3	0	7.37	7	Latania scale	Mature female	8	0	8
+3	2	355.5	7	Latania scale	Crawler	0	105	105
+3	2	355.5	7	Latania scale	1 instar	4	98	102
+3	2	355.5	7	Latania scale	2 instar	13	52	65
+3	2	355.5	7	Latania scale	3 instar	9	1	10
+3	2	355.5	7	Latania scale	Mature female	2	0	2
+3	5	1472.93	7	Latania scale	Crawler	0	100	100
+3	5	1472.93	7	Latania scale	1 instar	0	100	100
+3	5	1472.93	7	Latania scale	2 instar	2	98	100
+3	5	1472.93	7	Latania scale	3 instar	0	100	100
+3	5	1472.93	7	Latania scale	Mature female	0	17	17
+3	10	2851.55	7	Latania scale	Crawler	0	102	102
+3	10	2851.55	7	Latania scale	1 instar	0	100	100
+3	10	2851.55	7	Latania scale	2 instar	0	101	101
+3	10	2851.55	7	Latania scale	3 instar	1	104	105
+3	10	2851.55	7	Latania scale	Mature female	0	101	101
+3	20	6028.96	7	Latania scale	Crawler	0	102	102
+3	20	6028.96	7	Latania scale	1 instar	0	100	100
+3	20	6028.96	7	Latania scale	2 instar	0	95	95
+3	20	6028.96	7	Latania scale	3 instar	0	101	101
+3	20	6028.96	7	Latania scale	Mature female	0	0	0
+3	40	12209.18	7	Latania scale	Crawler	0	109	109
+3	40	12209.18	7	Latania scale	1 instar	0	100	100
+3	40	12209.18	7	Latania scale	2 instar	0	100	100
+3	40	12209.18	7	Latania scale	3 instar	1	109	110
+3	40	12209.18	7	Latania scale	Mature female	0	25	25
+3	60	17487.51	7	Latania scale	Crawler	0	109	109
+3	60	17487.51	7	Latania scale	1 instar	0	100	100
+3	60	17487.51	7	Latania scale	2 instar	0	101	101
+3	60	17487.51	7	Latania scale	3 instar	0	101	101
+3	60	17487.51	7	Latania scale	Mature female	0	16	16

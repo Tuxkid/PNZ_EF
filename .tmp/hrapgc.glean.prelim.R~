@@ -1,0 +1,41 @@
+glean.prelim <-
+function(choice = 1)
+{
+### Purpose:- ALCM data collection
+### ----------------------------------------------------------------------
+### Modified from:- 
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 10 Apr 2013, 13:29
+### ----------------------------------------------------------------------
+### Revisions:-
+
+  
+    alcm.df <- prelim.df[prelim.df$Species == "ALCM",]
+    alcm.df$Lifestage = "diap"
+    latania.df <- prelim.df[prelim.df$Species == "Latania scale",]
+    latania.df$Species <- "LS"
+    mb.df <- prelim.df[prelim.df$Species == "Mealybug",]
+    mb.df$Lifestage <- "all"
+    thrip.df <- prelim.df[prelim.df$Species == "Onion thrips",]
+    sjs.df <- prelim.df[prelim.df$Species == "SJS",]
+    sjs.df$Lifestage <- "all"
+    use.df <- rbind(alcm.df, latania.df, mb.df, thrip.df, sjs.df)
+    use.df <- within(use.df, Efppm[is.na(Efppm)] <- 0)
+    browser()
+##     attach(alcm.df)
+##     on.exit(detach("alcm.df"))
+    idset <- with(use.df, make.id(Efppm))
+    cutx <- NULL
+    leg.brief <- with(use.df, unique(paste(Species, Lifestage)))
+    maint <- "Mortality of various in ethyl formate"
+    xlabels <- c(0, 0)
+    xaxtitle <- "Dose (ppm)"
+    with(use.df,
+         list(id = idset, times = Efppm, total = Dead + Live, dead = Dead, 
+        cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
+        legend = leg.brief, xlabels = xlabels, takelog = FALSE))
+
+  
+}

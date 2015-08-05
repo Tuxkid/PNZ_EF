@@ -1,0 +1,54 @@
+glean.repd <- function(choice = 1)
+{
+### Purpose:- Replicated lot: change some column names
+### ----------------------------------------------------------------------
+### Modified from:- glean.prelim
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:-  8 May 2013, 13:42
+### ----------------------------------------------------------------------
+### Revisions:- 
+browser()
+  rep.df <- within(rep.df, Efppm[is.na(Efppm)] <- 0)
+rep.df <- rep.df[, -4]
+  alcm.df <- rep.df[rep.df$Species == "ALCM",]
+  alcm.df$Lifestage = "diap"
+  latania.df <- rep.df[rep.df$Species == "Latania scale",]
+  latania.df$Species <- "LS"
+  latania.df <- df.sort(latania.df, c("Efppm", "Lifestage"))
+  mb.df <- rep.df[rep.df$Species == "Obscure mealybugs",]
+  mb.df$Lifestage <- "all" ## add lifestages
+  mb.sum <- unique(mb.df[, 1:5])
+  mb.sum$Live <- aggregate(Live~ Efppm,  data = mb.df, sum)$Live
+  mb.sum$Dead <- aggregate(Dead~ Efppm,  data = mb.df, sum)$Dead
+  mb.sum$Total <-aggregate(Total~ Efppm,  data = mb.df, sum)$Total
+##  names(mb.sum) <- names(mb.df)
+
+  thrip.df <- rep.df[rep.df$Species == "Onion thrips",]
+thrip.df <- df.sort(thrip.df, c("Efppm", "Lifestage"))
+    sjs.df <- rep.df[rep.df$Species == "San Jose",]
+  sjs.df$Lifestage <- "all"
+  sjs.sum <- unique(sjs.df[, 1:5])
+  sjs.sum$Live <- aggregate(Live~ Efppm,  data = sjs.df, sum)$Live
+  sjs.sum$Dead <- aggregate(Dead~ Efppm,  data = sjs.df, sum)$Dead
+  sjs.sum$Total <- aggregate(Total~ Efppm,  data = sjs.df, sum)$Total
+##  names(sjs.sum) <- names(sjs.df)
+## add into one dataframe
+  use.df <- rbind(alcm.df, latania.df, mb.sum, thrip.df, sjs.sum)
+  ##     attach(alcm.df)
+  ##     on.exit(detach("alcm.df"))
+  idset <- with(use.df, make.id(Efppm))
+  cutx <- NULL
+  leg.brief <- with(use.df, unique(paste(Species, Lifestage)))
+  maint <- "Mortality of various in ethyl formate"
+  xlabels <- c(0, 0)
+  xaxtitle <- "Dose (ppm)"
+  with(use.df,
+       list(id = idset, times = Efppm, total = unlist(Dead) + unlist(Live),
+            dead = Dead, 
+            cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
+            legend = leg.brief, xlabels = xlabels, takelog = FALSE))
+
+  
+}

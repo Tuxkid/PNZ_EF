@@ -1,0 +1,262 @@
+  Listing of: plot.reportJ
+  Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
+Last updated: 05/08/2014 
+**************************************
+
+plot.reportJ <-
+structure(function(span = .8 , titl = FALSE)
+{
+### Purpose:- June batch of critters exposed to EF
+### ----------------------------------------------------------------------
+### Modified from:- plot.report
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:-  4 Aug 2014, 13:58
+### ----------------------------------------------------------------------
+### Revisions:- 
+
+  ax.cex <- .8
+  lab.cex <- 1.1
+  cex.pt <- .9
+  leg.cex <- 0.8
+  ytix <- c(0, 1, 10, 20, 50, 80, 90, 99, 100)
+  ytix.at <- ang(ytix/100)
+  require(RColorBrewer)
+  COLOURS <- brewer.pal(5, "Dark2") # pick from these below
+  PCHS <- (0:5)[-4] # pick from these below
+ ### Use all/most of above in following plots
+  species <- unique(june.df$Species)
+  species.abbr <- c("LTMB", "WAA", "GHT", "SJS")
+ june.df <- june.df[june.df$Efg != "Control",]
+  june.df <- within(june.df, Efppm[is.na(Efppm)] <- 0)
+  june.df <- june.df[, -8]
+  june.df$Efppm <- june.df$Efppm * 10000 # (not really ppm but %)
+### Separate into 4 dataframes
+  ltmb.df <- june.df[june.df$Species == "Longtailed Mealybug",]
+  ltmb.df <- df.sort(ltmb.df, c("Efppm", "Rep", "Lifestage"))
+  ltmb.df <- ltmb.df[-grep( "Male",ltmb.df$Lifestage),]
+  ltmb.df <- within(ltmb.df, Live <- Live + Moribund)
+  ltmb.df$Species <- "LTMB"
+
+  waa.df <- june.df[june.df$Species == "Wooly Apple Aphid",]
+  waa.df <- df.sort(waa.df, c("Efppm", "Rep", "Lifestage"))
+  waa.df <- waa.df[-grep("alate", waa.df$Lifestage),]
+  waa.df <- waa.df[-grep("5th instars", waa.df$Lifestage),]
+## 
+  waa.df <- within(waa.df, Live <- Live + Moribund)
+  waa.df$Species <- "WAA"
+
+  ght.df <- june.df[june.df$Species == "Greenhouse thrips",]
+  ght.df <- within(ght.df, Live <- Live + Moribund)
+  ght.df <- df.sort(ght.df, c("Efppm", "Rep", "Lifestage"))
+  ght.df <- ght.df[-grep("Pupae", ght.df$Lifestage),]
+  ght.df$Species <- "GHT"
+
+  sjs.df <- june.df[june.df$Species == "San Jose Scale",]
+  sjs.df <- df.sort(sjs.df, c("Efppm", "Rep", "Lifestage"))
+  sjs.df <- within(sjs.df, Lifestage[Lifestage == "Crawler"] <- "Crawler/1*")
+  sjs.df <- within(sjs.df, Lifestage[Lifestage == "1*"] <- "Crawler/1*")
+  sjs.df <- within(sjs.df, Lifestage[Lifestage == "2* female"] <- "2*")
+  sjs.df <- within(sjs.df, Lifestage[Lifestage == "2* male"] <- "2*")
+  sjs.df <- within(sjs.df, Lifestage[Lifestage == "3* mature"] <- "3*")
+  sjs.df <- within(sjs.df, Dead <- Dead + Moribund)
+  sjs.df$Species <- "SJS"
+
+  ## add back into one dataframe
+   use.df <- rbind(ltmb.df, waa.df, ght.df, sjs.df)
+ 
+  use.df <- within(use.df, Mort <- Dead/Total)
+  use.df <- within(use.df, AngMort <- ang(Mort))
+  use.df$Efppm <- use.df$Efppm/10000
+  sum.df <- aggregate(AngMort ~ Efppm + Lifestage + Species, data = use.df, mean)
+  ## separate out into species again:
+  ltmb.df <- sum.df[sum.df$Species == "LTMB",]
+  waa.df <- sum.df[sum.df$Species == "WAA",]
+  ght.df <- sum.df[sum.df$Species == "GHT",]
+  sjs.df <- sum.df[sum.df$Species == "SJS",]
+### Individual plotting functions (non-generic but close)
+  
+### plotting begins
+
+### LTMB 
+  sems <- NULL # add on sems as calculated
+  stages <- sort(unique(ltmb.df$Lifestage))
+  colours <- COLOURS[seq(stages)] # code to work for other insects as well
+  pchs <- PCHS[seq(stages)]
+  spans <- rep(span, length(stages)) # probably tinker with this one
+  names(pchs) <- names(colours) <- names(spans) <- stages
+  bitmap("LTMB.png", type = "png16m", width = 155, height = 143,
+         res = 900, units = "mm", pointsize = 11)
+  for(i in stages){
+    ltmb.df.i <- ltmb.df[ltmb.df$Lifestage == i,]
+    ltmb.lo.i <- with(ltmb.df.i, loess(AngMort ~ Efppm,
+                                             degree = 1, span = spans[i]))
+    ltmb.lo.pred.i <- predict(ltmb.lo.i,
+                                 unique(ltmb.df.i$Efppm), se = TRUE)
+    ltmb.lo.pred.i$fit[ltmb.lo.pred.i$fit > 90] <- 90
+    sems <- c(sems, rms(ltmb.lo.pred.i$se.fit)) # make vector of three sems
+    ltmb.lo.pred.i$fit[ltmb.lo.pred.i$fit > 90] <- 90
+    spline.i <- spline(unique(ltmb.df.i$Efppm), ltmb.lo.pred.i$fit, n = 200)
+    spline.i$y[spline.i$y > 90] <-  90
+    spline.i$y <- monotone(spline.i$y)# take out some more bends sometimes
+### plotting begins
+    if(i == stages[1]){
+      with(ltmb.df.i, blank.plot(Efppm, AngMort, ylim = c(0, 90)))
+      axis(1, las = 1, mgp = c(1.8, .8, 0), cex.axis = .8)
+      axis(2, las = 1, at = ytix.at, labels = ytix,
+           mgp = c(1.8, .8, 0), cex.axis = ax.cex)
+      box()
+      mtext("Ethyl formate concentration (%)", side = 1, line = 1.9, cex = lab.cex)
+      mtext("Mortality (%)", side = 2, line = 1.9, cex = lab.cex)
+    }
+    with(spline.i, lines(x, y, lty = 1, lwd = 1.5, col = colours[i]))
+
+    with(ltmb.df.i, points(Efppm, AngMort, pch = pchs[i], #lty = df.i$lt[1],
+                              col = colours[i], cex = cex.pt))
+  }
+  if(titl)
+    title("LTMB")
+  bar.legs(.7, .55, ebv = sems, ltys = rep(1, length(sems)),
+           labs = stages, pchs = pchs,
+           point.cex = cex.pt, leg.cex = leg.cex, cols = colours,
+           eq.tex.gap = FALSE, line.lwd = 1.5, line.leng = .12)
+  dev.off()
+    
+### WAA 
+  sems <- NULL # add on sems as calculated
+  stages <- sort(unique(waa.df$Lifestage))
+  colours <- COLOURS[seq(stages)] # code to work for other insects as well
+  pchs <- PCHS[seq(stages)]
+  spans <- rep(span, length(stages)) # probably tinker with this one
+  names(pchs) <- names(colours) <- names(spans) <- stages
+  bitmap("WAA.png", type = "png16m", width = 155, height = 143,
+         res = 900, units = "mm", pointsize = 11)
+  for(i in stages){
+    waa.df.i <- waa.df[waa.df$Lifestage == i,]
+    waa.lo.i <- with(waa.df.i, loess(AngMort ~ Efppm,
+                                             degree = 1, span = spans[i]))
+    waa.lo.pred.i <- predict(waa.lo.i,
+                                 unique(waa.df.i$Efppm), se = TRUE)
+    waa.lo.pred.i$fit[waa.lo.pred.i$fit > 90] <- 90
+    sems <- c(sems, rms(waa.lo.pred.i$se.fit)) # make vector of three sems
+    waa.lo.pred.i$fit[waa.lo.pred.i$fit > 90] <- 90
+    spline.i <- spline(unique(waa.df.i$Efppm), waa.lo.pred.i$fit, n = 200)
+    spline.i$y[spline.i$y > 90] <-  90
+    spline.i$y <- monotone(spline.i$y)# take out some more bends sometimes
+### plotting begins
+    if(i == stages[1]){
+      with(waa.df.i, blank.plot(Efppm, AngMort, ylim = c(0, 90)))
+      axis(1, las = 1, mgp = c(1.8, .8, 0), cex.axis = .8)
+      axis(2, las = 1, at = ytix.at, labels = ytix,
+           mgp = c(1.8, .8, 0), cex.axis = ax.cex)
+      box()
+      mtext("Ethyl formate concentration (%)", side = 1, line = 1.9, cex = lab.cex)
+      mtext("Mortality (%)", side = 2, line = 1.9, cex = lab.cex)
+    }
+    with(spline.i, lines(x, y, lty = 1, lwd = 1.5, col = colours[i]))
+
+    with(waa.df.i, points(Efppm, AngMort, pch = pchs[i], #lty = df.i$lt[1],
+                              col = colours[i], cex = cex.pt))
+  }
+  if(titl)
+    title("WAA")
+  bar.legs(.6, .8, ebv = sems, ltys = rep(1, length(sems)),
+           labs = stages, pchs = pchs,
+           point.cex = cex.pt, leg.cex = leg.cex, cols = colours,
+           eq.tex.gap = FALSE, line.lwd = 1.5, line.leng = .12)
+  dev.off()
+  
+### Greenhouse thrips
+  sems <- NULL # add on sems as calculated
+  stages <- unique(ght.df$Lifestage)
+  colours <- COLOURS[seq(stages)] # code to work for other insects as well
+  pchs <- PCHS[seq(stages)]
+  spans <- rep(span+.1, length(stages)) # probably tinker with this one
+  names(pchs) <- names(colours) <- names(spans) <- stages
+  bitmap("GHT.png", type = "png16m", width = 155, height = 143,
+         res = 900, units = "mm", pointsize = 11)
+  for(i in stages){
+    ght.df.i <- ght.df[ght.df$Lifestage == i,]
+    ght.lo.i <- with(ght.df.i, loess(AngMort ~ Efppm,
+                                             degree = 1, span = spans[i]))
+    ght.lo.pred.i <- predict(ght.lo.i,
+                             unique(ght.df.i$Efppm), se = TRUE)
+    ght.lo.pred.i$fit[ght.lo.pred.i$fit > 90] <- 90
+    sems <- c(sems, rms(ght.lo.pred.i$se.fit)) # make vector of three sems
+    ght.lo.pred.i$fit[ght.lo.pred.i$fit > 90] <- 90
+    spline.i <- spline(unique(ght.df.i$Efppm), ght.lo.pred.i$fit, n = 200)
+    spline.i$y[spline.i$y > 90] <-  90
+    spline.i$y <- monotone(spline.i$y)# take out some more bends sometimes
+### plotting begins
+    if(i == stages[1]){
+      with(ght.df.i, blank.plot(Efppm, AngMort, ylim = c(0, 90)))
+      axis(1, las = 1, mgp = c(1.8, .8, 0), cex.axis = .8)
+      axis(2, las = 1, at = ytix.at, labels = ytix,
+           mgp = c(1.8, .8, 0), cex.axis = ax.cex)
+      box()
+      mtext("Ethyl formate concentration (%)", side = 1, line = 1.9, cex = lab.cex)
+      mtext("Mortality (%)", side = 2, line = 1.9, cex = lab.cex)
+    }
+  ##  browser()
+    spline.i <- as.data.frame(spline.i)
+    spline.i <- spline.i[spline.i$y > 0,]
+    with(spline.i, lines(x, y, lty = 1, lwd = 1.5, col = colours[i]))
+
+    with(ght.df.i, points(Efppm, AngMort, pch = pchs[i], #lty = df.i$lt[1],
+                              col = colours[i], cex = cex.pt))
+  }
+  if(titl)
+    title("GHT")
+  bar.legs(.6, .7, ebv = sems, ltys = rep(1, length(sems)),
+           labs = stages, pchs = pchs,
+           point.cex = cex.pt, leg.cex = leg.cex, cols = colours,
+           eq.tex.gap = FALSE, line.lwd = 1.5, line.leng = .12)
+  dev.off()
+  
+### San Jose Scale
+  sems <- NULL # add on sems as calculated
+  stages <- unique(sjs.df$Lifestage)
+  colours <- COLOURS[seq(stages)] # code to work for other insects as well
+  pchs <- PCHS[seq(stages)]
+  spans <- rep(span, length(stages)) # probably tinker with this one
+  spans[2] <- .89
+##  browser()
+  names(pchs) <- names(colours) <- names(spans) <- stages
+  sjs.df <- sjs.df[sjs.df$Efppm > 0,]
+  bitmap("SJS.png", type = "png16m", width = 155, height = 143,
+         res = 900, units = "mm", pointsize = 11)
+  for(i in stages[c(3, 1,2)]){
+    sjs.df.i <- sjs.df[sjs.df$Lifestage == i,]
+    sjs.lo.i <- with(sjs.df.i, loess(AngMort ~ Efppm,
+                                             degree = 1, span = spans[i]))
+    sjs.lo.pred.i <- predict(sjs.lo.i,
+                                 unique(sjs.df.i$Efppm), se = TRUE)
+    sjs.lo.pred.i$fit[sjs.lo.pred.i$fit > 90] <- 90
+    sems <- c(sems, rms(sjs.lo.pred.i$se.fit)) # make vector of three sems
+    sjs.lo.pred.i$fit[sjs.lo.pred.i$fit > 90] <- 90
+    spline.i <- spline(unique(sjs.df.i$Efppm), sjs.lo.pred.i$fit, n = 200)
+    spline.i$y[spline.i$y > 90] <-  90
+    spline.i$y <- monotone(spline.i$y)# take out some more bends sometimes
+### plotting begins
+    if(i == stages[3]){
+      with(sjs.df.i, blank.plot(Efppm, AngMort, ylim = c(0, 90)))
+      axis(1, las = 1, mgp = c(1.8, .8, 0), cex.axis = .8)
+      axis(2, las = 1, at = ytix.at, labels = ytix,
+           mgp = c(1.8, .8, 0), cex.axis = ax.cex)
+      box()
+      mtext("Ethyl formate concentration (%)", side = 1, line = 1.9, cex = lab.cex)
+      mtext("Mortality (%)", side = 2, line = 1.9, cex = lab.cex)
+    }
+    with(spline.i, lines(x, y, lty = 1, lwd = 1.5, col = colours[i]))
+    with(sjs.df.i, points(Efppm, AngMort, pch = pchs[i], #lty = df.i$lt[1],
+                            col = colours[i], cex = cex.pt))
+  }
+  if(titl)
+    title("SJS")
+  bar.legs(.7, .6, ebv = sems, ltys = rep(1, length(sems)),
+           labs = stages[c(3, 1,2)], pchs = pchs[c(3, 1,2)],
+           point.cex = cex.pt, leg.cex = leg.cex, cols = colours[c(3, 1,2)],
+           eq.tex.gap = FALSE, line.lwd = 1.5, line.leng = .12)
+  dev.off()
+}, comment = "05/08/2014")

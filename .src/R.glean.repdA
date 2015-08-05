@@ -1,0 +1,88 @@
+  Listing of: glean.repdA
+  Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
+Last updated: 17/06/2013 
+**************************************
+
+glean.repdA <-
+structure(function(choice = 1)
+{
+### Purpose:- "new" ALCM data that has moribund = dead
+### ----------------------------------------------------------------------
+### Modified from:- glean.repd
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 17 Jun 2013, 10:00
+### ----------------------------------------------------------------------
+### Revisions:- 
+
+  rep.df <- within(rep.df, Efppm[is.na(Efppm)] <- 0)
+  rep.df <- rep.df[, -9]
+  alcm.df <- rep.df[rep.df$Species == "Apple leaf curling midge",]
+  alcm.df$Lifestage = "diap"
+  alcm.df <- df.sort(alcm.df, c("Efppm", "Rep", "Lifestage"))
+  alcmMD.df <- within(alcm.df, Dead <- Dead + Moribund) #
+  alcmMD.df$Species <- "ALCM_md"
+  alcm.df <- within(alcm.df, Live <- Live + Moribund)
+  latania.df <- rep.df[rep.df$Species == "Latania scale",]
+##   latania.df$Species <- "LS"
+  latania.df <- df.sort(latania.df, c("Efppm", "Rep", "Lifestage"))
+  latania.df <- within(latania.df, Dead <- Dead + Moribund)
+
+  mb.df <- rep.df[rep.df$Species == "Obscure mealybugs",]
+##  
+ ## mb.df$Lifestage <- "all" ## add lifestages
+##   mb.sum <- unique(mb.df[, 1:6])
+##   mb.sum$Live <- aggregate(Live~ Efppm + Lifestage + Rep, data = mb.df, sum)$Live
+##   mb.sum$Dead <- aggregate(Dead~ Efppm+ Lifestage + Rep, data = mb.df, sum)$Dead
+##   mb.sum$Total <-aggregate(Total~ Efppm+ Lifestage + Rep, data = mb.df, sum)$Total
+##   mb.sum$Moribund <-aggregate(Moribund~ Efppm+ Lifestage + Rep, data = mb.df, sum)$Moribund
+  mb.df <- within(mb.df, Live <- Live + Moribund)
+  mb.df <- df.sort(mb.df, c("Efppm", "Rep", "Lifestage"))
+##  names(mb.sum) <- names(mb.df)
+
+  thrip.df <- rep.df[rep.df$Species == "Onion thrips",]
+  thrip.df <- df.sort(thrip.df, c("Efppm", "Rep", "Lifestage"))
+  thrip.df <- within(thrip.df, Live <- Live + Moribund)
+
+##   sjs.df <- rep.df[rep.df$Species == "San Jose",]
+##   sjs.df$Lifestage <- "all"
+##   sjs.sum <- unique(sjs.df[, 1:5])
+##   sjs.sum$Live <- aggregate(Live~ Efppm,  data = sjs.df, sum)$Live
+##   sjs.sum$Dead <- aggregate(Dead~ Efppm,  data = sjs.df, sum)$Dead
+##   sjs.sum$Total <- aggregate(Total~ Efppm,  data = sjs.df, sum)$Total
+##  names(sjs.sum) <- names(sjs.df)
+## add into one dataframe
+  use.df <- rbind(alcm.df[, names(mb.df)], alcmMD.df[, names(mb.df)],
+                  latania.df[, names(mb.df)],
+                  mb.df , thrip.df[, names(mb.df)])
+## cbind(MB = names(mb.df), Th =names(thrip.df), ALCM = names(alcm.df),
+##       Lat = names(latania.df))
+
+  
+## shorter names:
+  use.df$Species <-
+    lookup(as.character(use.df$Species),
+           c("Apple leaf curling midge", "ALCM_md",
+             "Onion thrips", "Latania scale", 
+             "Obscure mealybugs"),
+           c("ALCM_ml", "ALCM_md","thrips", "LS", "OMB"))
+  duds <- grep(" male", use.df$Lifestage)
+
+  use.df <- use.df[-duds,]
+  ##     attach(alcm.df)
+  ##     on.exit(detach("alcm.df"))
+  idset <- with(use.df, make.id(Efppm))
+  cutx <- NULL
+  leg.brief <- with(use.df, unique(paste(Species, Lifestage, Rep, sep= "|")))
+  maint <- "Mortality of various pests in ethyl formate"
+  xlabels <- c(0, 0)
+  xaxtitle <- "Dose (%)"
+  with(use.df,
+       list(id = idset, times = Efppm/10000, total = unlist(Dead) + unlist(Live),
+            dead = Dead, 
+            cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
+            legend = leg.brief, xlabels = xlabels, takelog = FALSE))
+
+  
+}, comment = "17/06/2013")

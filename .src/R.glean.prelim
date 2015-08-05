@@ -1,0 +1,59 @@
+  Listing of: glean.prelim
+  Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
+Last updated: 10/04/2013 
+**************************************
+
+glean.prelim <-
+structure(function(choice = 1)
+{
+### Purpose:- ALCM data collection
+### ----------------------------------------------------------------------
+### Modified from:- 
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 10 Apr 2013, 13:29
+### ----------------------------------------------------------------------
+### Revisions:-
+  prelim.df <- within(prelim.df, Efppm[is.na(Efppm)] <- 0)
+prelim.df <- prelim.df[, -4]
+  alcm.df <- prelim.df[prelim.df$Species == "ALCM",]
+  alcm.df$Lifestage = "diap"
+  latania.df <- prelim.df[prelim.df$Species == "Latania scale",]
+  latania.df$Species <- "LS"
+  latania.df <- df.sort(latania.df, c("Efppm", "Lifestage"))
+  mb.df <- prelim.df[prelim.df$Species == "Mealybug",]
+  mb.df$Lifestage <- "all" ## add lifestages
+  mb.sum <- unique(mb.df[, 1:5])
+  mb.sum$Live <- aggregate(Live~ Efppm,  data = mb.df, sum)$Live
+  mb.sum$Dead <- aggregate(Dead~ Efppm,  data = mb.df, sum)$Dead
+  mb.sum$Total <-aggregate(Total~ Efppm,  data = mb.df, sum)$Total
+##  names(mb.sum) <- names(mb.df)
+
+  thrip.df <- prelim.df[prelim.df$Species == "Onion thrips",]
+thrip.df <- df.sort(thrip.df, c("Efppm", "Lifestage"))
+    sjs.df <- prelim.df[prelim.df$Species == "San Jose",]
+  sjs.df$Lifestage <- "all"
+  sjs.sum <- unique(sjs.df[, 1:5])
+  sjs.sum$Live <- aggregate(Live~ Efppm,  data = sjs.df, sum)$Live
+  sjs.sum$Dead <- aggregate(Dead~ Efppm,  data = sjs.df, sum)$Dead
+  sjs.sum$Total <- aggregate(Total~ Efppm,  data = sjs.df, sum)$Total
+##  names(sjs.sum) <- names(sjs.df)
+## add into one dataframe
+  use.df <- rbind(alcm.df, latania.df, mb.sum, thrip.df, sjs.sum)
+  ##     attach(alcm.df)
+  ##     on.exit(detach("alcm.df"))
+  idset <- with(use.df, make.id(Efppm))
+  cutx <- NULL
+  leg.brief <- with(use.df, unique(paste(Species, Lifestage)))
+  maint <- "Mortality of various in ethyl formate"
+  xlabels <- c(0, 0)
+  xaxtitle <- "Dose (ppm)"
+  with(use.df,
+       list(id = idset, times = Efppm, total = unlist(Dead) + unlist(Live),
+            dead = Dead, 
+            cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
+            legend = leg.brief, xlabels = xlabels, takelog = FALSE))
+
+  
+}, comment = "10/04/2013")

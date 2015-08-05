@@ -1,0 +1,439 @@
+Species	Lifestage	Efg	Efppm	CO2	Fruit	Rep	Duration	Live	Dead	Moribund	Total
+Longtailed Mealybug	1*	Control			N	1	1	103	3	0	106
+Longtailed Mealybug	2*	Control			N	1	1	104	0	0	104
+Longtailed Mealybug	3*	Control			N	1	1	61	0	0	61
+Longtailed Mealybug	Female adult	Control			N	1	1	57	0	0	57
+Longtailed Mealybug	Male 3/4*	Control			N	1	1	6	0	0	6
+Longtailed Mealybug	Male adult	Control			N	1	1	9	1	0	10
+Longtailed Mealybug	1*	0	0	5.62	N	1	1	101	8	0	109
+Longtailed Mealybug	2*	0	0	5.62	N	1	1	142	1	0	143
+Longtailed Mealybug	3*	0	0	5.62	N	1	1	103	2	0	105
+Longtailed Mealybug	Female adult	0	0	5.62	N	1	1	100	4	0	104
+Longtailed Mealybug	Male 3/4*	0	0	5.62	N	1	1	5	0	0	5
+Longtailed Mealybug	Male adult	0	0	5.62	N	1	1	3	1	0	4
+Longtailed Mealybug	1*	0.05	0.04	0.76	N	1	1	97	3	0	100
+Longtailed Mealybug	2*	0.05	0.04	0.76	N	1	1	100	0	0	100
+Longtailed Mealybug	3*	0.05	0.04	0.76	N	1	1	101	2	0	103
+Longtailed Mealybug	Female adult	0.05	0.04	0.76	N	1	1	86	2	0	88
+Longtailed Mealybug	Male 3/4*	0.05	0.04	0.76	N	1	1	11	0	0	11
+Longtailed Mealybug	Male adult	0.05	0.04	0.76	N	1	1	1	2	0	3
+Longtailed Mealybug	1*	0.1	0.05	1.05	N	1	1	63	23	0	86
+Longtailed Mealybug	2*	0.1	0.05	1.05	N	1	1	71	5	0	76
+Longtailed Mealybug	3*	0.1	0.05	1.05	N	1	1	74	1	0	75
+Longtailed Mealybug	Female adult	0.1	0.05	1.05	N	1	1	78	3	0	81
+Longtailed Mealybug	Male 3/4*	0.1	0.05	1.05	N	1	1	5	0	0	5
+Longtailed Mealybug	Male adult	0.1	0.05	1.05	N	1	1	4	1	0	5
+Longtailed Mealybug	1*	0.15	0.09	1.58	N	1	1	105	7	0	112
+Longtailed Mealybug	2*	0.15	0.09	1.58	N	1	1	99	1	0	100
+Longtailed Mealybug	3*	0.15	0.09	1.58	N	1	1	70	3	0	73
+Longtailed Mealybug	Female adult	0.15	0.09	1.58	N	1	1	70	2	0	72
+Longtailed Mealybug	Male 3/4*	0.15	0.09	1.58	N	1	1	0	0	0	0
+Longtailed Mealybug	Male adult	0.15	0.09	1.58	N	1	1	1	1	0	2
+Longtailed Mealybug	1*	0.2	0.13	2.14	N	1	1	85	14	0	99
+Longtailed Mealybug	2*	0.2	0.13	2.14	N	1	1	79	4	0	83
+Longtailed Mealybug	3*	0.2	0.13	2.14	N	1	1	36	4	0	40
+Longtailed Mealybug	Female adult	0.2	0.13	2.14	N	1	1	30	2	0	32
+Longtailed Mealybug	Male 3/4*	0.2	0.13	2.14	N	1	1	2	0	0	2
+Longtailed Mealybug	Male adult	0.2	0.13	2.14	N	1	1	1	5	0	6
+Longtailed Mealybug	1*	0.3	0.2	2.99	N	1	1	44	63	0	107
+Longtailed Mealybug	2*	0.3	0.2	2.99	N	1	1	1	92	0	93
+Longtailed Mealybug	3*	0.3	0.2	2.99	N	1	1	46	8	0	54
+Longtailed Mealybug	Female adult	0.3	0.2	2.99	N	1	1	99	7	0	106
+Longtailed Mealybug	Male 3/4*	0.3	0.2	2.99	N	1	1	10	0	0	10
+Longtailed Mealybug	Male adult	0.3	0.2	2.99	N	1	1	3	1	0	4
+Longtailed Mealybug	1*	0.4	0.28	4.02	N	1	1	15	89	0	104
+Longtailed Mealybug	2*	0.4	0.28	4.02	N	1	1	3	102	0	105
+Longtailed Mealybug	3*	0.4	0.28	4.02	N	1	1	3	49	0	52
+Longtailed Mealybug	Female adult	0.4	0.28	4.02	N	1	1	24	35	3	62
+Longtailed Mealybug	Male 3/4*	0.4	0.28	4.02	N	1	1	1	5	1	7
+Longtailed Mealybug	Male adult	0.4	0.28	4.02	N	1	1	0	4	0	4
+Longtailed Mealybug	1*	0.6	0.39	5.87	N	1	1	0	102	0	102
+Longtailed Mealybug	2*	0.6	0.39	5.87	N	1	1	0	110	0	110
+Longtailed Mealybug	3*	0.6	0.39	5.87	N	1	1	0	100	0	100
+Longtailed Mealybug	Female adult	0.6	0.39	5.87	N	1	1	1	67	0	68
+Longtailed Mealybug	Male 3/4*	0.6	0.39	5.87	N	1	1	0	2	0	2
+Longtailed Mealybug	Male adult	0.6	0.39	5.87	N	1	1	0	5	0	5
+Longtailed Mealybug	1*	Control			N	2	1	98	3	0	101
+Longtailed Mealybug	2*	Control			N	2	1	101	0	0	101
+Longtailed Mealybug	3*	Control			N	2	1	88	0	0	88
+Longtailed Mealybug	Female adult	Control			N	2	1	110	0	0	110
+Longtailed Mealybug	Male 3/4*	Control			N	2	1	3	0	0	3
+Longtailed Mealybug	Male adult	Control			N	2	1	7	3	0	10
+Longtailed Mealybug	1*	0	0	5.54	N	2	1	96	12	0	108
+Longtailed Mealybug	2*	0	0	5.54	N	2	1	75	3	0	78
+Longtailed Mealybug	3*	0	0	5.54	N	2	1	97	4	0	101
+Longtailed Mealybug	Female adult	0	0	5.54	N	2	1	120	0	0	120
+Longtailed Mealybug	Male 3/4*	0	0	5.54	N	2	1	9	0	0	9
+Longtailed Mealybug	Male adult	0	0	5.54	N	2	1	5	2	0	7
+Longtailed Mealybug	1*	0.05	0.03	0.95	N	2	1	104	22	0	126
+Longtailed Mealybug	2*	0.05	0.03	0.95	N	2	1	105	4	0	109
+Longtailed Mealybug	3*	0.05	0.03	0.95	N	2	1	61	0	0	61
+Longtailed Mealybug	Female adult	0.05	0.03	0.95	N	2	1	108	0	0	108
+Longtailed Mealybug	Male 3/4*	0.05	0.03	0.95	N	2	1	6	0	0	6
+Longtailed Mealybug	Male adult	0.05	0.03	0.95	N	2	1	0	27	0	27
+Longtailed Mealybug	1*	0.1	0.09	1.76	N	2	1	89	16	0	105
+Longtailed Mealybug	2*	0.1	0.09	1.76	N	2	1	83	5	0	88
+Longtailed Mealybug	3*	0.1	0.09	1.76	N	2	1	37	3	0	40
+Longtailed Mealybug	Female adult	0.1	0.09	1.76	N	2	1	86	7	0	93
+Longtailed Mealybug	Male 3/4*	0.1	0.09	1.76	N	2	1	4	0	0	4
+Longtailed Mealybug	Male adult	0.1	0.09	1.76	N	2	1	9	6	0	15
+Longtailed Mealybug	1*	0.15	0.07	1.28	N	2	1	48	64	0	112
+Longtailed Mealybug	2*	0.15	0.07	1.28	N	2	1	23	24	0	47
+Longtailed Mealybug	3*	0.15	0.07	1.28	N	2	1	33	17	0	50
+Longtailed Mealybug	Female adult	0.15	0.07	1.28	N	2	1	79	4	0	83
+Longtailed Mealybug	Male 3/4*	0.15	0.07	1.28	N	2	1	4	0	0	4
+Longtailed Mealybug	Male adult	0.15	0.07	1.28	N	2	1	2	0	0	2
+Longtailed Mealybug	1*	0.2	0.12	1.74	N	2	1	0	101	0	101
+Longtailed Mealybug	2*	0.2	0.12	1.74	N	2	1	8	57	0	65
+Longtailed Mealybug	3*	0.2	0.12	1.74	N	2	1	31	13	0	44
+Longtailed Mealybug	Female adult	0.2	0.12	1.74	N	2	1	62	5	0	67
+Longtailed Mealybug	Male 3/4*	0.2	0.12	1.74	N	2	1	12	0	0	12
+Longtailed Mealybug	Male adult	0.2	0.12	1.74	N	2	1	4	2	0	6
+Longtailed Mealybug	1*	0.3	0.16	1.56	N	2	1	50	71	0	121
+Longtailed Mealybug	2*	0.3	0.16	1.56	N	2	1	7	80	0	87
+Longtailed Mealybug	3*	0.3	0.16	1.56	N	2	1	9	37	0	46
+Longtailed Mealybug	Female adult	0.3	0.16	1.56	N	2	1	51	46	0	97
+Longtailed Mealybug	Male 3/4*	0.3	0.16	1.56	N	2	1	1	0	0	1
+Longtailed Mealybug	Male adult	0.3	0.16	1.56	N	2	1	0	8	0	8
+Longtailed Mealybug	1*	0.4	0.3	2.24	N	2	1	1	106	0	107
+Longtailed Mealybug	2*	0.4	0.3	2.24	N	2	1	0	101	0	101
+Longtailed Mealybug	3*	0.4	0.3	2.24	N	2	1	3	96	0	99
+Longtailed Mealybug	Female adult	0.4	0.3	2.24	N	2	1	23	82	0	105
+Longtailed Mealybug	Male 3/4*	0.4	0.3	2.24	N	2	1	3	2	0	5
+Longtailed Mealybug	Male adult	0.4	0.3	2.24	N	2	1	0	5	0	5
+Longtailed Mealybug	1*	0.6	0.43	5.34	N	2	1	0	101	0	101
+Longtailed Mealybug	2*	0.6	0.43	5.34	N	2	1	0	103	0	103
+Longtailed Mealybug	3*	0.6	0.43	5.34	N	2	1	0	84	0	84
+Longtailed Mealybug	Female adult	0.6	0.43	5.34	N	2	1	0	21	0	21
+Longtailed Mealybug	Male 3/4*	0.6	0.43	5.34	N	2	1	0	2	0	2
+Longtailed Mealybug	Male adult	0.6	0.43	5.34	N	2	1	0	8	0	8
+Longtailed Mealybug	1*	Control			N	3	1	106	5	0	111
+Longtailed Mealybug	2*	Control			N	3	1	87	1	0	88
+Longtailed Mealybug	3*	Control			N	3	1	55	2	0	57
+Longtailed Mealybug	Female adult	Control			N	3	1	101	2	0	103
+Longtailed Mealybug	Male 3/4*	Control			N	3	1	10	0	0	10
+Longtailed Mealybug	Male adult	Control			N	3	1	7	4	0	11
+Longtailed Mealybug	1*	0	0		N	3	1	86	18	0	104
+Longtailed Mealybug	2*	0	0		N	3	1	66	2	0	68
+Longtailed Mealybug	3*	0	0		N	3	1	65	1	0	66
+Longtailed Mealybug	Female adult	0	0		N	3	1	105	1	0	106
+Longtailed Mealybug	Male 3/4*	0	0		N	3	1	4	0	0	4
+Longtailed Mealybug	Male adult	0	0		N	3	1	2	8	0	10
+Longtailed Mealybug	1*	0.05	0.02	0.63	N	3	1	108	7	0	115
+Longtailed Mealybug	2*	0.05	0.02	0.63	N	3	1	97	6	0	103
+Longtailed Mealybug	3*	0.05	0.02	0.63	N	3	1	92	2	0	94
+Longtailed Mealybug	Female adult	0.05	0.02	0.63	N	3	1	108	4	0	112
+Longtailed Mealybug	Male 3/4*	0.05	0.02	0.63	N	3	1	10	0	0	10
+Longtailed Mealybug	Male adult	0.05	0.02	0.63	N	3	1	2	11	0	13
+Longtailed Mealybug	1*	0.1	0.06	1.21	N	3	1	101	7	0	108
+Longtailed Mealybug	2*	0.1	0.06	1.21	N	3	1	57	3	0	60
+Longtailed Mealybug	3*	0.1	0.06	1.21	N	3	1	59	1	0	60
+Longtailed Mealybug	Female adult	0.1	0.06	1.21	N	3	1	101	1	0	102
+Longtailed Mealybug	Male 3/4*	0.1	0.06	1.21	N	3	1	1	0	0	1
+Longtailed Mealybug	Male adult	0.1	0.06	1.21	N	3	1	1	1	0	2
+Longtailed Mealybug	1*	0.15	0.06	1.05	N	3	1	67	56	0	123
+Longtailed Mealybug	2*	0.15	0.06	1.05	N	3	1	38	62	0	100
+Longtailed Mealybug	3*	0.15	0.06	1.05	N	3	1	52	5	0	57
+Longtailed Mealybug	Female adult	0.15	0.06	1.05	N	3	1	76	2	0	78
+Longtailed Mealybug	Male 3/4*	0.15	0.06	1.05	N	3	1	5	0	0	5
+Longtailed Mealybug	Male adult	0.15	0.06	1.05	N	3	1	0	4	0	4
+Longtailed Mealybug	1*	0.2	0.1	1.01	N	3	1	31	68	0	99
+Longtailed Mealybug	2*	0.2	0.1	1.01	N	3	1	4	54	0	58
+Longtailed Mealybug	3*	0.2	0.1	1.01	N	3	1	57	10	0	67
+Longtailed Mealybug	Female adult	0.2	0.1	1.01	N	3	1	86	11	0	97
+Longtailed Mealybug	Male 3/4*	0.2	0.1	1.01	N	3	1	0	12	0	12
+Longtailed Mealybug	Male adult	0.2	0.1	1.01	N	3	1	0	7	0	7
+Longtailed Mealybug	1*	0.3	0.2	2.77	N	3	1	38	71	0	109
+Longtailed Mealybug	2*	0.3	0.2	2.77	N	3	1	16	65	0	81
+Longtailed Mealybug	3*	0.3	0.2	2.77	N	3	1	37	48	0	85
+Longtailed Mealybug	Female adult	0.3	0.2	2.77	N	3	1	38	25	0	63
+Longtailed Mealybug	Male 3/4*	0.3	0.2	2.77	N	3	1	0	3	0	3
+Longtailed Mealybug	Male adult	0.3	0.2	2.77	N	3	1	0	4	0	4
+Longtailed Mealybug	1*	0.4	0.32	3.62	N	3	1	40	72	0	112
+Longtailed Mealybug	2*	0.4	0.32	3.62	N	3	1	0	59	0	59
+Longtailed Mealybug	3*	0.4	0.32	3.62	N	3	1	2	94	0	96
+Longtailed Mealybug	Female adult	0.4	0.32	3.62	N	3	1	27	63	5	95
+Longtailed Mealybug	Male 3/4*	0.4	0.32	3.62	N	3	1	7	8	0	15
+Longtailed Mealybug	Male adult	0.4	0.32	3.62	N	3	1	0	14	0	14
+Longtailed Mealybug	1*	0.6	0.36	4.95	N	3	1	0	77	0	77
+Longtailed Mealybug	2*	0.6	0.36	4.95	N	3	1	0	105	0	105
+Longtailed Mealybug	3*	0.6	0.36	4.95	N	3	1	0	63	0	63
+Longtailed Mealybug	Female adult	0.6	0.36	4.95	N	3	1	0	14	0	14
+Longtailed Mealybug	Male 3/4*	0.6	0.36	4.95	N	3	1	0	4	0	4
+Longtailed Mealybug	Male adult	0.6	0.36	4.95	N	3	1	0	5	0	5
+Wooly Apple Aphid	Early instars	Control			N	1	1	95	10	0	105
+Wooly Apple Aphid	Late instars	Control			N	1	1	23	1	0	24
+Wooly Apple Aphid	5th instars	Control			N	1	1	1	0	0	1
+Wooly Apple Aphid	5th alate	Control			N	1	1	7	0	0	7
+Wooly Apple Aphid	Early instars	0	0	5.62	N	1	1	27	0	0	27
+Wooly Apple Aphid	Late instars	0	0	5.62	N	1	1	19	0	0	19
+Wooly Apple Aphid	5th instars	0	0	5.62	N	1	1	7	0	0	7
+Wooly Apple Aphid	5th alate	0	0	5.62	N	1	1	1	0	0	1
+Wooly Apple Aphid	Early instars	0.05	0.04	0.76	N	1	1	20	32	0	52
+Wooly Apple Aphid	Late instars	0.05	0.04	0.76	N	1	1	14	50	0	64
+Wooly Apple Aphid	5th instars	0.05	0.04	0.76	N	1	1	0	0	0	0
+Wooly Apple Aphid	5th alate	0.05	0.04	0.76	N	1	1	0	4	0	4
+Wooly Apple Aphid	Early instars	0.1	0.05	1.05	N	1	1	65	80	0	145
+Wooly Apple Aphid	Late instars	0.1	0.05	1.05	N	1	1	57	66	0	123
+Wooly Apple Aphid	5th instars	0.1	0.05	1.05	N	1	1	10	0	0	10
+Wooly Apple Aphid	5th alate	0.1	0.05	1.05	N	1	1	0	2	0	2
+Wooly Apple Aphid	Early instars	0.15	0.09	1.58	N	1	1	0	87	1	88
+Wooly Apple Aphid	Late instars	0.15	0.09	1.58	N	1	1	0	102	1	103
+Wooly Apple Aphid	5th instars	0.15	0.09	1.58	N	1	1	0	45	2	47
+Wooly Apple Aphid	5th alate	0.15	0.09	1.58	N	1	1	0	0	0	0
+Wooly Apple Aphid	Early instars	0.2	0.13	2.14	N	1	1	0	95	0	95
+Wooly Apple Aphid	Late instars	0.2	0.13	2.14	N	1	1	0	59	0	59
+Wooly Apple Aphid	5th instars	0.2	0.13	2.14	N	1	1	0	0	0	0
+Wooly Apple Aphid	5th alate	0.2	0.13	2.14	N	1	1	0	4	0	4
+Wooly Apple Aphid	Early instars	Control			N	2	1	30	9	0	39
+Wooly Apple Aphid	Late instars	Control			N	2	1	40	22	0	62
+Wooly Apple Aphid	5th instars	Control			N	2	1	10	1	0	11
+Wooly Apple Aphid	5th alate	Control			N	2	1	3	1	0	4
+Wooly Apple Aphid	Early instars	0	0	5.54	N	2	1	23	6	0	29
+Wooly Apple Aphid	Late instars	0	0	5.54	N	2	1	89	27	0	116
+Wooly Apple Aphid	5th instars	0	0	5.54	N	2	1	6	1	0	7
+Wooly Apple Aphid	5th alate	0	0	5.54	N	2	1	0	1	0	1
+Wooly Apple Aphid	Early instars	0.05	0.03	0.95	N	2	1	14	49	0	63
+Wooly Apple Aphid	Late instars	0.05	0.03	0.95	N	2	1	49	58	0	107
+Wooly Apple Aphid	5th instars	0.05	0.03	0.95	N	2	1	8	3	0	11
+Wooly Apple Aphid	5th alate	0.05	0.03	0.95	N	2	1	0	1	0	1
+Wooly Apple Aphid	Early instars	0.1	0.09	1.76	N	2	1	0	69	0	69
+Wooly Apple Aphid	Late instars	0.1	0.09	1.76	N	2	1	1	46	0	47
+Wooly Apple Aphid	5th instars	0.1	0.09	1.76	N	2	1	2	40	0	42
+Wooly Apple Aphid	5th alate	0.1	0.09	1.76	N	2	1	0	0	0	0
+Wooly Apple Aphid	Early instars	0.15	0.07	1.28	N	2	1	0	73	0	73
+Wooly Apple Aphid	Late instars	0.15	0.07	1.28	N	2	1	0	77	0	77
+Wooly Apple Aphid	5th instars	0.15	0.07	1.28	N	2	1	0	8	0	8
+Wooly Apple Aphid	5th alate	0.15	0.07	1.28	N	2	1	0	1	0	1
+Wooly Apple Aphid	Early instars	0.2	0.12	1.74	N	2	1	0	114	0	114
+Wooly Apple Aphid	Late instars	0.2	0.12	1.74	N	2	1	0	119	0	119
+Wooly Apple Aphid	5th instars	0.2	0.12	1.74	N	2	1	0	4	0	4
+Wooly Apple Aphid	5th alate	0.2	0.12	1.74	N	2	1	0	0	0	0
+Wooly Apple Aphid	Early instars	Control			N	3	1	132	3	0	135
+Wooly Apple Aphid	Late instars	Control			N	3	1	80	12	0	92
+Wooly Apple Aphid	5th instars	Control			N	3	1	8	2	0	10
+Wooly Apple Aphid	5th alate	Control			N	3	1	0	0	0	0
+Wooly Apple Aphid	Early instars	0	0		N	3	1	23	6	0	29
+Wooly Apple Aphid	Late instars	0	0		N	3	1	89	27	0	116
+Wooly Apple Aphid	5th instars	0	0		N	3	1	6	1	0	7
+Wooly Apple Aphid	5th alate	0	0		N	3	1	0	1	0	1
+Wooly Apple Aphid	Early instars	0.05	0.02	0.63	N	3	1	14	49	0	63
+Wooly Apple Aphid	Late instars	0.05	0.02	0.63	N	3	1	49	58	0	107
+Wooly Apple Aphid	5th instars	0.05	0.02	0.63	N	3	1	8	3	0	11
+Wooly Apple Aphid	5th alate	0.05	0.02	0.63	N	3	1	0	1	0	1
+Wooly Apple Aphid	Early instars	0.1	0.06	1.21	N	3	1	0	69	0	69
+Wooly Apple Aphid	Late instars	0.1	0.06	1.21	N	3	1	1	46	0	47
+Wooly Apple Aphid	5th instars	0.1	0.06	1.21	N	3	1	2	40	0	42
+Wooly Apple Aphid	5th alate	0.1	0.06	1.21	N	3	1	0	0	0	0
+Wooly Apple Aphid	Early instars	0.15	0.06	1.05	N	3	1	0	73	0	73
+Wooly Apple Aphid	Late instars	0.15	0.06	1.05	N	3	1	0	77	0	77
+Wooly Apple Aphid	5th instars	0.15	0.06	1.05	N	3	1	0	8	0	8
+Wooly Apple Aphid	5th alate	0.15	0.06	1.05	N	3	1	0	1	0	1
+Wooly Apple Aphid	Early instars	0.2	0.1	1.01	N	3	1	0	114	0	114
+Wooly Apple Aphid	Late instars	0.2	0.1	1.01	N	3	1	0	119	0	119
+Wooly Apple Aphid	5th instars	0.2	0.1	1.01	N	3	1	0	4	0	4
+Wooly Apple Aphid	5th alate	0.2	0.1	1.01	N	3	1	0	0	0	0
+Greenhouse thrips	Egg hatch	Control			N	1	1	168			
+Greenhouse thrips	Larvae	Control			N	1	1	99	0	0	99
+Greenhouse thrips	Pupae	Control			N	1	1	14	0	0	14
+Greenhouse thrips	Adult	Control			N	1	1	130	1	0	131
+Greenhouse thrips	Egg hatch	0	0	5.62	N	1	1	139			
+Greenhouse thrips	Larvae	0	0	5.62	N	1	1	83	0	0	83
+Greenhouse thrips	Pupae	0	0	5.62	N	1	1	25	0	0	25
+Greenhouse thrips	Adult	0	0	5.62	N	1	1	120	3	0	123
+Greenhouse thrips	Egg hatch	0.05	0.04	0.76	N	1	1	214			
+Greenhouse thrips	Adult	0.05	0.04	0.76	N	1	1	6	105	0	111
+Greenhouse thrips	Egg hatch	0.1	0.05	1.05	N	1	1	0			
+Greenhouse thrips	Larvae	0.1	0.05	1.05	N	1	1	85	5	0	90
+Greenhouse thrips	Pupae	0.1	0.05	1.05	N	1	1	1	0	0	1
+Greenhouse thrips	Adult	0.1	0.05	1.05	N	1	1	12	100	0	112
+Greenhouse thrips	Egg hatch	0.15	0.09	1.58	N	1	1	13			
+Greenhouse thrips	Adult	0.15	0.09	1.58	N	1	1	0	98	1	99
+Greenhouse thrips	Egg hatch	0.2	0.13	2.14	N	1	1	144			
+Greenhouse thrips	Larvae	0.2	0.13	2.14	N	1	1	64	0	0	64
+Greenhouse thrips	Pupae	0.2	0.13	2.14	N	1	1	10	0	0	10
+Greenhouse thrips	Adult	0.2	0.13	2.14	N	1	1	0	105	0	105
+Greenhouse thrips	Egg hatch	0.3	0.2	2.99	N	1	1	141			
+Greenhouse thrips	Larvae	0.3	0.2	2.99	N	1	1	6	66	0	72
+Greenhouse thrips	Pupae	0.3	0.2	2.99	N	1	1	0	0	0	0
+Greenhouse thrips	Adult	0.3	0.2	2.99	N	1	1	0	100	0	100
+Greenhouse thrips	Egg hatch	0.4	0.28	4.02	N	1	1	191			
+Greenhouse thrips	Larvae	0.4	0.28	4.02	N	1	1	0	44	0	44
+Greenhouse thrips	Pupae	0.4	0.28	4.02	N	1	1	0	0	0	0
+Greenhouse thrips	Adult	0.4	0.28	4.02	N	1	1	0	147	0	147
+Greenhouse thrips	Egg hatch	0.6	0.39	5.87	N	1	1	0			
+Greenhouse thrips	Larvae	0.6	0.39	5.87	N	1	1	0	81	0	81
+Greenhouse thrips	Pupae	0.6	0.39	5.87	N	1	1	0	1	0	1
+Greenhouse thrips	Adult	0.6	0.39	5.87	N	1	1	0	126	0	126
+Greenhouse thrips	Egg hatch	Control			N	2	1	205			
+Greenhouse thrips	Larvae	Control			N	2	1	81	7	0	88
+Greenhouse thrips	Pupae	Control			N	2	1	0	0	0	0
+Greenhouse thrips	Adult	Control			N	2	1	108	4	0	112
+Greenhouse thrips	Egg hatch	0	0	5.54	N	2	1	0			
+Greenhouse thrips	Larvae	0	0	5.54	N	2	1	111	1	0	112
+Greenhouse thrips	Pupae	0	0	5.54	N	2	1	6	0	0	6
+Greenhouse thrips	Adult	0	0	5.54	N	2	1	110	1	0	111
+Greenhouse thrips	Egg hatch	0.05	0.03	0.95	N	2	1	187			
+Greenhouse thrips	Adult	0.05	0.03	0.95	N	2	1	78	45	0	123
+Greenhouse thrips	Egg hatch	0.1	0.09	1.76	N	2	1	183			
+Greenhouse thrips	Larvae	0.1	0.09	1.76	N	2	1	86	2	0	88
+Greenhouse thrips	Pupae	0.1	0.09	1.76	N	2	1	0	2	0	2
+Greenhouse thrips	Adult	0.1	0.09	1.76	N	2	1	0	104	0	104
+Greenhouse thrips	Egg hatch	0.15	0.07	1.28	N	2	1	167			
+Greenhouse thrips	Adult	0.15	0.07	1.28	N	2	1	0	101	0	101
+Greenhouse thrips	Egg hatch	0.2	0.12	1.74	N	2	1	179			
+Greenhouse thrips	Larvae	0.2	0.12	1.74	N	2	1	20	60	0	80
+Greenhouse thrips	Pupae	0.2	0.12	1.74	N	2	1	1	0	0	1
+Greenhouse thrips	Adult	0.2	0.12	1.74	N	2	1	0	114	0	114
+Greenhouse thrips	Egg hatch	0.3	0.16	1.56	N	2	1	82			
+Greenhouse thrips	Larvae	0.3	0.16	1.56	N	2	1	1	46	0	47
+Greenhouse thrips	Pupae	0.3	0.16	1.56	N	2	1	7	0	2	9
+Greenhouse thrips	Adult	0.3	0.16	1.56	N	2	1	0	112	0	112
+Greenhouse thrips	Egg hatch	0.4	0.3	2.24	N	2	1	1			
+Greenhouse thrips	Larvae	0.4	0.3	2.24	N	2	1	0	82	0	82
+Greenhouse thrips	Pupae	0.4	0.3	2.24	N	2	1	0	1	0	1
+Greenhouse thrips	Adult	0.4	0.3	2.24	N	2	1	0	114	0	114
+Greenhouse thrips	Egg hatch	0.6	0.43	5.34	N	2	1	5			
+Greenhouse thrips	Larvae	0.6	0.43	5.34	N	2	1	0	80	0	80
+Greenhouse thrips	Pupae	0.6	0.43	5.34	N	2	1	0	6	0	6
+Greenhouse thrips	Adult	0.6	0.43	5.34	N	2	1	0	129	0	129
+Greenhouse thrips	Egg hatch	Control			N	3	1	101			
+Greenhouse thrips	Larvae	Control			N	3	1	97	2	0	99
+Greenhouse thrips	Pupae	Control			N	3	1	6	0	0	6
+Greenhouse thrips	Adult	Control			N	3	1	97	3	0	100
+Greenhouse thrips	Egg hatch	0	0		N	3	1	101			
+Greenhouse thrips	Larvae	0	0		N	3	1	86	0	0	86
+Greenhouse thrips	Pupae	0	0		N	3	1	5	0	0	5
+Greenhouse thrips	Adult	0	0		N	3	1	89	4	0	93
+Greenhouse thrips	Egg hatch	0.05	0.02	0.63	N	3	1	199			
+Greenhouse thrips	Adult	0.05	0.02	0.63	N	3	1	71	23	0	94
+Greenhouse thrips	Egg hatch	0.1	0.06	1.21	N	3	1	202			
+Greenhouse thrips	Larvae	0.1	0.06	1.21	N	3	1	78	1	0	79
+Greenhouse thrips	Pupae	0.1	0.06	1.21	N	3	1	8	0	0	8
+Greenhouse thrips	Adult	0.1	0.06	1.21	N	3	1	0	118	0	118
+Greenhouse thrips	Egg hatch	0.15	0.06	1.05	N	3	1	138			
+Greenhouse thrips	Adult	0.15	0.06	1.05	N	3	1	0	83	0	83
+Greenhouse thrips	Egg hatch	0.2	0.1	1.01	N	3	1	10			
+Greenhouse thrips	Larvae	0.2	0.1	1.01	N	3	1	1	65	2	68
+Greenhouse thrips	Pupae	0.2	0.1	1.01	N	3	1	0	1	0	1
+Greenhouse thrips	Adult	0.2	0.1	1.01	N	3	1	0	95	0	95
+Greenhouse thrips	Egg hatch	0.3	0.2	2.77	N	3	1	4			
+Greenhouse thrips	Larvae	0.3	0.2	2.77	N	3	1	0	75	0	75
+Greenhouse thrips	Pupae	0.3	0.2	2.77	N	3	1	0	2	0	2
+Greenhouse thrips	Adult	0.3	0.2	2.77	N	3	1	0	110	0	110
+Greenhouse thrips	Egg hatch	0.4	0.32	3.62	N	3	1	210			
+Greenhouse thrips	Larvae	0.4	0.32	3.62	N	3	1	0	67	0	67
+Greenhouse thrips	Pupae	0.4	0.32	3.62	N	3	1	0	1	0	1
+Greenhouse thrips	Adult	0.4	0.32	3.62	N	3	1	0	108	0	108
+Greenhouse thrips	Egg hatch	0.6	0.36	4.95	N	3	1	3			
+Greenhouse thrips	Larvae	0.6	0.36	4.95	N	3	1	0	77	0	77
+Greenhouse thrips	Pupae	0.6	0.36	4.95	N	3	1	0	9	0	9
+Greenhouse thrips	Adult	0.6	0.36	4.95	N	3	1	0	107	0	107
+San Jose Scale	Crawler	Control			N	1	1	58	12	0	70
+San Jose Scale	1*	Control			N	1	1	30	5	0	35
+San Jose Scale	2* female	Control			N	1	1	69	20	0	89
+San Jose Scale	2* male	Control			N	1	1	0	0	0	0
+San Jose Scale	3*	Control			N	1	1	38	15	0	53
+San Jose Scale	3* mature	Control			N	1	1	18	1	0	19
+San Jose Scale	Crawler	0	0	5.62	N	1	1	0	0	0	0
+San Jose Scale	1*	0	0	5.62	N	1	1	13	70	0	83
+San Jose Scale	2* female	0	0	5.62	N	1	1	21	79	0	100
+San Jose Scale	2* male	0	0	5.62	N	1	1	5	30	0	35
+San Jose Scale	3*	0	0	5.62	N	1	1	37	50	0	87
+San Jose Scale	3* mature	0	0	5.62	N	1	1	15	5	0	20
+San Jose Scale	Crawler	0.2	0.13	2.14	N	1	1	0	102	0	102
+San Jose Scale	1*	0.2	0.13	2.14	N	1	1	21	83	0	104
+San Jose Scale	2* female	0.2	0.13	2.14	N	1	1	8	7	0	15
+San Jose Scale	2* male	0.2	0.13	2.14	N	1	1	0	0	0	0
+San Jose Scale	3*	0.2	0.13	2.14	N	1	1	32	34	5	71
+San Jose Scale	3* mature	0.2	0.13	2.14	N	1	1	32	5	7	44
+San Jose Scale	Crawler	0.3	0.2	2.99	N	1	1	0	0	0	0
+San Jose Scale	1*	0.3	0.2	2.99	N	1	1	0	26	0	26
+San Jose Scale	2* female	0.3	0.2	2.99	N	1	1	7	14	0	21
+San Jose Scale	2* male	0.3	0.2	2.99	N	1	1	2	58	0	60
+San Jose Scale	3*	0.3	0.2	2.99	N	1	1	62	8	4	74
+San Jose Scale	3* mature	0.3	0.2	2.99	N	1	1	0	0	0	0
+San Jose Scale	Crawler	0.4	0.28	4.02	N	1	1	0	0	0	0
+San Jose Scale	1*	0.4	0.28	4.02	N	1	1	0	46	0	46
+San Jose Scale	2* female	0.4	0.28	4.02	N	1	1	4	88	0	92
+San Jose Scale	2* male	0.4	0.28	4.02	N	1	1	0	14	0	14
+San Jose Scale	3*	0.4	0.28	4.02	N	1	1	23	29	1	53
+San Jose Scale	3* mature	0.4	0.28	4.02	N	1	1	3	0	0	3
+San Jose Scale	Crawler	0.6	0.39	5.87	N	1	1	0	0	0	0
+San Jose Scale	1*	0.6	0.39	5.87	N	1	1	0	48	0	48
+San Jose Scale	2* female	0.6	0.39	5.87	N	1	1	0	181	2	183
+San Jose Scale	2* male	0.6	0.39	5.87	N	1	1	0	43	0	43
+San Jose Scale	3*	0.6	0.39	5.87	N	1	1	8	70	3	81
+San Jose Scale	3* mature	0.6	0.39	5.87	N	1	1	0	0	0	0
+San Jose Scale	Crawler	Control			N	2	1	81	21	0	102
+San Jose Scale	1*	Control			N	2	1	98	3	0	101
+San Jose Scale	2* female	Control			N	2	1	83	8	0	91
+San Jose Scale	2* male	Control			N	2	1	24	6	0	30
+San Jose Scale	3*	Control			N	2	1	95	3	0	98
+San Jose Scale	3* mature	Control			N	2	1	53	1	0	54
+San Jose Scale	Crawler	0	0	5.54	N	2	1	6	7	0	13
+San Jose Scale	1*	0	0	5.54	N	2	1	21	26	0	47
+San Jose Scale	2* female	0	0	5.54	N	2	1	30	7	0	37
+San Jose Scale	2* male	0	0	5.54	N	2	1	13	19	0	32
+San Jose Scale	3*	0	0	5.54	N	2	1	81	23	0	104
+San Jose Scale	3* mature	0	0	5.54	N	2	1	70	5	0	75
+San Jose Scale	Crawler	0.2	0.12	1.74	N	2	1	0	0	0	0
+San Jose Scale	1*	0.2	0.12	1.74	N	2	1	0	114	0	114
+San Jose Scale	2* female	0.2	0.12	1.74	N	2	1	4	135	1	140
+San Jose Scale	2* male	0.2	0.12	1.74	N	2	1	0	50	0	50
+San Jose Scale	3*	0.2	0.12	1.74	N	2	1	34	81	8	123
+San Jose Scale	3* mature	0.2	0.12	1.74	N	2	1	0	0	0	0
+San Jose Scale	Crawler	0.3	0.16	1.56	N	2	1	0	43	0	43
+San Jose Scale	1*	0.3	0.16	1.56	N	2	1	0	23	0	23
+San Jose Scale	2* female	0.3	0.16	1.56	N	2	1	8	54	0	62
+San Jose Scale	2* male	0.3	0.16	1.56	N	2	1	0	49	0	49
+San Jose Scale	3*	0.3	0.16	1.56	N	2	1	48	8	0	56
+San Jose Scale	3* mature	0.3	0.16	1.56	N	2	1	19	2	2	23
+San Jose Scale	Crawler	0.4	0.3	2.24	N	2	1	0	101	0	101
+San Jose Scale	1*	0.4	0.3	2.24	N	2	1	0	103	0	103
+San Jose Scale	2* female	0.4	0.3	2.24	N	2	1	0	101	0	101
+San Jose Scale	2* male	0.4	0.3	2.24	N	2	1	0	82	0	82
+San Jose Scale	3*	0.4	0.3	2.24	N	2	1	0	83	8	91
+San Jose Scale	3* mature	0.4	0.3	2.24	N	2	1	0	103	0	103
+San Jose Scale	Crawler	0.6	0.43	5.34	N	2	1	0	0	0	0
+San Jose Scale	1*	0.6	0.43	5.34	N	2	1	0	65	0	65
+San Jose Scale	2* female	0.6	0.43	5.34	N	2	1	0	101	1	102
+San Jose Scale	2* male	0.6	0.43	5.34	N	2	1	0	20	0	20
+San Jose Scale	3*	0.6	0.43	5.34	N	2	1	0	102	6	108
+San Jose Scale	3* mature	0.6	0.43	5.34	N	2	1	0	13	0	13
+San Jose Scale	Crawler	Control			N	3	1	1	108	0	109
+San Jose Scale	1*	Control			N	3	1	22	21	0	43
+San Jose Scale	2* female	Control			N	3	1	53	14	0	67
+San Jose Scale	2* male	Control			N	3	1	26	42	0	68
+San Jose Scale	3*	Control			N	3	1	91	11	0	102
+San Jose Scale	3* mature	Control			N	3	1	45	9	0	54
+San Jose Scale	Crawler	0	0		N	3	1	93	11	0	104
+San Jose Scale	1*	0	0		N	3	1	105	1	0	106
+San Jose Scale	2* female	0	0		N	3	1	37	3	0	40
+San Jose Scale	2* male	0	0		N	3	1	24	1	0	25
+San Jose Scale	3*	0	0		N	3	1	24	1	0	25
+San Jose Scale	3* mature	0	0		N	3	1	22	5	6	33
+San Jose Scale	Crawler	0.2	0.1	1.01	N	3	1	20	10	0	30
+San Jose Scale	1*	0.2	0.1	1.01	N	3	1	53	48	0	101
+San Jose Scale	2* female	0.2	0.1	1.01	N	3	1	13	90	0	103
+San Jose Scale	2* male	0.2	0.1	1.01	N	3	1	2	30	0	32
+San Jose Scale	3*	0.2	0.1	1.01	N	3	1	78	36	8	122
+San Jose Scale	3* mature	0.2	0.1	1.01	N	3	1	22	1	0	23
+San Jose Scale	Crawler	0.3	0.2	2.77	N	3	1	1	108	0	109
+San Jose Scale	1*	0.3	0.2	2.77	N	3	1	12	90	0	102
+San Jose Scale	2* female	0.3	0.2	2.77	N	3	1	19	60	0	79
+San Jose Scale	2* male	0.3	0.2	2.77	N	3	1	4	97	0	101
+San Jose Scale	3*	0.3	0.2	2.77	N	3	1	48	59	0	107
+San Jose Scale	3* mature	0.3	0.2	2.77	N	3	1	56	11	0	67
+San Jose Scale	Crawler	0.4	0.32	3.62	N	3	1	0	0	0	0
+San Jose Scale	1*	0.4	0.32	3.62	N	3	1	18	86	0	104
+San Jose Scale	2* female	0.4	0.32	3.62	N	3	1	2	55	0	57
+San Jose Scale	2* male	0.4	0.32	3.62	N	3	1	0	8	0	8
+San Jose Scale	3*	0.4	0.32	3.62	N	3	1	45	55	0	100
+San Jose Scale	3* mature	0.4	0.32	3.62	N	3	1	45	9	2	56
+San Jose Scale	Crawler	0.6	0.36	4.95	N	3	1	4	101	0	105
+San Jose Scale	1*	0.6	0.36	4.95	N	3	1	0	102	0	102
+San Jose Scale	2* female	0.6	0.36	4.95	N	3	1	0	100	0	100
+San Jose Scale	2* male	0.6	0.36	4.95	N	3	1	0	104	0	104
+San Jose Scale	3*	0.6	0.36	4.95	N	3	1	0	96	4	100
+San Jose Scale	3* mature	0.6	0.36	4.95	N	3	1	0	87	17	104

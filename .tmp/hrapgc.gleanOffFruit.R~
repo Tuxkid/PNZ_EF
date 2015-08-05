@@ -1,0 +1,60 @@
+gleanOffFruit <- function (choice = 1)
+{
+### Purpose:- 
+### ----------------------------------------------------------------------
+### Modified from:- glean.megaA (in adjacent directory)
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:-  8 Jun 2015, 14:49
+### ----------------------------------------------------------------------
+### Revisions:- 
+browser()
+  xx <- june15Off.df
+  xx <- within(xx, EfNom <- as.numeric(EfNom))
+##   xx <- xx[!is.na(xx$EfNom),]
+   xx <- within(xx, EfNom[is.na(EfNom)] <- 0)
+  species <- unique(xx$Species)
+  is.scale <- grep("scale", species, value = TRUE)
+  xx <- within(xx, IsScale <- Species%in%is.scale)
+  xx <- within(xx, Live[!IsScale] <- Live[!IsScale] + Moribund[!IsScale])
+  xx <- within(xx, Dead[IsScale] <- Dead[IsScale] + Moribund[IsScale])
+  ## unhatched are dead
+  xx <- within(xx, Dead[!is.na(Unhatched)] <-
+               Dead[!is.na(Unhatched)] + Unhatched[!is.na(Unhatched)])
+  xx <- within(xx, Efpc[is.na(Efpc)] <- EfNom[is.na(Efpc)]/2) # might fix later
+  xx <- within(xx, Efpc[EfNom ==  0] <- 0) # no controls sometimes otherwise
+
+require(dplyr)
+  
+##  browser()
+
+  use.df <- xx %>%
+    tbl_df %>% arrange(Pest, Lifestage, Temperature, Duration, Rep, Efpc)
+
+##   use.df2 <- df.sort(xx, rev(c("Pest", "Lifestage", "Temperature",
+##                               "Duration", "Rep", "Efpc")))
+##   with(use.df, table(Lifestage))  
+  ## Check if there's any difference between "Controls"
+
+
+### Then a normal glean function
+  idset <- with(use.df, make.id(Efpc))
+  cutx <- NULL
+  
+  use.df <- within(use.df, Temp <- paste0(Temperature, "°C"))
+  use.df <- within(use.df, Hours <- paste0(Duration, "h"))
+##  use.df <- within(use.df, DAT <- paste0(Assessed, "d"))
+  leg.brief <- with(use.df, unique(paste(Pest, Lifestage, Temp,
+                              Hours, Rep, sep= "|")))
+  maint <- "Mortality of PNZ targets off fruit in ethyl formate after various durations"
+  xlabels <- c(0, 0)
+  xaxtitle <- "Dose (%)"
+  with(use.df,
+       list(id = idset, times = Efpc, total = unlist(Dead) + unlist(Live),
+            dead = Dead, 
+            cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
+            legend = leg.brief, xlabels = xlabels, takelog = FALSE))
+
+  
+}

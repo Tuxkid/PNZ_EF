@@ -1,0 +1,23 @@
+group.responses <- function(xx = june15Off.df)
+{
+### Purpose:- Plot groups of mortality responses on one graph
+### ----------------------------------------------------------------------
+### Modified from:- 
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 10 Jun 2015, 09:59
+### ----------------------------------------------------------------------
+### Revisions:- 
+
+  sls <- levels(xx$SLS)
+  for(sl in sls){
+    dfs <- xx[xx$SLS == sl,]
+     browser()
+    cat("\n\n", sl, ":\n =======================\n")
+    with(dfs, print(table(Duration, Temperature)))
+  }
+
+
+
+}

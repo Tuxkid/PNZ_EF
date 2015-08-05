@@ -1,0 +1,45 @@
+data.spot <-
+structure(function(ab, use, id = NULL, separate = T)
+{
+### To show table of times, dead and total to correspond to selected 
+###   parts of ab type list of the form ab$use
+### If id is not specified, all values will be shown
+### separate will group each section and names individually, othewise
+###   only one table will be made
+###
+### WARNING: Will crash if the legends are not unique 
+  names.ab <- names(ab)
+  if(length(use) > 1)
+    stop("use can be of length 1 only")
+  if(is.character(use))
+    ab.sub <- (1:length(names.ab))[!is.na(match(names.ab, use))]
+  else ab.sub <- use
+  aab <- ab[[ab.sub]]
+  glean <- aab$datafun
+  choice <- aab$choice
+  glean.fn <- get(glean)
+  glean.list <- glean.fn(choice)
+  df <- data.frame(id = glean.list$id, time = glean.list$times, dead = 
+                   glean.list$dead, total = glean.list$total)
+  df$live <- df$total - df$dead
+  df <- df[, c("id", "time", "live", "dead", "total")]
+  df$mort <- round(df$dead/df$total * 100)
+  if(is.null(id))
+    out.df <- df
+  else out.df <- df[!is.na(match(df[["id"]], id)),  ]
+  print(glean.list$maint)
+  out.list <- list()
+  if(separate) {
+    if(is.null(id))
+      id <- unique(df$id)
+    for(i in id)
+      out.list[[glean.list$legend[i]]] <- df[df$id == i,  ]
+    out.list
+  }
+  else {
+    if(!is.null(id))
+      print(glean.list$legend[id])
+    out.df
+  }
+}
+, comment = "18/04/1999")

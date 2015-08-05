@@ -1,0 +1,31 @@
+glean.alcm <- function(choice = 1)
+{
+### Purpose:- ALCM data collection
+### ----------------------------------------------------------------------
+### Modified from:- 
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 10 Apr 2013, 13:29
+### ----------------------------------------------------------------------
+### Revisions:-
+
+  
+    alcm.df <- df.sort(prelim.df[prelim.df$Species == "ALCM",]
+browser()
+       df.sort(   alcm.df, rev(c("Stage", "Position", 
+        "Rep")))
+    attach(alcm.df)
+    on.exit(detach("alcm.df"))
+    idset <- make.id(Time)
+    cutx <- NULL
+    leg.brief <- unique(paste(Stage, Position, " Rep", Rep, sep = ""))
+    maint <- paste(degree(40), "heat treatment of some bug or other")
+    xlabels <- c(0, 0)
+    xaxtitle <- "Time (minutes)"
+    list(id = idset, times = Time, total = Dead + Live, dead = Dead, 
+        cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
+        legend = leg.brief, xlabels = xlabels, takelog = F)
+
+  
+}
