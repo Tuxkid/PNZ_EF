@@ -292,15 +292,17 @@ dev.off()
 
 mean.lt(ab.sept15Off, 1, leg.beg = 0, leg.end= 2, rnd = 2, border = TRUE,
         insect = "everything") # 
-
-
-
-mean.lt(ab.sept15Off, 1, leg.beg = 0, leg.end= 2, rnd = 2, border = TRUE,
+mean.lt(ab.sept15Off, 1, leg.beg = 0, leg.end= 2, rnd = 2, 
         insect = "everything", xlout = "Sept2015CIs.xls") # 
+sepCI.df <- mean.lt(ab.sept15Off, 1, leg.beg = 0, leg.end= 2, rnd = 2, df.out = TRUE) # 
 
+## make pest, duration and temperature columns
 
-
-
+sepCI.df$Pest <- getbit(rownames(sepCI.df), "\\|", 1)
+sepCI.df$Temperature <- getbit(rownames(sepCI.df), "\\|", 2)
+sepCI.df$Temperature <- as.numeric(gsub("[A-z]", "", sepCI.df$Temperature))
+sepCI.df$Duration <- getbit(rownames(sepCI.df), "\\|", 3)
+sepCI.df$Duration <- as.numeric(gsub("[A-z]", "", sepCI.df$Duration))
 
 
 ##############################################

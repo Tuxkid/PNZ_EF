@@ -1,12 +1,12 @@
   Listing of: mean.lt
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 17/11/2014 
+Last updated: 04/09/2015 
 **************************************
 
 mean.lt <-
 structure(function(start.list = ab.soluble, choose = 1, lt = 99, intv = 95, new.order = F,
-           leg.beg = NULL, leg.end = 4, insect = "interesting critters",
-         fit = NULL, sub = NULL, rnd = 1, lt.ld = "LT",
+           leg.beg = NULL, leg.end = 4, insect = "interesting critters", rm.deg = TRUE,
+         fit = NULL, sub = NULL, rnd = 1, lt.ld = "LT", xlout = NULL, df.out = FALSE,
            two.tables = F, borders = F, omit = NULL)
 {
   ## Requires LT data in an ab. type list with sublist names such as "total"
@@ -27,7 +27,11 @@ structure(function(start.list = ab.soluble, choose = 1, lt = 99, intv = 95, new.
   ##   to allow the practice of having trial numbers in that legend: if there's no space
   ##   in the legend, it won't work.
   ## rnd: amount of rounding. (might make this one the "official" Gems version.
+  ## rm.deg: remove degree symbol?
+  ## xlout: name of Excel file for output
+  ## df.out: Do we want a dataframe returned?
 ##### August 2013: added lt.ld and a rounding
+##### February 2015: added xlout
   
   ablist <- as.character(substitute(start.list))
   leng.name <- nchar(ablist)
@@ -41,7 +45,9 @@ structure(function(start.list = ab.soluble, choose = 1, lt = 99, intv = 95, new.
 #### If not all values are being used, what subset?
   if(is.null(sub))
     sub <- seq(ab$legend)
-  legs <- as.character(ab$legend)[sub]    
+  legs <- as.character(ab$legend)[sub]
+  if(rm.deg)
+    legs <- gsub("°", "", legs)
 ### Seems to be necessary for correct class
   if(is.null(leg.beg)) {
 ### Find the first space in the legend names:
@@ -132,12 +138,19 @@ structure(function(start.list = ab.soluble, choose = 1, lt = 99, intv = 95, new.
   }
   else {
     one.table <- cbind(mm, x)
-    cat(c(paste("Separate ", lt.ld, lt, "s with mean and ", intv, "% c.i. for ", 
-                type, ":", sep = ""), "\n\n"))
-    if(borders)
-      print.char.matrix(unfactor(as.data.frame(one.table)), col.names = TRUE,
-                        hsep = " | ", csep = "-+-") else     tab.mat(one.table)
-
-    
+    one.df <- unfactor(as.data.frame(one.table))
+    if(df.out) # return the dataframe then quit
+      return(one.df)
+    if(!is.null(xlout)){ # use WriteXLS
+      require(WriteXLS)
+      sheet.lab <- paste0(lt.ld, lt, "s CI for ", insect)
+      WriteXLS("one.df", xlout, sheet.lab, row.names = TRUE)} else
+    {
+      cat(c(paste("Separate ", lt.ld, lt, "s with mean and ", intv,
+                  "% c.i. for ", type, ":", sep = ""), "\n\n"))
+      if(borders)
+        print.char.matrix(unfactor(as.data.frame(one.table)), col.names = TRUE,
+                          hsep = " | ", csep = "-+-") else tab.mat(one.table)
+    }
   }
-}, comment = "17/11/2014")
+}, comment = "04/09/2015")

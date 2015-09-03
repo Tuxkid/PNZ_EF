@@ -49,8 +49,12 @@ mean.lt <- function(start.list = ab.soluble, choose = 1, lt = 99, intv = 95, new
   spec <- substring(legs, leg.beg + 1, nchar(legs) - leg.end)
   include <- rep(TRUE, length = (length(spec)))    #
 ### Are there any we wish to exclude? (22/1/2001)
-  if(!is.null(omit))
-    include[grep(omit, spec)] <- FALSE
+  if(!is.null(omit)){ # add in exclusion by index 17/11/2014
+    if(is.character(omit))
+      include[grep(omit, spec)] <- FALSE
+    if(is.numeric(omit))
+        include[omit] <- FALSE
+  } 
   spec <- spec[include]
   uniq.spec <- unique(spec)
   sortspec <- sort(spec)
