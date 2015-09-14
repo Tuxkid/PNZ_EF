@@ -1,24 +1,18 @@
-  Listing of: gleanOffFruitSept
-  Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 11/09/2015 
-**************************************
-
-gleanOffFruitSept <-
-structure(function(choice = 1)
+gleanWithFruitSeptLBAM <- function(choice = 1)
 {
-### Purpose:- September lot
+### Purpose:- LBAM only with fruit subset
 ### ----------------------------------------------------------------------
-### Modified from:- gleanOffFruitJuly
+### Modified from:- gleanWithFruitSept
 ### ----------------------------------------------------------------------
 ### Arguments:- 
 ### ----------------------------------------------------------------------
-### Author:-   Patrick Connolly, Date:-  3 Sep 2015, 15:51
+### Author:-   Patrick Connolly, Date:-  8 Sep 2015, 15:47
 ### ----------------------------------------------------------------------
-### Revisions:- as.character(Efnom) fixed 09/09/2015
+### Revisions:- 
 
 
-  xx <- sept15Off.df
-  xx <- within(xx, EfNom <- as.numeric(as.character(Efnom))) # fixed 9/9/15
+  xx <- septLBAMwith.df
+  xx <- within(xx, EfNom <- as.numeric(Efnom))
 ##   xx <- xx[!is.na(xx$EfNom),]
    xx <- within(xx, Efnom[is.na(Efnom)] <- 0) # no CO2
    xx <- within(xx, Dead[is.na(Dead)] <- 0) # one empty cell should be zero
@@ -35,11 +29,10 @@ structure(function(choice = 1)
 
   xx <- within(xx, Efpc[is.na(Efpc)] <- EfNom[is.na(Efpc)]/2) # might fix later
   xx <- within(xx, Efpc[EfNom ==  0] <- 0) # no controls sometimes otherwise
+  xx$Row <- seq(nrow(xx))
 
 require(dplyr)
   
-##  browser()
-
   use.df <- xx %>%
     tbl_df %>% arrange(SLS, Temperature, Duration, Rep, Efpc) 
 
@@ -68,15 +61,20 @@ require(dplyr)
 
 
 ### Then a normal glean function
-  idset <- with(use.df, make.id(Efpc))
+  use.df$Idset <- idset <- with(use.df, make.id(Efpc))
   cutx <- NULL
+
+  prp <- use.df %>% #filter(Idset == 15) %>%
+    select(SLS, Temperature, Duration, Rep, Idset, Efpc, Row, Total, dead)
+ browser()
+  dtsm <- use.df %>% filter(SLS == "dTSM")
   
   use.df <- within(use.df, Temp <- paste0(Temperature, "°C"))
   use.df <- within(use.df, Hours <- paste0(Duration, "h"))
 ##  use.df <- within(use.df, DAT <- paste0(Assessed, "d"))
   leg.brief <- with(use.df, unique(paste(SLS, Temp,
                               Hours, Rep, sep= "|")))
-  maint <- "Mortality of PNZ targets off fruit in ethyl formate after various durations"
+  maint <- "Mortality of PNZ targets with fruit in ethyl formate after various durations"
   xlabels <- c(0, 0)
   xaxtitle <- "Dose (%)"
   with(use.df,
@@ -85,4 +83,4 @@ require(dplyr)
             legend = leg.brief, xlabels = xlabels, takelog = FALSE))
 
   
-}, comment = "11/09/2015")
+}

@@ -283,7 +283,12 @@ ct.checkM() # > LBAM_CT_coeff.pdf
 
 sept15Off.df <- read.delim("EFOffSept2015.txt")
 ab.sept15Off <- list()
-ab.sept15Off[[1]] <- allfit(data = gleanOffFruitSept)
+ab.sept15Off[[1]] <- allfit(data = gleanOffFruitSept) # small mistake
+## rerun with correction
+ab.sept15Off[[2]] <- allfit(data = gleanOffFruitSept) # redone
+## However made no difference
+aa <- cbind(ab.sept15Off[[1]]$lt[,3], ab.sept15Off[[2]]$lt[,3])
+apply(aa, 1, diff) # all zero or NA
 pdf(file = "EFsept15OffMortality.pdf", width = 255/25.4, height = 195/25.4)
 flyplot(1:173, data = ab.sept15Off, choice = 1, pc = c(line = 99), lt.ld = "LC",
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
@@ -292,11 +297,43 @@ dev.off()
 
 mean.lt(ab.sept15Off, 1, leg.beg = 0, leg.end= 2, rnd = 2, border = TRUE,
         insect = "everything") # 
-
-
-
-mean.lt(ab.sept15Off, 1, leg.beg = 0, leg.end= 2, rnd = 2, border = TRUE,
+mean.lt(ab.sept15Off, 1, leg.beg = 0, leg.end= 2, rnd = 2, 
         insect = "everything", xlout = "Sept2015CIs.xls") # 
+sepCI.df <- mean.lt(ab.sept15Off, 1, leg.beg = 0, leg.end= 2, rnd = 2, df.out = TRUE) # 
+
+## make pest, duration and temperature columns
+
+sepCI.df$Pest <- getbit(rownames(sepCI.df), "\\|", 1)
+sepCI.df$Temperature <- getbit(rownames(sepCI.df), "\\|", 2)
+sepCI.df$Temperature <- as.numeric(gsub("[A-z]", "", sepCI.df$Temperature))
+sepCI.df$Duration <- getbit(rownames(sepCI.df), "\\|", 3)
+sepCI.df$Duration <- as.numeric(gsub("[A-z]", "", sepCI.df$Duration))
+
+#########
+## with fruit
+sept15With.df <- read.delim("EFwithSept2015.txt")
+## need to fix up inconsistencies with CM
+with(sept15With.df, table(SLS)) # 6 different CM to describe Egg and 5*
+sept15With.df <- within(sept15With.df, SLS <- as.character(SLS))
+sept15With.df <- within(sept15With.df, SLS[SLS == "CM 5"] <- "CM5")
+sept15With.df <- within(sept15With.df, SLS[SLS == "Cm 5"] <- "CM5")
+sept15With.df <- within(sept15With.df, SLS[SLS == "CM Eggs"] <- "CM Egg")
+sept15With.df <- within(sept15With.df, SLS[SLS == "CM eggs"] <- "CM Egg")
+sept15With.df <- within(sept15With.df, SLS <- as.factor(SLS))
+
+ab.sept15With <- list()
+ab.sept15With[[1]] <- allfit(data = gleanWithFruitSept)
+pdf(file = "EFsept15WithMortality.pdf", width = 255/25.4, height = 195/25.4)
+flyplot(1:173, data = ab.sept15With, choice = 1, pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off()
+### won't work: too many inconsistencies
+
+## Try LBAM only
+table(sept15With.df$Pest) # >> avoid missing the spaces
+septLBAMwith.df <- sept15With.df[with(sept15With.df, grep("LBAM", Pest)),]
+septLBAMwith.df <- within(septLBAMwith.df, Date <-
+                          as.Date(as.character(Date), format = "%d/%m/%Y"))
 
 
 
@@ -305,7 +342,7 @@ mean.lt(ab.sept15Off, 1, leg.beg = 0, leg.end= 2, rnd = 2, border = TRUE,
 
 ##############################################
 ##
-## Github repository
+## Github repository (xterm command line)
 ##
 ##########################################
 

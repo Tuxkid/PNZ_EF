@@ -1,2 +1,3 @@
 write.function(gleanOffFruitSept)
-write.function(mean.lt)
+write.function(gleanWithFruitSept)
+write.function(gleanWithFruitSeptLBAM)

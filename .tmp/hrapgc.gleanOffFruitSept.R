@@ -8,11 +8,11 @@ gleanOffFruitSept <- function(choice = 1)
 ### ----------------------------------------------------------------------
 ### Author:-   Patrick Connolly, Date:-  3 Sep 2015, 15:51
 ### ----------------------------------------------------------------------
-### Revisions:- 
+### Revisions:- as.character(Efnom) fixed 09/09/2015
 
 
   xx <- sept15Off.df
-  xx <- within(xx, EfNom <- as.numeric(Efnom))
+  xx <- within(xx, EfNom <- as.numeric(as.character(Efnom))) # fixed 9/9/15
 ##   xx <- xx[!is.na(xx$EfNom),]
    xx <- within(xx, Efnom[is.na(Efnom)] <- 0) # no CO2
    xx <- within(xx, Dead[is.na(Dead)] <- 0) # one empty cell should be zero
