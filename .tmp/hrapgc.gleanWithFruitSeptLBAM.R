@@ -44,7 +44,7 @@ gleanWithFruitSeptLBAM <- function(choice = 1)
 
   xxx <- within(xxx, Ndx <- paste(Date, SLS,Fruit, Temperature, Duration, Rep, sep = "|"))
   
-###  Which are the controls rows
+###  Which are the controls' rows
   xx.hc <- xxx[xxx$HC, ] # i.e. handling controls
   xx.co2c <- xxx[with(xxx, Efpc == 0 & !HC),] # i.e. CO2 controls
   cont.rows <- rbind(xx.hc, xx.co2c)$Row
@@ -92,9 +92,9 @@ gleanWithFruitSeptLBAM <- function(choice = 1)
   contronly.df <- ditch( "Ndx", xxx[xxx$Ndx %in% contonly,])
   contrmissing.df <- nocont.df[is.na(nocont.df$Row),]
 
-  require("WriteXLS")
-  WriteXLS(c("cont.df", "contrmissing.df", "contronly.df"), "LBAMmissing.xls",
-           c("AllControls", "NoControls", "ControlsOnly"))
+##   require("WriteXLS")
+##   WriteXLS(c("cont.df", "contrmissing.df", "contronly.df"), "LBAMmissing.xls",
+##            c("AllControls", "NoControls", "ControlsOnly"))
   
 ### Use Duration 3 controls when Duration 2 is without
   ## put Ndx back in (slightly different one)
@@ -103,85 +103,104 @@ gleanWithFruitSeptLBAM <- function(choice = 1)
   cont.df <- rbind(cont.df, contronly.df)
   cont.df <- within(cont.df,
                     Ndx <- paste(Date, HC, SLS, Fruit, Temperature, Duration, Rep, sep = "|"))
-  browser()
-contrmissing.dfB4 <- contrmissing.df
+##  browser()
+  contrmissing.dfB4 <- contrmissing.df
+  reused <- 0
   for(k in seq(nrow(contrmissing.df))){
     missing.k <- contrmissing.df[k, ]
     if(is.na(missing.k$Total)){ # otherwise nothing needed
       if(missing.k$Duration == 2){
-      ##   browser()
-       Ndx.k <- missing.k$Ndx
+        Ndx.k <- missing.k$Ndx
         Ndx.kFix <- gsub("\\|2\\|", "|3|", Ndx.k)
-       mort.dat <- c("dead", "Total")
-##         cont.df[cont.df$Ndx == Ndx.kFix, ]        
-        try(contrmissing.df[contrmissing.df$Ndx == Ndx.k, mort.dat] <-
-            cont.df[cont.df$Ndx == Ndx.kFix, mort.dat])
+        if(Ndx.k == "2015-05-29|TRUE|LBAM egg|Kiwifruit|5|2|1")
+        mort.dat <- c("dead", "Total")
+        ##
+        reuse.k <- cont.df[cont.df$Ndx == Ndx.kFix, ]
+        if(nrow(reuse.k) > 0){
+          contrmissing.df[contrmissing.df$Ndx == Ndx.k, mort.dat] <- reuse.k[, mort.dat]
+          reused <- reused + 1
+          cat("Reused", Ndx.kFix, "\n")
+        }
+        ##         try(contrmissing.df[contrmissing.df$Ndx == Ndx.k, mort.dat] <-
+        ##             cont.df[cont.df$Ndx == Ndx.kFix, mort.dat])
       }
-
     }
   }
-       browser()
- ##   xx <- within(xx, Efpc[is.na(Efpc)] <- EfNom[is.na(Efpc)]/2) # might fix later
-##   xx <- within(xx, Efpc[EfNom ==  0] <- 0) # no controls sometimes otherwise
 
+  ## remove contronly.df Rows from repaired control data (useful ones already copied)
+  fixed.cont.df <- cont.df[!cont.df$Row %in% contronly.df$Row, ]
+  cont.notmissing.df <- contrmissing.df[!with(contrmissing.df, is.na(Total)),]
+  use.df <- ditch("Ndx", rbind(fixed.cont.df, cont.notmissing.df, xx.treat)) %>%
+                  arrange(Date, SLS, Fruit, Temperature, Duration, Rep, Efpc, HC) %>%
+                    filter(!is.na(Total))
+  use.df <- within(use.df,
+                   Ndx <- paste(Date, SLS, Fruit, Temperature, Duration, Rep, sep = "|"))
+  if(FALSE){
+    
+    WriteXLS(c("fixed.cont.df", "contrmissing.dfB4", "contronly.df", "use.df"), "LBAMmissing2.xls",
+             c("AllControls", "NoControls", "ControlsOnly", "ReadyToUse"))
+ }
+  
 
   ## Check if there's any difference between "Controls"
   if(FALSE){
-    test.control <- function(dff){
-      sls <- unique(dff$Ndx)
-      for(sl in sls){
-        dfs <- dff[dff$Ndx == sl,]
-        cat("\n\n", sl, ":\n =======================")
-        if(nrow(dfs)< 2){
-          cat("\n")
- ##         cat("\nDoes not have both controls\n")
-         } else{
-          spec.glm <- glm(cbind(dead, Total - dead) ~ HC, data = dfs,
-                          family = binomial)
-    ##          browser()
-          cat("\n",anova(spec.glm, test = "Chi")[2, "Pr(>Chi)"], "\n")
-        }
-      }
-    }
-    test.control(control.df)
-    browser()
-  } # Only TSM egg looks close
-
     test.control2 <- function(dff){
+      dff <- dff[dff$Efpc == 0,]  # i.e. controls
       sls <- unique(dff$Ndx)
       cont.out.df <- data.frame(Index = sls)
-      cont.out.df$Psame <- NA
+      cont.out.df <- within(cont.out.df, HC <- CO2 <- Psame <- NA)
+      
       for(sl in sls){
         dfs <- dff[dff$Ndx == sl,]
-        cat("\n\n", sl, ":\n ===================================")
+        cat("\n", sl, ":\n ===================================\n")
         if(nrow(dfs) == 2){
           spec.glm <- glm(cbind(dead, Total - dead) ~ HC, data = dfs,
                           family = binomial)
-         Psl <- anova(spec.glm, test = "Chi")[2, "Pr(>Chi)"]
-          cont.out.df$Psame[cont.out.df$Index == sl] <- Psl
+          hand.mort <- with(dfs[dfs$HC, ], round(100 * dead/Total))
+          CO.mort <- with(dfs[!dfs$HC, ], round(100 * dead/Total))
+          ##          browser()
+          Psl <- anova(spec.glm, test = "Chi")[2, "Pr(>Chi)"]
+          cont.out.df <- within(cont.out.df, Psame[Index == sl] <- Psl)
+          cont.out.df <- within(cont.out.df, HC[Index == sl] <- hand.mort)
+          cont.out.df <- within(cont.out.df, CO2[Index == sl] <- CO.mort)
         }
       }
       cont.out.df
     }
- 
-           browser()
-  aa <- test.control2(control.df)
+    
+    aa <- test.control2(use.df)
     browser()
+    aa[with(aa, HC > CO2),] # shows about 1/3 have HC > CO2 
+  }
+### Then a normal glean function using maximum control mortality
+
+  use.df <- within(use.df, Mort <- dead/Total)
+  use.df <- within(use.df, Row <- seq(nrow(use.df)))
+  cont.df <- use.df[use.df$Efpc == 0,]
+  ## which control mortality is greatest?
+  smallest <- function(x){
+    biff <- logical(length(x))
+    if(length(x) > 1){
+      xmin <- min(x, na.rm = TRUE)
+      wx <- which(x == xmin)
+      wx <- wx[1] # necessary for ties: want only one
+      biff[wx] <- TRUE
+    }
+    biff
+  }
+  cont.df$Smaller <- unlist(with(cont.df, tapply(Mort, Ndx, smallest)))
+  ignore.rows <- with(cont.df, Row[Smaller])
+  use.df <- use.df[!use.df$Row %in% ignore.rows, ] %>%
+    arrange(SLS, Fruit, Temperature, Duration, Rep, Efpc, HC) %>%
+      select(SLS, Fruit, Temperature, Duration, Rep, Efpc, dead, Total)
   
-
-
-
-### Then a normal glean function
   use.df$Idset <- idset <- with(use.df, make.id(Efpc))
   cutx <- NULL
-   browser()
-   use.df %>% filter(Idset %in% 6:10) %>%
-    select(SLS, Temperature, Duration, Rep, Idset, Efpc, Row, Total, dead) %>%
-      arrange(Row)
+  
   use.df <- within(use.df, Temp <- paste0(Temperature, "°C"))
   use.df <- within(use.df, Hours <- paste0(Duration, "h"))
 ##  use.df <- within(use.df, DAT <- paste0(Assessed, "d"))
-  leg.brief <- with(use.df, unique(paste(SLS, Temp,
+  leg.brief <- with(use.df, unique(paste(SLS, substring(Fruit, 1, 1), Temp,
                               Hours, Rep, sep= "|")))
   maint <- "Mortality of LBAM with fruit in ethyl formate after various durations"
   xlabels <- c(0, 0)
