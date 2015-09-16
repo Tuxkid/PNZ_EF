@@ -118,7 +118,7 @@ structure(function(choice = 1)
       if(missing.k$Duration == 2){
         Ndx.k <- missing.k$Ndx
         Ndx.kFix <- gsub("\\|2\\|", "|3|", Ndx.k)
-        if(Ndx.k == "2015-05-29|TRUE|LBAM egg|Kiwifruit|5|2|1")
+        ## if(Ndx.k == "2015-05-29|TRUE|LBAM egg|Kiwifruit|5|2|1")
         mort.dat <- c("dead", "Total")
         ##
         reuse.k <- cont.df[cont.df$Ndx == Ndx.kFix, ]

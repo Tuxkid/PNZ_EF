@@ -318,15 +318,13 @@ sept15With.df <- within(sept15With.df, SLS <- as.character(SLS))
 sept15With.df <- within(sept15With.df, SLS[SLS == "CM 5"] <- "CM5")
 sept15With.df <- within(sept15With.df, SLS[SLS == "Cm 5"] <- "CM5")
 sept15With.df <- within(sept15With.df, SLS[SLS == "CM Eggs"] <- "CM Egg")
-sept15With.df <- within(sept15With.df, SLS[SLS == "CM eggs"] <- "CM Egg")
+sept15With.df <- within(sept15With.df, SLS[SLS == "CM eggs"]http://emacs.stackexchange.com/questions/212/is-there-a-way-to-use-query-replace-from-grep-ack-ag-output-modes <- "CM Egg")
 sept15With.df <- within(sept15With.df, SLS <- as.factor(SLS))
 
 ab.sept15With <- list()
 ab.sept15With[[1]] <- allfit(data = gleanWithFruitSept)
-pdf(file = "EFsept15WithMortality.pdf", width = 255/25.4, height = 195/25.4)
-flyplot(1:173, data = ab.sept15With, choice = 1, pc = c(line = 99), lt.ld = "LC",
-        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
-dev.off()
+
+
 ### won't work: too many inconsistencies
 
 ## Try LBAM only
@@ -334,9 +332,13 @@ table(sept15With.df$Pest) # >> avoid missing the spaces
 septLBAMwith.df <- sept15With.df[with(sept15With.df, grep("LBAM", Pest)),]
 septLBAMwith.df <- within(septLBAMwith.df, Date <-
                           as.Date(as.character(Date), format = "%d/%m/%Y"))
+ab.sept15With[["lbam"]] <- allfit(data = gleanWithFruitSeptLBAM)
 
 
-
+pdf(file = "EFsept15WithMortalityLBAM.pdf", width = 255/25.4, height = 195/25.4)
+flyplot(1:25, data = ab.sept15With, choice = "lbam", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off()
 
 
 
