@@ -1,0 +1,16 @@
+conc2ct <- function(xx = septLBAMOffFirst100.df)
+{
+### Purpose:- modify table of Conc and duration to CTs
+###           (less mucking around that how others were done
+### ----------------------------------------------------------------------
+### Modified from:- 
+### ----------------------------------------------------------------------
+### Arguments:- xx: dataframe of first 100% points
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 22 Sep 2015, 11:26
+### ----------------------------------------------------------------------
+### Revisions:-
+
+browser()
+  
+}

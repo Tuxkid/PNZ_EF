@@ -1,1 +1,6 @@
-write.function(gleanWithFruitSeptLBAM)
+write.function(conc2ct)
+write.function(get100mort)
+write.function(get100mortCT)
+write.function(get100mortOff)
+write.function(gleanWithFruitSept_CT)
+write.function(gleanWithFruitSeptLBAM_CT)

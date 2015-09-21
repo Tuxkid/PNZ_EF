@@ -1,14 +1,21 @@
-gleanWithFruitSeptLBAM <- function(choice = 1)
+  Listing of: gleanWithFruitSept_CT
+  Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
+Last updated: 22/09/2015 
+**************************************
+
+gleanWithFruitSept_CT <-
+structure(function(choice = 1)
 {
-### Purpose:- LBAM only with fruit subset
+### Purpose:- CT product instead of concentration alone
 ### ----------------------------------------------------------------------
-### Modified from:- gleanWithFruitSept
+### Modified from:- gleanWithFruitSeptLBAM
 ### ----------------------------------------------------------------------
 ### Arguments:- 
 ### ----------------------------------------------------------------------
-### Author:-   Patrick Connolly, Date:-  8 Sep 2015, 15:47
+### Author:-   Patrick Connolly, Date:- 21 Sep 2015, 13:46
 ### ----------------------------------------------------------------------
 ### Revisions:- 
+
 
   require(dplyr)
   xx <- septLBAMwithFIX.df
@@ -41,11 +48,11 @@ gleanWithFruitSeptLBAM <- function(choice = 1)
   xx <- within(xx, Hours <- paste0(Duration, "h"))
   leg.brief <- with(xx, unique(paste(SLS, substring(Fruit, 1, 1), Temp,
                                      Hours, Rep, sep= "|")))
-  maint <- "Mortality of LBAM with fruit in ethyl formate after various durations"
+  maint <- "Mortality of LBAM with fruit in ethyl formate after various durations (CT)"
   xlabels <- c(0, 0)
   xaxtitle <- "Dose (%)"
   with(xx,
-       list(id = idset, times = Efpc, total = Total, dead = dead, 
+       list(id = idset, times = Efpc * Duration, total = Total, dead = dead, 
             cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
             legend = leg.brief, xlabels = xlabels, takelog = FALSE))
-}
+}, comment = "22/09/2015")
