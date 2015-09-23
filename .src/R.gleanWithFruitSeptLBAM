@@ -1,6 +1,6 @@
   Listing of: gleanWithFruitSeptLBAM
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 17/09/2015 
+Last updated: 23/09/2015 
 **************************************
 
 gleanWithFruitSeptLBAM <-
@@ -17,7 +17,7 @@ structure(function(choice = 1)
 ### Revisions:- 
 
   require(dplyr)
-  xx <- septLBAMwithFIX.df
+  xx <- sept15LBAMwithFIX.df
   
   ## which control mortality is greater?
   
@@ -54,4 +54,4 @@ structure(function(choice = 1)
        list(id = idset, times = Efpc, total = Total, dead = dead, 
             cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
             legend = leg.brief, xlabels = xlabels, takelog = FALSE))
-}, comment = "17/09/2015")
+}, comment = "23/09/2015")

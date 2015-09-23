@@ -1,0 +1,21 @@
+collectLCsLBAM <- function(xO = sepCIlbamOFF.df, xOCT = sepCIlbamOFF_CT.df,
+                           xW = septLBAMwithCI.df, xWCT = septLBAMwithCI_CT.df,
+                           xO100 = septLBAMOffFirst100.df, xOCT100 = ,
+                           xW100 = septLBAMwithFirst100.df, xWCT100 = septLBAMwithCI100_CT.df)
+{
+### Purpose:- Collect LCs and LCTs for LBAM off and with fruit
+### ----------------------------------------------------------------------
+### Modified from:- 
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 21 Sep 2015, 12:12
+### ----------------------------------------------------------------------
+### Revisions:-
+
+browser()
+
+
+
+ 
+}

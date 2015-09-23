@@ -11,7 +11,7 @@ gleanWithFruitSeptLBAM_CT <- function(choice = 1)
 ### Revisions:- 
 
   require(dplyr)
-  xx <- septLBAMwithFIX.df
+  xx <- sept15LBAMwithFIX.df
   
   ## which control mortality is greater?
   
@@ -43,7 +43,7 @@ gleanWithFruitSeptLBAM_CT <- function(choice = 1)
                                      Hours, Rep, sep= "|")))
   maint <- "Mortality of LBAM with fruit in ethyl formate after various durations (CT)"
   xlabels <- c(0, 0)
-  xaxtitle <- "Dose (%)"
+  xaxtitle <- "CT (-h%)"
   with(xx,
        list(id = idset, times = Efpc * Duration, total = Total, dead = dead, 
             cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 

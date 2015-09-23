@@ -11,7 +11,7 @@ gleanWithFruitSeptLBAM <- function(choice = 1)
 ### Revisions:- 
 
   require(dplyr)
-  xx <- septLBAMwithFIX.df
+  xx <- sept15LBAMwithFIX.df
   
   ## which control mortality is greater?
   

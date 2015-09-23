@@ -410,22 +410,114 @@ septLBAMwithCI100_CT.df <-
 
 
 ## off fruit again
+
+sepCIlbamOFF.df <- sepCI.df[grep("LBAM", sepCI.df$Pest), ]# no further calculation
 septLBAM15Off.df <- sept15Off.df[sept15Off.df$Pest == "LBAM",]
+
+
+septLBAMOffFirst100.df <- get100mortOff(xxx = gleanOffFruitSept, max.control = TRUE)
 ab.sept15Off100 <- list()
-ab.sept15Off100$lbam <- df2ablist(septLBAM15Off.df)
+ab.sept15Off100$lbam <- df2ablist(septLBAMOffFirst100.df)
 
-septLBAMOffFirst100.df <- get100mortOff()
-ab.sept15Off <- list()
-ab.sept15Off$lbam <- df2ablist(septLBAMOffFirst100.df)
-
-septLBAMoffCI.df <-
-  mean.lt(ab.sept15Off, "lbam", leg.beg = 0, leg.end= 2, rnd = 2, lt = 100,
-          df.out = TRUE, insect = "LBAM", omit = c(10, 18:25), lt.ld = "LC")
+septLBAMOffFirst100CI.df <- # not many 100%
+  mean.lt(ab.sept15Off100, "lbam", leg.beg = 0, leg.end= 2, rnd = 2, lt = 100,
+          df.out = TRUE, insect = "LBAM", lt.ld = "LC")
 
 ## CT
-septLBAMoffFirst100CT.df <- get100mortCT(septLBAMoff.df)
 
 
+
+## CT
+septLBAMoffFirst100_CT.df <- conc2ct(septLBAMOffFirst100.df)
+septLBAMoffFirst100_CT.df
+######################################################################
+## Collect LCs and LCTs for LBAM
+
+lbamLCsLCTsOffWith.df <- collectLCsLBAM()
+
+
+collectLCsLBAM <- function(xO = sepCIlbamOFF.df, xOCT = sepCIlbamOFF_CT.df,
+                           xW = septLBAMwithCI.df, xWCT = septLBAMwithCI_CT.df,
+                           xO100 = septLBAMOffFirst100CI.df, xOCT100 = septLBAMoffFirst100_CT.df,
+                           xW100 = septLBAMwithCI100.df, xWCT100 = septLBAMwithCI100_CT.df)
+
+###############################################################################################
+
+  sept15Off.df <- read.delim("EFOffSept2015.txt") ## i.e. off fruit
+## 
+sept15With.df <- read.delim("EFwithSept2015.txt") # in containers of fruit
+sept15LBAMoff.df <- sept15Off.df[with(sept15Off.df, Pest == "LBAM"), ]
+sept15LBAMwith.df <- sept15With.df[with(sept15With.df, grep("LBAM", Pest)),]
+sept15LBAMwith.df <- within(sept15LBAMwith.df, Date <-
+                            as.Date(as.character(Date), format = "%d/%m/%Y"))
+## Lots of data entry tinkering required
+sept15LBAMwithFIX.df <- fix.septLBAMwith(sept15LBAMwith.df)
+
+ab.sept15With <- ab.sept15Off <- list()
+ab.sept15Off[["conc"]] <- allfit(data = gleanOffFruitSeptLBAM)
+ab.sept15Off[["CT"]] <- allfit(data = gleanOffFruitSeptLBAM_CT)
+ab.sept15With[["conc"]] <- allfit(data = gleanWithFruitSeptLBAM)
+ab.sept15With[["CT"]] <- allfit(data = gleanWithFruitSeptLBAM_CT)
+
+pdf(file = "EFsept15OffMortalityLBAM.pdf", width = 255/25.4, height = 195/25.4)
+flyplot(1:75, data = ab.sept15Off, choice = "conc", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:75, data = ab.sept15Off, choice = "CT", pc = c(line = 99), lt.ld = "LCT",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off()
+
+pdf(file = "EFsept15WithMortalityLBAM.pdf", width = 255/25.4, height = 195/25.4)
+flyplot(1:25, data = ab.sept15With, choice = "conc", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:25, data = ab.sept15With, choice = "CT", pc = c(line = 99), lt.ld = "LCT",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off()
+
+
+## First consistent 100% points 
+ab.sept15With100 <- ab.sept15Off100 <- list()
+ab.sept15Off100$conc <- df2ablist(get100mort(gleanOffFruitSeptLBAM))
+ab.sept15Off100$CT <- df2ablist(get100mort(gleanOffFruitSeptLBAM_CT))
+ab.sept15With100$conc <- df2ablist(get100mort(gleanWithFruitSeptLBAM))
+ab.sept15With100$CT <- df2ablist(get100mort(gleanWithFruitSeptLBAM_CT))
+
+## dataframes of CIs
+septLBAMoffCI.df <-
+  mean.lt(ab.sept15Off, "conc", leg.beg = 0, leg.end= 2, rnd = 2,
+          df.out = TRUE, insect = "LBAM", omit = c(11, 26), lt.ld = "LC")
+septLBAMoffCI_CT.df <-
+  mean.lt(ab.sept15Off, "CT", leg.beg = 0, leg.end= 2, rnd = 2,
+          df.out = TRUE, insect = "LBAM", omit = c(11, 26), lt.ld = "LCT")
+
+septLBAMwithCI.df <-
+  mean.lt(ab.sept15With, "conc", leg.beg = 0, leg.end= 2, rnd = 2,
+          df.out = TRUE, insect = "LBAM", omit = c(10, 18:25), lt.ld = "LC")
+septLBAMwithCI_CT.df <-
+  mean.lt(ab.sept15With, "CT", leg.beg = 0, leg.end= 2, rnd = 2,
+          df.out = TRUE, insect = "LBAM", omit = c(10, 18:25), lt.ld = "LCT")
+
+
+septLBAMoff100CI.df <-
+  mean.lt(ab.sept15Off100, "conc", leg.beg = 0, leg.end= 2, rnd = 2, lt = 100,
+          df.out = TRUE, insect = "LBAM", lt.ld = "LC")
+septLBAMoff100CI_CT.df <-
+  mean.lt(ab.sept15Off100, "CT", leg.beg = 0, leg.end= 2, rnd = 2, lt = 100,
+          df.out = TRUE, insect = "LBAM", lt.ld = "LCT")
+
+septLBAMwith100CI.df <-
+  mean.lt(ab.sept15With100, "conc", leg.beg = 0, leg.end= 2, rnd = 2, lt = 100,
+          df.out = TRUE, insect = "LBAM", lt.ld = "LC")
+septLBAMwith100CI_CT.df <-
+  mean.lt(ab.sept15With100, "CT", leg.beg = 0, leg.end= 2, rnd = 2, lt = 100,
+          df.out = TRUE, insect = "LBAM", lt.ld = "LCT")
+
+
+
+
+
+
+
+  
 ##############################################
 ##
 ## Github repository (xterm command line)
