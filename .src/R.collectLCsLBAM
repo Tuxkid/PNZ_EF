@@ -1,6 +1,6 @@
   Listing of: collectLCsLBAM
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 23/09/2015 
+Last updated: 25/09/2015 
 **************************************
 
 collectLCsLBAM <-
@@ -24,9 +24,6 @@ structure(function(xO = septLBAMoffCI.df, xOCT = septLBAMoffCI_CT.df,
 rownames(xO) <- gsub("ME", "egg", rownames(xO))
 rownames(xOCT) <- gsub("ME", "egg", rownames(xOCT))
 
-## xO100$legend <- gsub("ME", "egg", as.character(xO100$legend))
-## xOCT100$legend <- gsub("ME", "egg", as.character(xOCT100$legend))
-
 ## Off fruit
 off.df <- data.frame(LC99est = as.numeric(xO$lt.mean),
                      Min100mort = as.numeric(xO100$lt.mean),
@@ -34,8 +31,20 @@ off.df <- data.frame(LC99est = as.numeric(xO$lt.mean),
                      Min100mortCT = as.numeric(xOCT100$lt.mean))
 rownames(off.df) <- rownames(xO)
 
-browser()
+## With fruit: have to use a matrix
+with.mat <- matrix(nrow = nrow(xW100), ncol = 4)
+dimnames(with.mat) <- list(rownames(xW100), names(off.df))
+with.mat[rownames(xW), "LC99est"] <- as.numeric(xW$lt.mean)
+with.mat[rownames(xW100), "Min100mort"] <- as.numeric(xW100$lt.mean)
+with.mat[rownames(xWCT), "LCT99est"] <- as.numeric(xWCT$lt.mean)
+with.mat[rownames(xWCT100), "Min100mortCT"] <- as.numeric(xWCT100$lt.mean)
+with.df <- as.data.frame(with.mat)
 
-
-
-}, comment = "23/09/2015")
+require("WriteXLS")
+WriteXLS(x = c("off.df", "with.df", "xO", "xO100", "xOCT", "xOCT100", "xW", "xW100",
+           "xWCT", "xWCT100"), "PredictionLBAM_Tables_EF.xls",
+         c("Off fruit summary", "On fruit summary", "Off fruit", "Off fruit 100%",
+           "Off fruit CT", "Off fruit 100% CT", "With fruit", "With fruit 100%",
+           "With fruit CT", "With fruit 100% CT"), row.names = TRUE)
+           
+}, comment = "25/09/2015")

@@ -1,6 +1,6 @@
   Listing of: get100mort
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 23/09/2015 
+Last updated: 25/09/2015 
 **************************************
 
 get100mort <-
@@ -17,7 +17,7 @@ structure(function(xxx = gleanOffFruitSeptLBAM, max.control = TRUE)
 ### ----------------------------------------------------------------------
 ### Author:-   Patrick Connolly, Date:- 21 Sep 2015, 14:37
 ### ----------------------------------------------------------------------
-### Revisions:- 
+### Revisions:- 24/09/2015 remove NaNs in last step
 
   require(dplyr)
   yy <- xxx()
@@ -51,5 +51,6 @@ structure(function(xxx = gleanOffFruitSeptLBAM, max.control = TRUE)
       }
     }
   }
+  out.df$MinConc[is.na(out.df$MinConc)] <- NA
   out.df
-}, comment = "23/09/2015")
+}, comment = "25/09/2015")

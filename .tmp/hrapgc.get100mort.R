@@ -12,7 +12,7 @@ get100mort <-
 ### ----------------------------------------------------------------------
 ### Author:-   Patrick Connolly, Date:- 21 Sep 2015, 14:37
 ### ----------------------------------------------------------------------
-### Revisions:- 
+### Revisions:- 24/09/2015 remove NaNs in last step
 
   require(dplyr)
   yy <- xxx()
@@ -46,5 +46,6 @@ get100mort <-
       }
     }
   }
+  out.df$MinConc[is.na(out.df$MinConc)] <- NA
   out.df
 }
