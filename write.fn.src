@@ -1,5 +1,6 @@
 write.function(collectLCsLBAM)
 write.function(collectLCsLBAM2)
+write.function(collectLCsLBAM3)
 write.function(get100mort)
 write.function(gleanOffFruitSeptLBAM_J)
 write.function(gleanWithFruitSeptLBAM_J)

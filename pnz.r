@@ -514,8 +514,16 @@ collectLCsLBAM() # >> PredictionLBAM_Tables_EF.xls
 
 ab.sept15Off$Joined <- ab.sept15Off$Joined <- allfit(data = gleanOffFruitSeptLBAM_J)
 ab.sept15With$Joined <- ab.sept15With$Joined <- allfit(data = gleanWithFruitSeptLBAM_J)
+## Draw corresponding plots
+pdf(file = "LBAMjoinedEFmortality.pdf", width = 255/25.4, height = 195/25.4)
+flyplot(1:25, data = ab.sept15Off, choice = "Joined", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:25, data = ab.sept15With, choice = "Joined", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off()
 
-
+## "Predicted" and "Actual" mortalities at 2 and 3% EF
+collectLCsLBAM2() # >> PredictionLBAM_WithFruit_EF.xls
   
 ##############################################
 ##
