@@ -35,7 +35,7 @@ fix.septLBAMwith <- function(xx = septLBAMwith.df)
 
   xxx <- xx %>%
     arrange(Date, SLS, Fruit, Temperature, Duration, Rep, Efpc) %>%
-      select(Date, SLS, Fruit, Temperature, Duration, Rep, Efnom, Efpc, HC, dead, Total, Row)
+      select(Date, SLS, Fruit, Temperature, Duration, Rep, Efpc, HC, dead, Total, Row)
   idcols <- names(xxx %>%
       select(Date, SLS, Fruit, Temperature, Duration, Rep))
   respcols <- names(xxx %>%
@@ -130,7 +130,7 @@ fix.septLBAMwith <- function(xx = septLBAMwith.df)
   fixed.cont.df <- cont.df[!cont.df$Row %in% contronly.df$Row, ]
   cont.notmissing.df <- contrmissing.df[!with(contrmissing.df, is.na(Total)),]
   use.df <- ditch("Ndx", rbind(fixed.cont.df, cont.notmissing.df, xx.treat)) %>%
-                  arrange(Date, SLS, Fruit, Temperature, Duration, Rep, Efnom, Efpc, HC) %>%
+                  arrange(Date, SLS, Fruit, Temperature, Duration, Rep, Efpc, HC) %>%
                     filter(!is.na(Total))
   use.df <- within(use.df,
                    Ndx <- paste(Date, SLS, Fruit, Temperature, Duration, Rep, sep = "|"))
