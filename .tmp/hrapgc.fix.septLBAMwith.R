@@ -8,7 +8,8 @@ fix.septLBAMwith <- function(xx = septLBAMwith.df)
 ### ----------------------------------------------------------------------
 ### Author:-   Patrick Connolly, Date:- 16 Sep 2015, 16:23
 ### ----------------------------------------------------------------------
-### Revisions:- 
+### Revisions:- 28/9/2015 added in Efnom to result (might screw up some
+###                       other calculations)
 
   require(dplyr)
   

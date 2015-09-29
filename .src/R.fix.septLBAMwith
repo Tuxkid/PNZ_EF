@@ -1,6 +1,6 @@
   Listing of: fix.septLBAMwith
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 17/09/2015 
+Last updated: 29/09/2015 
 **************************************
 
 fix.septLBAMwith <-
@@ -14,7 +14,8 @@ structure(function(xx = septLBAMwith.df)
 ### ----------------------------------------------------------------------
 ### Author:-   Patrick Connolly, Date:- 16 Sep 2015, 16:23
 ### ----------------------------------------------------------------------
-### Revisions:- 
+### Revisions:- 28/9/2015 added in Efnom to result (might screw up some
+###                       other calculations)
 
   require(dplyr)
   
@@ -41,7 +42,7 @@ structure(function(xx = septLBAMwith.df)
 
   xxx <- xx %>%
     arrange(Date, SLS, Fruit, Temperature, Duration, Rep, Efpc) %>%
-      select(Date, SLS, Fruit, Temperature, Duration, Rep, Efpc, HC, dead, Total, Row)
+      select(Date, SLS, Fruit, Temperature, Duration, Rep, Efnom, Efpc, HC, dead, Total, Row)
   idcols <- names(xxx %>%
       select(Date, SLS, Fruit, Temperature, Duration, Rep))
   respcols <- names(xxx %>%
@@ -136,7 +137,7 @@ structure(function(xx = septLBAMwith.df)
   fixed.cont.df <- cont.df[!cont.df$Row %in% contronly.df$Row, ]
   cont.notmissing.df <- contrmissing.df[!with(contrmissing.df, is.na(Total)),]
   use.df <- ditch("Ndx", rbind(fixed.cont.df, cont.notmissing.df, xx.treat)) %>%
-                  arrange(Date, SLS, Fruit, Temperature, Duration, Rep, Efpc, HC) %>%
+                  arrange(Date, SLS, Fruit, Temperature, Duration, Rep, Efnom, Efpc, HC) %>%
                     filter(!is.na(Total))
   use.df <- within(use.df,
                    Ndx <- paste(Date, SLS, Fruit, Temperature, Duration, Rep, sep = "|"))
@@ -178,4 +179,4 @@ structure(function(xx = septLBAMwith.df)
     aa[with(aa, HC > CO2),] # shows about 1/3 have HC > CO2 
   }
   use.df
-}, comment = "17/09/2015")
+}, comment = "29/09/2015")
