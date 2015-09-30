@@ -1,0 +1,26 @@
+sieve <- function(xx = semicomLBAM.df)
+{
+### Purpose:- sieves out the mortalities for semicommercial data
+### ----------------------------------------------------------------------
+### Modified from:- 
+### ----------------------------------------------------------------------
+### Arguments:- 
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 29 Sep 2015, 14:35
+### ----------------------------------------------------------------------
+### Revisions:-
+
+browser()
+  is.egg <- grep("egg", levels(xx$Lifestage), ignore.case = TRUE,value = TRUE)
+  xx <- within(xx, IsEgg <- Lifestage%in%is.egg)
+  is.scale <- grep("OS", levels(xx$SLS), ignore.case = TRUE,value = TRUE)
+  xx <- within(xx, IsScale <- SLS%in%is.scale)
+  xx <- xx[!is.na(xx$Total), ] # won't total unless
+
+  ## Define what is dead
+  xx <- within(xx, dead <- Dead)
+  xx <- within(xx, dead[IsEgg] <- Unhatched[IsEgg])
+  xx <- within(xx, Dead[IsScale] <- Dead[IsScale] + Moribund[IsScale])
+
+  
+}

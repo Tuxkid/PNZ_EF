@@ -524,7 +524,20 @@ dev.off()
 
 ## "Predicted" and "Actual" mortalities at 2 and 3% EF
 collectLCsLBAM2() # >> PredictionLBAM_WithFruit_EF.xls
-  
+## Using 2&3 as target concentrations and finding what conc eventuated
+##  to model the expected mortality
+collectLCsLBAM4() # >> PredictionLBAM_WithFruit_EF4.xls
+
+###################################################################################
+
+## Semi-commercial environment
+semicom.df <- read.delim("EFsemicSept2015.txt")
+semicomLBAM.df <- semicom.df[with(semicom.df, Pest == "LBAM"),]
+sept15LBAMsemic.df <- sieve(semicomLBAM.df) # >> PredictionLBAM_SemiCommercial_EF4.xls
+
+
+
+
 ##############################################
 ##
 ## Github repository (xterm command line)
