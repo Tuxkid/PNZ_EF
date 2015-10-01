@@ -1,1 +1,4 @@
-write.function(sieve)
+write.function(fix.septWith)
+write.function(glean.subset)
+write.function(gleanWithFruitSeptAll)
+write.function(gleanWithFruitSeptAll_CT)
