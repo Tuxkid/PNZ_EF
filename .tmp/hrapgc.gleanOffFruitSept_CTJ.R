@@ -1,21 +1,14 @@
-  Listing of: gleanOffFruitSept
-  Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 02/10/2015 
-**************************************
-
-gleanOffFruitSept <-
-structure(function(choice = 1)
+gleanOffFruitSept_CTJ <- function(choice = 1)
 {
-### Purpose:- September lot
+### Purpose:- Joined, CT products
 ### ----------------------------------------------------------------------
-### Modified from:- gleanOffFruitJuly
+### Modified from:- gleanOffFruitSept_J
 ### ----------------------------------------------------------------------
 ### Arguments:- 
 ### ----------------------------------------------------------------------
-### Author:-   Patrick Connolly, Date:-  3 Sep 2015, 15:51
+### Author:-   Patrick Connolly, Date:-  2 Oct 2015, 09:39
 ### ----------------------------------------------------------------------
-### Revisions:- as.character(Efnom) fixed 09/09/2015
-###             23/09/2015 added selecting max of Handling and CO2 controls
+### Revisions:- 
 
   xx <- sept15Off.df
   xx <- within(xx, EfNom <- as.numeric(as.character(Efnom))) # fixed 9/9/15
@@ -60,7 +53,7 @@ structure(function(choice = 1)
       select(SLS, Temperature, Duration, Rep, Efpc, dead, Total)
 
   use.df <- xx %>%
-    tbl_df %>% arrange(SLS, Temperature, Duration, Rep, Efpc) 
+    tbl_df %>% arrange(SLS, Temperature, Duration, Efpc) 
 
 ### Then a normal glean function
   idset <- with(use.df, make.id(Efpc))
@@ -69,13 +62,12 @@ structure(function(choice = 1)
   use.df <- within(use.df, Temp <- paste0(Temperature, "°C"))
   use.df <- within(use.df, Hours <- paste0(Duration, "h"))
   ##  use.df <- within(use.df, DAT <- paste0(Assessed, "d"))
-  leg.brief <- with(use.df, unique(paste(SLS, Temp,
-                                         Hours, Rep, sep= "|")))
-  maint <- "Mortality of PNZ pests off fruit in ethyl formate after various durations"
+  leg.brief <- with(use.df, unique(paste(SLS, Temp, Hours, sep= "|")))
+  maint <- "Mortality of PNZ pests off fruit in ethyl formate after various CTs (joined)"
   xlabels <- c(0, 0)
-  xaxtitle <- "Dose (%)"
+  xaxtitle <- "CT (%-h)"
   with(use.df,
-       list(id = idset, times = Efpc, total = Total, dead = dead, 
+       list(id = idset, times = Efpc * Duration, total = Total, dead = dead, 
             cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
             legend = leg.brief, xlabels = xlabels, takelog = FALSE))
-}, comment = "02/10/2015")
+}

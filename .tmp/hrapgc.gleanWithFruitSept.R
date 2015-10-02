@@ -56,7 +56,7 @@ require(dplyr)
       }
     }
     test.control(use.df)
-    browser()
+
   } # Only TSM egg looks close
 
 
@@ -66,7 +66,6 @@ require(dplyr)
 
   prp <- use.df %>% #filter(Idset == 15) %>%
     select(SLS, Temperature, Duration, Rep, Idset, Efpc, Row, Total, dead)
- browser()
   dtsm <- use.df %>% filter(SLS == "dTSM")
   
   use.df <- within(use.df, Temp <- paste0(Temperature, "°C"))

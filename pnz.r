@@ -447,7 +447,7 @@ sept15LBAMwith.df <- within(sept15LBAMwith.df, Date <-
 ## Lots of data entry tinkering required
 sept15LBAMwithFIX.df <- fix.septLBAMwith(sept15LBAMwith.df)
 
-ab.sept15With <- ab.sept15Off <- list()
+ab.sept15With <- ab.sept15Off <- list() # 
 ab.sept15Off[["conc"]] <- allfit(data = gleanOffFruitSeptLBAM)
 ab.sept15Off[["CT"]] <- allfit(data = gleanOffFruitSeptLBAM_CT)
 ab.sept15With[["conc"]] <- allfit(data = gleanWithFruitSeptLBAM)
@@ -538,13 +538,89 @@ sept15LBAMsemic.df <- sieve(semicomLBAM.df) # >> PredictionLBAM_SemiCommercial_E
 ###################################################################################
 ###################################################################################
 
-## LBAM all works: try the rest.
+##### LBAM all works: try the rest.
 
-septwithFIXall.df <- fix.septWith(xx = sept15With.df)
+### off fruit already done above: repeated here
+
+sept15Off.df <- read.delim("EFOffSept2015.txt")
+ab.sept15OffAll <- list()
+ab.sept15OffAll[["conc"]] <- allfit(data = gleanOffFruitSept) 
+ab.sept15OffAll[["CT"]] <- allfit(data = gleanOffFruitSept_CT) 
+ab.sept15OffAll[["concJ"]] <- allfit(data = gleanOffFruitSept_J) 
+ab.sept15OffAll[["CTJ"]] <- allfit(data = gleanOffFruitSept_CTJ) 
+
+pdf(file = "EFsept15OffMortality.pdf", width = 255/25.4, height = 195/25.4)
+flyplot(1:173, data = ab.sept15OffAll, choice = "conc", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:173, data = ab.sept15OffAll, choice = "CT", pc = c(line = 99), lt.ld = "LCT",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:73, data = ab.sept15OffAll, choice = "concJ", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:73, data = ab.sept15OffAll, choice = "CTJ", pc = c(line = 99), lt.ld = "LCT",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off()
+
+## confidence intervals for All off fruit
+mean.lt(ab.sept15OffAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2, border = TRUE,
+        insect = "PNZ pests", lt.ld = "LC") # 
+mean.lt(ab.sept15Off, 1, leg.beg = 0, leg.end= 2, rnd = 2, 
+        insect = "everything", xlout = "Sept2015CIs.xls") # 
+sepOffCI.df <- mean.lt(ab.sept15OffAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2, df.out = TRUE,
+                       omit = c(1:15, 25:38, 52:64, 81:82, 101:103, 121, 145,156:161)) # 
+sepOffCI_CT.df <- mean.lt(ab.sept15OffAll, "CT", leg.beg = 0, leg.end= 2, rnd = 2, df.out = TRUE,
+                       omit = c(1:15, 25:38, 52:64, 81:82, 101:103, 121, 145,156:161)) # 
+
+## First consistent 100% points 
+ab.sept15With100 <- ab.sept15Off100 <- list()
+ab.sept15Off100$conc <- df2ablist(get100mortAll(gleanOffFruitSept))
+ab.sept15Off100$CT <- df2ablist(get100mortAll(gleanOffFruitSept_CT))
+
+sepOff100CI.df <- mean.lt(ab.sept15Off100, "conc", leg.beg = 0, lt = 100,
+                          omit = c(1:15, 25:38, 52:64, 81:82, 101:103, 121, 145,156:161),
+                          leg.end= 2, rnd = 2, df.out = TRUE) # 
+sepOff100CI_CT.df <- mean.lt(ab.sept15Off100, "CT", leg.beg = 0, lt = 100,
+                            omit = c(1:15, 25:38, 52:64, 81:82, 101:103, 121, 145,156:161),
+                           leg.end= 2, rnd = 2, df.out = TRUE) # 
+
+######################################################################################
+
+### With fruit 
+
+septwithFIXall.df <- fix.septWith(xx = sept15With.df) # lots of fixes
 ab.sept15WithAll <- list()
 ab.sept15WithAll[["conc"]] <- allfit(data = gleanWithFruitSeptAll)
 ab.sept15WithAll$CT <- allfit(data = gleanWithFruitSeptAll_CT)
+ab.sept15WithAll[["concJ"]] <- allfit(data = gleanWithFruitSeptAll_J)
+ab.sept15WithAll$CTJ <- allfit(data = gleanWithFruitSeptAll_CTJ)
 
+pdf(file = "EFsept15WithMortality.pdf", width = 255/25.4, height = 195/25.4)
+flyplot(1:43, data = ab.sept15WithAll, choice = "conc", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:43, data = ab.sept15WithAll, choice = "CT", pc = c(line = 99), lt.ld = "LCT",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:15, data = ab.sept15WithAll, choice = "concJ", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:15, data = ab.sept15WithAll, choice = "CTJ", pc = c(line = 99), lt.ld = "LCT",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off() # CT lot in same file 
+
+sepWithCI.df <- mean.lt(ab.sept15WithAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2,
+                        omit = c(22, 30:43), df.out = TRUE) # 
+sepWithCI_CT.df <- mean.lt(ab.sept15WithAll, "CT", leg.beg = 0, leg.end= 2, rnd = 2,
+                        omit = c(22, 30:43), df.out = TRUE) # 
+
+## First consistent 100% points 
+ab.sept15With100$conc <- df2ablist(get100mortAll(gleanWithFruitSeptAll))
+ab.sept15With100$CT <- df2ablist(get100mortAll(gleanWithFruitSeptAll_CT))
+
+
+sepWith100CI.df <- mean.lt(ab.sept15With100, "conc", leg.beg = 0, lt = 100,
+                          omit = c(22, 30:43), leg.end= 2, rnd = 2, df.out = TRUE) # 
+sepWith100CI_CT.df <- mean.lt(ab.sept15With100, "CT", leg.beg = 0, lt = 100,
+                             omit = c(22, 30:43), leg.end= 2, rnd = 2, df.out = TRUE) #
+
+
+collectLCs() ## >> PredictionAll_With.OffFruit_EF.xls
 
 
 
