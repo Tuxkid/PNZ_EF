@@ -1,10 +1,10 @@
   Listing of: sieve
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 30/09/2015 
+Last updated: 06/10/2015 
 **************************************
 
 sieve <-
-structure(function(xx = semicomLBAM.df)
+structure(function(xx = semicomLBAM.df, out.xls = "PredictionLBAM_SemiCommercial_EF4.xls")
 {
 ### Purpose:- sieves out the mortalities for semicommercial data
 ### ----------------------------------------------------------------------
@@ -40,7 +40,7 @@ structure(function(xx = semicomLBAM.df)
   pred.mat <- round(100 * cbind(Lower = cloglog.bt(pred.xx.lo), Upper = cloglog.bt(pred.xx.hi)),1)
   pred.df <- as.data.frame(pred.mat)
   pred.df <- within(pred.df, StageTreat <- rownames(pred.df))
-  pred.df <- within(pred.df, Stage <- getbit(StageTreat,  "\\|", 1))
+  pred.df <- within(pred.df, SpeciesStage <- getbit(StageTreat,  "\\|", 1))
   pred.df <- within(pred.df, fruit <- getbit(StageTreat,  "\\|", 2))
   pred.df <- within(pred.df, Treatment <- getbit(StageTreat,  "\\|", 3))
   pred.df <- within(pred.df, temp <- getbit(StageTreat,  "\\|", 4))
@@ -52,8 +52,8 @@ structure(function(xx = semicomLBAM.df)
   predict.df <- within(pred.df, Fruit[fruit == "K"] <- "kiwifruit")
 
   out.df <- predict.df %>%
-    arrange(Stage, Fruit, Temp, Duration) %>%
-      select(Stage, Treatment, Fruit, Temp, Duration, Lower, Upper)
+    arrange(SpeciesStage, Fruit, Temp, Duration) %>%
+      select(SpeciesStage, Treatment, Fruit, Temp, Duration, Lower, Upper)
 
 ##   xx %>% select(SLS, Efnom, Temp, Sample, Mort)%>%
 ##     arrange(SLS, Efnom, Temp) %>%
@@ -62,8 +62,9 @@ structure(function(xx = semicomLBAM.df)
 
   require("WriteXLS")
 
-  WriteXLS(x = "out.df", "PredictionLBAM_SemiCommercial_EF4.xls", "predicted 95% CI")
+  WriteXLS(x = "out.df", out.xls, "predicted 95% CI",
+           BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 2)
   out.df  
   
 
-}, comment = "30/09/2015")
+}, comment = "06/10/2015")

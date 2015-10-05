@@ -534,6 +534,8 @@ collectLCsLBAM4() # >> PredictionLBAM_WithFruit_EF4.xls
 semicom.df <- read.delim("EFsemicSept2015.txt")
 semicomLBAM.df <- semicom.df[with(semicom.df, Pest == "LBAM"),]
 sept15LBAMsemic.df <- sieve(semicomLBAM.df) # >> PredictionLBAM_SemiCommercial_EF4.xls
+sept15semic.df <- sieve(semicom.df, "Prediction_SemiCommercial_EF4.xls") # >> Prediction_SemiCommercial_EF4.xls
+
 
 ###################################################################################
 ###################################################################################

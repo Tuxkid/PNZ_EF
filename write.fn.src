@@ -1,1 +1,1 @@
-write.function(collectLCs)
+write.function(sieve)
