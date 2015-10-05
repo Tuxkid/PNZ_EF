@@ -1,4 +1,5 @@
-collectLCs <- function(xO = sepOffCI.df, xOCT = sepOffCI_CT.df,
+collectLCs <- function(adjust.cont = TRUE,
+                       xO = sepOffCI.df, xOCT = sepOffCI_CT.df,
                        xW = sepWithCI.df, xWCT = sepWithCI_CT.df,
                        xO100 = sepOff100CI.df, xOCT100 = sepOff100CI_CT.df,
                        xW100 = sepWith100CI.df, xWCT100 = sepWith100CI_CT.df,
@@ -10,47 +11,51 @@ collectLCs <- function(xO = sepOffCI.df, xOCT = sepOffCI_CT.df,
 ### ----------------------------------------------------------------------
 ### Modified from:- collectLCsLBAM3 & collectLCsLBAM4
 ### ----------------------------------------------------------------------
-### Arguments:- 
+### Arguments:- adjust.cont: Do we adjust for control mortality?
 ### ----------------------------------------------------------------------
 ### Author:-   Patrick Connolly, Date:-  2 Oct 2015, 14:58
 ### ----------------------------------------------------------------------
 ### Revisions:- 
 
-## Standardize egg in identifiers
-rownames(xO) <- gsub("ME", "egg", rownames(xO))
-rownames(xOCT) <- gsub("ME", "egg", rownames(xOCT))
-
-## Off fruit
-off.df <- data.frame(LC99est = as.numeric(xO$lt.mean),
-                     Min100mort = as.numeric(xO100$lt.mean),
-                     LCT99est = as.numeric(xOCT$lt.mean),
-                     Min100mortCT = as.numeric(xOCT100$lt.mean))
-rownames(off.df) <- rownames(xO)
-
-## With fruit: have to use a matrix
-with.mat <- matrix(nrow = nrow(xW100), ncol = 4)
-dimnames(with.mat) <- list(rownames(xW100), names(off.df))
-with.mat[rownames(xW), "LC99est"] <- as.numeric(xW$lt.mean)
-with.mat[rownames(xW100), "Min100mort"] <- as.numeric(xW100$lt.mean)
-with.mat[rownames(xWCT), "LCT99est"] <- as.numeric(xWCT$lt.mean)
-with.mat[rownames(xWCT100), "Min100mortCT"] <- as.numeric(xWCT100$lt.mean)
-with.df <- as.data.frame(with.mat)
-with.id <- rownames(with.df)
-
-## remove A| and K| from rownames
-## With help from Rhelp
-chopAK <- function(x)
-  gsub("\\|[AK]\\|","\\|", x)
-
-
-glean.off <- get(ab.off$datafun)
-glean.with <- get(ab.with$datafun)
-## data used in those ab lists
-mort.dat.off <- with(glean.off(), data.frame(id, times, dead, total))
-mort.dat.with <- with(glean.with(), data.frame(id, times, dead, total))
-## legends to line up
-legs.off <- glean.off()$legend
-legs.off <- gsub("ME", "egg", legs.off)
+  ## Standardize egg in identifiers
+  rownames(xO) <- gsub("ME", "egg", rownames(xO))
+  rownames(xOCT) <- gsub("ME", "egg", rownames(xOCT))
+  
+  ## Off fruit
+  off.df <- data.frame(LC99est = as.numeric(xO$lt.mean),
+                       Min100mort = as.numeric(xO100$lt.mean),
+                       LCT99est = as.numeric(xOCT$lt.mean),
+                       Min100mortCT = as.numeric(xOCT100$lt.mean))
+  rownames(off.df) <- rownames(xO)
+  off.df <- within(off.df, Min100mort[is.nan(Min100mort)] <- NA)
+  off.df <- within(off.df, Min100mortCT[is.nan(Min100mortCT)] <- NA)
+  
+  ## With fruit: have to use a matrix
+  with.mat <- matrix(nrow = nrow(xW100), ncol = 4)
+  dimnames(with.mat) <- list(rownames(xW100), names(off.df))
+  with.mat[rownames(xW), "LC99est"] <- as.numeric(xW$lt.mean)
+  with.mat[rownames(xW100), "Min100mort"] <- as.numeric(xW100$lt.mean)
+  with.mat[rownames(xWCT), "LCT99est"] <- as.numeric(xWCT$lt.mean)
+  with.mat[rownames(xWCT100), "Min100mortCT"] <- as.numeric(xWCT100$lt.mean)
+  with.df <- as.data.frame(with.mat)
+  with.id <- rownames(with.df)
+  with.df <- within(with.df, Min100mort[is.nan(Min100mort)] <- NA)
+  with.df <- within(with.df, Min100mortCT[is.nan(Min100mortCT)] <- NA)
+  
+  ## remove A| and K| from rownames
+  ## With help from Rhelp
+  chopAK <- function(x)
+    gsub("\\|[AK]\\|","\\|", x)
+  
+  
+  glean.off <- get(ab.off$datafun)
+  glean.with <- get(ab.with$datafun)
+  ## data used in those ab lists
+  mort.dat.off <- with(glean.off(), data.frame(id, times, dead, total))
+  mort.dat.with <- with(glean.with(), data.frame(id, times, dead, total))
+  ## legends to line up
+  legs.off <- glean.off()$legend
+  legs.off <- gsub("ME", "egg", legs.off)
   ## Get concentrations from data used in glean functions
   zO <- within(zO, SLS <- gsub("ME", "egg", SLS)) # needed here too
   zO <- within(zO, Temp <- paste0(Temperature, "C"))
@@ -94,7 +99,8 @@ legs.off <- gsub("ME", "egg", legs.off)
     ## slope and intercept info
     slope.i.with <- ab.with$slope[i]
     intercept.i.with <- ab.with$intercept[i]
-    ## corresponding off data identifier
+
+     ## corresponding off data identifier
     lab.with.i <- with.id[i]
     lab.with.i.match <- gsub("C", "°C", lab.with.i)
     lab.off.i <- chopAK(lab.with.i.match) # removes the fruit info
@@ -109,17 +115,18 @@ legs.off <- gsub("ME", "egg", legs.off)
     ## control adjustments
     cont.mort.with.i <- with(cont.dat.with.i, mean(dead/total))
     cont.mort.off.i <- with(cont.dat.off.i, mean(dead/total))
-    ## adjust slopes for control mort
-    if(cloglog.bt(intercept.i.off) > cont.mort.off.i)
-      intercept.i.off <- cloglog(cloglog.bt(intercept.i.off) - cont.mort.off.i) else
-    slope.i.off <- slope.i.off * (1 - cont.mort.off.i) # adj slope instead
-    
-    if(cloglog.bt(intercept.i.with) > cont.mort.with.i)
-      intercept.i.with <- cloglog(cloglog.bt(intercept.i.with) - cont.mort.with.i) else
-    slope.i.with <- slope.i.with * (1 - cont.mort.with.i)
+    if(adjust.cont){    ## adjust intercepts for control mort
+      if(cloglog.bt(intercept.i.off) > cont.mort.off.i)
+        intercept.i.off <- cloglog(cloglog.bt(intercept.i.off) - cont.mort.off.i) else
+      slope.i.off <- slope.i.off * (1 - cont.mort.off.i) # adj slope instead
+      
+      if(cloglog.bt(intercept.i.with) > cont.mort.with.i)
+        intercept.i.with <- cloglog(cloglog.bt(intercept.i.with) - cont.mort.with.i) else
+      slope.i.with <- slope.i.with * (1 - cont.mort.with.i)
+    }
 ### Relevant concentrations for this i
-    achieved.i.off <- as.data.frame(zzO[with(zzO, Ndx == lab.off.ii), ])
-    achieved.i.with <- as.data.frame(zzW[with(zzW, Ndx == lab.with.i), ])
+    achieved.i.off <- as.data.frame(zzO[with(zzO, Ndx == lab.off.ii), ]) # ii for off
+    achieved.i.with <- as.data.frame(zzW[with(zzW, Ndx == lab.with.i), ]) # i for with
     
     for(j in predict.at){ # always 2 for Off fruit
       conc.ij.off <- achieved.i.off[achieved.i.off$Efnom == j, ] %>%
@@ -132,8 +139,8 @@ legs.off <- gsub("ME", "egg", legs.off)
                         c("AchievedEFwith_lo", "AchievedEFwith_hi")] <- conc.ij.with)
       
       ## predictions for those concentrations, off and with
-      pred.off.ij <- cloglog.bt(intercept.i.off + slope.i.off * conc.ij.off) * 100
-      pred.with.ij <- cloglog.bt(intercept.i.with + slope.i.with * conc.ij.with) * 100
+      pred.off.ij <- round(cloglog.bt(intercept.i.off + slope.i.off * conc.ij.off) * 100, 1)
+      pred.with.ij <- round(cloglog.bt(intercept.i.with + slope.i.with * conc.ij.with) * 100, 1)
       
       try(prediction.df[with(prediction.df, StageTreat == lab.with.i & TargetEFconc == j),
                         c("PredictedOff_lo", "PredictedOff_hi")] <- pred.off.ij, silent = TRUE)
@@ -157,7 +164,15 @@ legs.off <- gsub("ME", "egg", legs.off)
     select(Stage, Fruit, Temp, Duration, TargetEFconc, AchievedEFoff_lo, AchievedEFoff_hi,
            PredictedOff_lo, PredictedOff_hi, AchievedEFwith_lo, AchievedEFwith_hi,
            PredictedWith_lo, PredictedWith_hi)
-  WriteXLS(x = "out.df", "PredictionAll_With.OffFruit_EF.xls", "predictions",
-           BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 4)
+  xlout <- ifelse(adjust.cont, "Predictions_With.OffFruit_EF_controlAdjust.xls",
+                  "Predictions_With.OffFruit_EF.xls")
+### Write out predictions, the off/with LC99 estimates, and the confidence limit of each
+###              group of replicates
+  WriteXLS(x = c("out.df", "off.df", "with.df", "xO", "xO100", "xOCT", "xOCT100", "xW", "xW100",
+           "xWCT", "xWCT100"), xlout, row.names = TRUE,
+           c("predictions @ 2 & 3%", "Off fruit", "With fruit", "Off fruit LC99CI", "Off fruit 100% LC99CI",
+           "Off fruit CT LC99CI", "Off fruit 100% CT LC99CI", "With fruit LC99CI", "With fruit 100% LC99CI",
+           "With fruit CT LC99CI", "With fruit 100% CT LC99CI"),
+           BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 2)
   out.df  
 }

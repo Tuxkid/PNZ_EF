@@ -622,7 +622,8 @@ sepWith100CI_CT.df <- mean.lt(ab.sept15With100, "CT", leg.beg = 0, lt = 100,
 
 collectLCs() ## >> PredictionAll_With.OffFruit_EF.xls
 
-
+collectLCs(adjust.cont = TRUE) ## >> Predictions_With.OffFruit_EF_controlAdjust.xls
+collectLCs(adjust.cont = FALSE) ## >> Predictions_With.OffFruit_EF.xls
 
 ##############################################
 ##
