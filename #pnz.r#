@@ -632,7 +632,7 @@ collectLCs(adjust.cont = FALSE) ## >> Predictions_With.OffFruit_EF.xls
 ##
 #####################################################
 ##
-## change xx and ab.list to overwrite pdfs and pngs
+## change xx and ab.list to make new pdfs and pngs
 
 ## presentation plots
 group.responsesD1S(sept15Off.df, ab.list = ab.sept15OffAll, want = 2) ## > Lines_forLBAM_5_2hS.pdf  
@@ -648,10 +648,10 @@ system("pdf2png Lines_forLBAM_5_15CS")   ## > Lines_forLBAM_5_15CS.png
 
 ## CTs
 
-group.responsesCT1S(sept15Off.df, want = 1, ab.list = ab.sept15OffAll)  ## > Lines_forLBAM_5__5CTS.pdf  
-group.responsesCT1S(sept15Off.df, want = 3, ab.list = ab.sept15OffAll)  ## > Lines_forLBAM_5__15CTS.pdf 
-system("pdf2png Lines_forLBAM_5__5CTS")    ## > Lines_forLBAM_5__5CTS.png  
-system("pdf2png Lines_forLBAM_5__15CTS")   ## > Lines_forLBAM_5__15CTS.png 
+group.responsesCT1S(sept15Off.df, want = 1, ab.list = ab.sept15OffAll)  ## > Lines_forLBAM_5_5CTS.pdf  
+group.responsesCT1S(sept15Off.df, want = 3, ab.list = ab.sept15OffAll)  ## > Lines_forLBAM_5_15CTS.pdf 
+system("pdf2png Lines_forLBAM_5_5CTS")    ## > Lines_forLBAM_5_5CTS.png  
+system("pdf2png Lines_forLBAM_5_15CTS")   ## > Lines_forLBAM_5_15CTS.png 
 
 ## Lots of lines
 group.responsesD2hS(sept15Off.df, ab.list = ab.sept15OffAll, store = 5)   ## > Lines_for5C_2hS.pdf

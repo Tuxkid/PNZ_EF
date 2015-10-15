@@ -1,6 +1,6 @@
   Listing of: sieve
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 06/10/2015 
+Last updated: 13/10/2015 
 **************************************
 
 sieve <-
@@ -65,6 +65,14 @@ structure(function(xx = semicomLBAM.df, out.xls = "PredictionLBAM_SemiCommercial
   WriteXLS(x = "out.df", out.xls, "predicted 95% CI",
            BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 2)
   out.df  
+
+
+  neofabLast.df %>%
+    arrange(tree, treatment) %>%
+      group_by(treatment, tree) %>%
+        summarise(No = mean(no), Diam = mean(diam))
+
+
   
 
-}, comment = "06/10/2015")
+}, comment = "13/10/2015")

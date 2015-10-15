@@ -1,1 +1,4 @@
-write.function(sieve)
+write.function(group.responsesCT1S)
+write.function(group.responsesD1S)
+write.function(group.responsesD2hS)
+write.function(group.responsesT1S)

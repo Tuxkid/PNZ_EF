@@ -59,6 +59,19 @@ sieve <- function(xx = semicomLBAM.df, out.xls = "PredictionLBAM_SemiCommercial_
   WriteXLS(x = "out.df", out.xls, "predicted 95% CI",
            BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 2)
   out.df  
+
+
+  neofabLast.df %>%
+    arrange(tree, treatment) %>%
+      group_by(treatment, tree) %>%
+        summarise(No = mean(no), Diam = mean(diam))
+
+
   
 
 }
+
+neofabLast.df %>%
+  arrange(tree, treatment) %>%
+  group_by(treatment, tree) %>%
+  summarise(No = mean(no), Diam = mean(diam))
