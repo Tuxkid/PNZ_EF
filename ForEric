@@ -1,0 +1,61 @@
+G'day Eric.
+
+This is the function I use:  
+
+bringLibrary <-
+function(lastR = "3.0.2", latestR = "3.1.0")
+{
+### Purpose:- Bring library from older R version to newer one.
+###           (Idea is to then updated the packages that need to be)
+### ----------------------------------------------------------------------
+### Modified from:- 
+### ----------------------------------------------------------------------
+### Arguments:- lastR: version of R that has the packages desired
+###             latestR: latest version of R of interest
+### ----------------------------------------------------------------------
+### Author:-   Patrick Connolly, Date:- 29 May 2014, 11:08
+### ----------------------------------------------------------------------
+### Revisions:- 22/8/14 fixed mistaken swap of lastR & latestR
+
+  now <- system(paste0("ls /home/hrapgc/local/R-", latestR, "/library"), TRUE)
+  was <- system(paste0("ls /home/hrapgc/local/R-", lastR, "/library"), TRUE)
+  need <- was[!is.element(was, now)]
+### Check if it's not already been done
+  if(length(need) < 1)
+    stop("Nothing in R-", lastR, " that isn't already in R-", latestR, ".\n")
+  for(i in need) # reason for running this function
+    system(paste0("cp -prv /home/hrapgc/local/R-", lastR, "/library/", i,
+                  " /home/hrapgc/local/R-", latestR, "/library/"))
+### Notify it's finished and give pastable text to update copied packages 
+  cat("packages copied into R-", latestR,
+      " directory.\nProbably a good idea to start R-", latestR,
+      " and run\n  update.packages(checkBuilt = TRUE, ask = FALSE)\n", sep = "")
+}
+
+
+Of course, you'll change /home/hrapgc/local/ to suit.  You could make
+it work out what the latest version is but it wouldn't save much
+typing and it's probably good to be mindful which versions are
+involved.
+
+My R versions are in ~/local/ , for example: ~/local/R-3.2.1/ which
+has ./library and ./bin sub-directories (among others).  That happens
+by default when I run ./configure and make from ~/local/R-3.2.1/ so if
+you start with your .tgz file in /usr/local/ instead of ~/local the
+corresponding directories are produced.
+
+When I install R-3.2.2 it creates corresponding ones and I would get
+the library from R-3.1.3 by running my function from the R command
+line in any directory thus:
+
+bringLibrary("3.1.3", "3.2.2")
+
+When it's finished there will appear a message to that effect and a
+text string that you can copy to the R command line to update all the
+packages that need changing.
+
+
+
+
+
+

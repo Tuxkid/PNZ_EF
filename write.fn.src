@@ -1,4 +1,3 @@
-write.function(group.responsesCT1S)
-write.function(group.responsesD1S)
-write.function(group.responsesD2hS)
-write.function(group.responsesT1S)
+write.function(fix.septWith2)
+write.function(gleanWithFruitSeptCM)
+write.function(gleanWithFruitSeptCM_J)

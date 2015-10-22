@@ -632,7 +632,7 @@ collectLCs(adjust.cont = FALSE) ## >> Predictions_With.OffFruit_EF.xls
 ##
 #####################################################
 ##
-## change xx and ab.list to overwrite pdfs and pngs
+## change xx and ab.list to make new pdfs and pngs
 
 ## presentation plots
 group.responsesD1S(sept15Off.df, ab.list = ab.sept15OffAll, want = 2) ## > Lines_forLBAM_5_2hS.pdf  
@@ -648,10 +648,10 @@ system("pdf2png Lines_forLBAM_5_15CS")   ## > Lines_forLBAM_5_15CS.png
 
 ## CTs
 
-group.responsesCT1S(sept15Off.df, want = 1, ab.list = ab.sept15OffAll)  ## > Lines_forLBAM_5__5CTS.pdf  
-group.responsesCT1S(sept15Off.df, want = 3, ab.list = ab.sept15OffAll)  ## > Lines_forLBAM_5__15CTS.pdf 
-system("pdf2png Lines_forLBAM_5__5CTS")    ## > Lines_forLBAM_5__5CTS.png  
-system("pdf2png Lines_forLBAM_5__15CTS")   ## > Lines_forLBAM_5__15CTS.png 
+group.responsesCT1S(sept15Off.df, want = 1, ab.list = ab.sept15OffAll)  ## > Lines_forLBAM_5_5CTS.pdf  
+group.responsesCT1S(sept15Off.df, want = 3, ab.list = ab.sept15OffAll)  ## > Lines_forLBAM_5_15CTS.pdf 
+system("pdf2png Lines_forLBAM_5_5CTS")    ## > Lines_forLBAM_5_5CTS.png  
+system("pdf2png Lines_forLBAM_5_15CTS")   ## > Lines_forLBAM_5_15CTS.png 
 
 ## Lots of lines
 group.responsesD2hS(sept15Off.df, ab.list = ab.sept15OffAll, store = 5)   ## > Lines_for5C_2hS.pdf
@@ -659,20 +659,24 @@ group.responsesD2hS(sept15Off.df, ab.list = ab.sept15OffAll, store = 15)  ## > L
 system("pdf2png Lines_for5C_2hS")   ## > Lines_for5C_2hS.png
 system("pdf2png Lines_for15C_2hS")   ## > Lines_for15C_2hS.png
 
+##############################################
+##
+#### 20/10/2015 Codling moth with fruit done separately
+##
+######################################################
+##
 
+septwithFIXcm.df <- fix.septWith2()
 
-
-
-
-
-
-
-
-
-
-
-
-
+ab.sept15WithCM <- list()
+ab.sept15WithCM[["conc"]] <- allfit(data = gleanWithFruitSeptCM)
+ab.sept15WithCM[["concJ"]] <- allfit(data = gleanWithFruitSeptCM_J)
+pdf(file = "EFsept15WithMortality_CM.pdf", width = 255/25.4, height = 195/25.4)
+flyplot(1:43, data = ab.sept15WithCM, choice = "conc", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:15, data = ab.sept15WithCM, choice = "concJ", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off() #
 
 
 
