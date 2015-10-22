@@ -100,7 +100,7 @@ fix.septWith2 <- function(xx = sept15With.df, dose.resp = TRUE)
   contronly.df <- ditch( "Ndx", xxx[xxx$Ndx %in% contonly,])
   contrmissing.df <- nocont.df[is.na(nocont.df$Row),]
 
-##   require("WriteXLS")
+  require("WriteXLS")
 ##   WriteXLS(c("cont.df", "contrmissing.df", "contronly.df"), "LBAMmissing.xls",
 ##            c("AllControls", "NoControls", "ControlsOnly"))
   

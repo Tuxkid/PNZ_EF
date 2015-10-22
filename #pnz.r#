@@ -678,10 +678,8 @@ flyplot(1:15, data = ab.sept15WithCM, choice = "concJ", pc = c(line = 99), lt.ld
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
 dev.off() #
 
-
 sepWithCM_CI.df <- mean.lt(ab.sept15WithCM, "conc", leg.beg = 0, leg.end= 3, rnd = 2, df.out = TRUE) # 
-
-WriteXLS("sepWithCM_CI.df", "WithFruitCM.xls", "Codling LC99s with fruit", row.names = TRUE)
+WriteXLS("sepWithCM_CI.df", "WithFruitCM_CIs.xls", "Codling LC99s with fruit", row.names = TRUE)
 
 
 
