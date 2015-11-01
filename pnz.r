@@ -683,6 +683,36 @@ WriteXLS("sepWithCM_CI.df", "WithFruitCM_CIs.xls", "Codling LC99s with fruit", r
 
 ### previous calculations have extensions
 collectLCs2() ## >> Predictions_With.OffFruit_EF2.xls
+## and for codling moth
+ collectLCsCM() ## >>Predictions_With.OffFruit_EF2CM.xls
+
+
+
+##################
+##
+
+
+
+## Lots of lines
+group.responsesD2hS(sept15Off.df, ab.list = ab.sept15OffAll, store = 5)   ## > Lines_for5C_2hS.pdf
+group.responsesD2hS(sept15Off.df, ab.list = ab.sept15OffAll, store = 15)  ## > Lines_for15C_2hS.pdf
+system("pdf2png Lines_for5C_2hS")   ## > Lines_for5C_2hS.png
+system("pdf2png Lines_for15C_2hS")   ## > Lines_for15C_2hS.png
+
+## Separate plots for apple and kiwifruit pests
+
+group.responsesD2hS_ak(store = 5, post = TRUE, crop = "apple") # Lines_for5C_2hS_apple.pdf
+group.responsesD2hS_ak(store = 15, post = TRUE, crop = "apple") # Lines_for15C_2hS_apple.pdf
+group.responsesD2hS_ak(store = 5, post = TRUE, crop = "kiwifruit") # Lines_for5C_2hS_kiwifruit.pdf
+group.responsesD2hS_ak(store = 15, post = TRUE, crop = "kiwifruit") # Lines_for15C_2hS_kiwifruit.pdf
+
+system("pdf2png Lines_for5C_2hS_apple")   ## > Lines_for5C_2hS_apple.png
+system("pdf2png Lines_for15C_2hS_apple")   ## > Lines_for15C_2hS_apple.png
+system("pdf2png Lines_for5C_2hS_kiwifruit")   ## > Lines_for5C_2hS_kiwifruit.png
+system("pdf2png Lines_for15C_2hS_kiwifruit")   ## > Lines_for15C_2hS_kiwifruit.png
+
+
+
 
 ##############################################
 ##

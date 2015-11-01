@@ -4,12 +4,13 @@ collectLCsCM <- function(adjust.cont = TRUE,
                        xO100 = sepOff100CI.df, xOCT100 = sepOff100CI_CT.df,
                        xW100 = sepWith100CI.df, xWCT100 = sepWith100CI_CT.df,
                        ab.off = ab.sept15OffAll$concJ,
-                       ab.with = ab.sept15WithAll$concJ,
-                       zO = sept15Off.df, zW = septwithFIXall.df)
+                       ab.with = ab.sept15WithCM$concJ,
+                       zO = sept15Off.df, zW = septwithFIXcm.df)
 {
 ### Purpose:- Codling moth done somewhat differently
 ### ----------------------------------------------------------------------
-### Modified from:- collectLCs
+### Modified from:- collectLCs2
+###                 will mention a lot of objects which aren't used
 ### ----------------------------------------------------------------------
 ### Arguments:- 
 ### ----------------------------------------------------------------------
@@ -18,10 +19,12 @@ collectLCsCM <- function(adjust.cont = TRUE,
 ### Revisions:- 
 
 
+
+
   ## Standardize egg in identifiers
   rownames(xO) <- gsub("ME", "egg", rownames(xO))
   rownames(xOCT) <- gsub("ME", "egg", rownames(xOCT))
-  
+  browser()
   ## Off fruit
   off.df <- data.frame(LC99est = as.numeric(xO$lt.mean),
                        Min100mort = as.numeric(xO100$lt.mean),
@@ -48,7 +51,6 @@ collectLCsCM <- function(adjust.cont = TRUE,
   chopAK <- function(x)
     gsub("\\|[AK]\\|","\\|", x)
   
-  
   glean.off <- get(ab.off$datafun)
   glean.with <- get(ab.with$datafun)
   ## data used in those ab lists
@@ -73,39 +75,38 @@ collectLCsCM <- function(adjust.cont = TRUE,
       select(Ndx, Efnom, Efpc, Rep) %>%
         arrange(Ndx, Efnom, Rep) %>%
           group_by(Ndx, Efnom) %>%
-            summarise(EF = mean(Efpc), Efmin = min(Efpc), Efmax = max(Efpc))
+            summarise(EF = round(mean(Efpc), 2), Efmin = min(Efpc), Efmax = max(Efpc))
   zzO <- within(zzO, Efnom <- fact2num(Efnom))
   
   zzW <- zW %>%
     filter(Efnom %in% predict.at, Efpc > 0) %>%
-      mutate(Efnom = factor(Efnom)) %>%
+      mutate(Efnom = factor(Efnom)) %>% # group_by must use character or factor
         select(Ndx, Efnom, Efpc, Rep) %>%
           arrange(Ndx, Efnom, Rep) %>%
             group_by(Ndx, Efnom) %>% # group_by must use character or factor
-              summarise(EF = mean(Efpc), Efmin = min(Efpc), Efmax = max(Efpc))
+              summarise(EF = round(mean(Efpc), 2), Efmin = min(Efpc), Efmax = max(Efpc))
 
   zzW <- within(zzW, Efnom <- fact2num(Efnom)) # needs a number for subsetting
 
-
-  
   prediction.df <- data.frame(StageTreat = rep(with.id, each = 2),
                               TargetEFconc = rep(2:3, length(with.id)),
-                              AchievedEFoff_lo = NA, AchievedEFoff_hi = NA,
-                              PredictedOff_lo = NA, PredictedOff_hi = NA,
-                              AchievedEFwith_lo = NA, AchievedEFwith_hi = NA,
-                              PredictedWith_lo = NA, PredictedWith_hi = NA)
+                              AchievedEFoff_mean = NA, AchievedEFoff_lo = NA, AchievedEFoff_hi = NA,
+                              PredictedOff_mean = NA, PredictedOff_lo = NA, PredictedOff_hi = NA,
+                              AchievedEFwith_mean = NA, AchievedEFwith_lo = NA, AchievedEFwith_hi = NA,
+                              PredictedWith_mean = NA, PredictedWith_lo = NA, PredictedWith_hi = NA)
   for(i in seq(with.id)){
     id.i <- with.id[i]
     dat.with.i <- mort.dat.with[mort.dat.with$id == i,]
+    browser()
     ## slope and intercept info
     slope.i.with <- ab.with$slope[i]
     intercept.i.with <- ab.with$intercept[i]
 
      ## corresponding off data identifier
     lab.with.i <- with.id[i]
-    lab.with.i.match <- gsub("C", "°C", lab.with.i)
+    lab.with.i.match <- gsub("C", "Â°C", lab.with.i)
     lab.off.i <- chopAK(lab.with.i.match) # removes the fruit info
-    lab.off.ii <- gsub("°C", "C", lab.off.i) # for matching in zzO
+    lab.off.ii <- gsub("Â°C", "C", lab.off.i) # for matching in zzO
     id.off.i <- which(legs.off == lab.off.i)
     dat.off.i <- mort.dat.off[mort.dat.off$id == id.off.i,]
     ## corresponding slope and intercept info for off data
@@ -131,22 +132,26 @@ collectLCsCM <- function(adjust.cont = TRUE,
     
     for(j in predict.at){ # always 2 for Off fruit
       conc.ij.off <- achieved.i.off[achieved.i.off$Efnom == j, ] %>%
-        select(Efmin, Efmax)
+        select(EF, Efmin, Efmax)
       conc.ij.with <- achieved.i.with[achieved.i.with$Efnom == j, ] %>%
-        select(Efmin, Efmax)
+        select(EF, Efmin, Efmax)
       try(prediction.df[with(prediction.df, StageTreat == lab.with.i & TargetEFconc == j), 
-                        c("AchievedEFoff_lo", "AchievedEFoff_hi")] <- conc.ij.off, silent = TRUE)
+                        c("AchievedEFoff_mean", "AchievedEFoff_lo", "AchievedEFoff_hi")] <-
+          conc.ij.off, silent = TRUE)
       try(prediction.df[with(prediction.df, StageTreat == lab.with.i & TargetEFconc == j),
-                        c("AchievedEFwith_lo", "AchievedEFwith_hi")] <- conc.ij.with)
+                        c("AchievedEFwith_mean", "AchievedEFwith_lo", "AchievedEFwith_hi")] <-
+          conc.ij.with, silent = TRUE)
       
       ## predictions for those concentrations, off and with
       pred.off.ij <- round(cloglog.bt(intercept.i.off + slope.i.off * conc.ij.off) * 100, 1)
       pred.with.ij <- round(cloglog.bt(intercept.i.with + slope.i.with * conc.ij.with) * 100, 1)
       
       try(prediction.df[with(prediction.df, StageTreat == lab.with.i & TargetEFconc == j),
-                        c("PredictedOff_lo", "PredictedOff_hi")] <- pred.off.ij, silent = TRUE)
+                        c("PredictedOff_mean", "PredictedOff_lo", "PredictedOff_hi")] <-
+          pred.off.ij, silent = TRUE)
       try(prediction.df[with(prediction.df, StageTreat == lab.with.i & TargetEFconc == j),
-                        c("PredictedWith_lo", "PredictedWith_hi")] <- pred.with.ij)      
+                        c("PredictedWith_mean", "PredictedWith_lo", "PredictedWith_hi")] <-
+          pred.with.ij)      
     }    
   }
   prediction.df <- within(prediction.df, StageTreat <- as.character(StageTreat))
@@ -162,10 +167,14 @@ collectLCsCM <- function(adjust.cont = TRUE,
   
   require("WriteXLS")
   out.df <- prediction.df %>%
-    select(Stage, Fruit, Temp, Duration, TargetEFconc, AchievedEFoff_lo, AchievedEFoff_hi,
-           PredictedOff_lo, PredictedOff_hi, AchievedEFwith_lo, AchievedEFwith_hi,
-           PredictedWith_lo, PredictedWith_hi)
-  xlout <- "Predictions_With.OffFruit_EF_Codling.xls"
+    select(Stage, Fruit, Temp, Duration, TargetEFconc,
+           AchievedEFoff_mean, AchievedEFoff_lo, AchievedEFoff_hi,
+           PredictedOff_mean, PredictedOff_lo, PredictedOff_hi,
+           AchievedEFwith_mean, AchievedEFwith_lo, AchievedEFwith_hi,
+           PredictedWith_mean, PredictedWith_lo, PredictedWith_hi)
+  xlout <- "Predictions_With.OffFruit_EF2CM.xls"
+#browser()
+  
 ### Write out predictions, the off/with LC99 estimates, and the confidence limit of each
 ###              group of replicates
   WriteXLS(x = c("out.df", "off.df", "with.df", "xO", "xO100", "xOCT", "xOCT100", "xW", "xW100",
@@ -173,6 +182,6 @@ collectLCsCM <- function(adjust.cont = TRUE,
            c("predictions @ 2 & 3%", "Off fruit", "With fruit", "Off fruit LC99CI", "Off fruit 100% LC99CI",
            "Off fruit CT LC99CI", "Off fruit 100% CT LC99CI", "With fruit LC99CI", "With fruit 100% LC99CI",
            "With fruit CT LC99CI", "With fruit 100% CT LC99CI"),
-           BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 2)
-  out.df  
+            BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 2)
+##  out.df  
 }
