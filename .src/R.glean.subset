@@ -1,6 +1,6 @@
   Listing of: glean.subset
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 01/10/2015 
+Last updated: 20/11/2015 
 **************************************
 
 glean.subset <-
@@ -22,4 +22,4 @@ structure(function(x, k = 1)
   id.tab <- table(xx$id)
   xx.df$legend <- rep(xx$legend, id.tab)
   xx.df[xx.df$id %in% k,]  
-}, comment = "01/10/2015")
+}, comment = "20/11/2015")

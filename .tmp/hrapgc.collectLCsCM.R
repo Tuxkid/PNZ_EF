@@ -160,15 +160,15 @@ collectLCsCM <- function(adjust.cont = FALSE,
   
 ### Write out predictions, the off/with LC99 estimates, and the confidence limit of each
 ###              group of replicates
-##   WriteXLS(x = c("out.df", "off.df", "with.df", "xO", "xO100", "xOCT", "xOCT100", "xW", "xW100",
-##            "xWCT", "xWCT100"), xlout, row.names = TRUE,
-##            c("predictions @ 2 & 3%", "Off fruit", "With fruit", "Off fruit LC99CI", "Off fruit 100% LC99CI",
-##            "Off fruit CT LC99CI", "Off fruit 100% CT LC99CI", "With fruit LC99CI", "With fruit 100% LC99CI",
-##            "With fruit CT LC99CI", "With fruit 100% CT LC99CI"),
-##             BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 2)
-##  out.df
+  WriteXLS(x = c("out.df", "off.df", "with.df", "xO", "xO100", "xOCT", "xOCT100", "xW", "xW100",
+           "xWCT", "xWCT100"), xlout, row.names = TRUE,
+           c("predictions @ 2 & 3%", "Off fruit", "With fruit", "Off fruit LC99CI", "Off fruit 100% LC99CI",
+           "Off fruit CT LC99CI", "Off fruit 100% CT LC99CI", "With fruit LC99CI", "With fruit 100% LC99CI",
+           "With fruit CT LC99CI", "With fruit 100% CT LC99CI"),
+            BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 2)
+ out.df
 
-  WriteXLS(x = c("out.df"), xlout, row.names = FALSE, c("predictions @ 2 & 3%"), BoldHeaderRow = TRUE)
+##   WriteXLS(x = c("out.df"), xlout, row.names = FALSE, c("predictions @ 2 & 3%"), BoldHeaderRow = TRUE)
 
   
 }

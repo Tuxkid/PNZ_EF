@@ -25,11 +25,12 @@ gleanOffFruitSept <-
   is.scale <- grep("OS", levels(xx$SLS), ignore.case = TRUE,value = TRUE)
   xx <- within(xx, IsScale <- SLS%in%is.scale)
   xx <- xx[!is.na(xx$Total), ] # won't total unless
+##  browser()
 
   ## Define what is dead
   xx <- within(xx, dead <- Dead)
   xx <- within(xx, dead[IsEgg] <- Unhatched[IsEgg])
-  xx <- within(xx, Dead[IsScale] <- Dead[IsScale] + Moribund[IsScale])
+  xx <- within(xx, dead[IsScale] <- Dead[IsScale] + Moribund[IsScale])
   
   ## Use higher of handling and CO2 controls
   require(dplyr)
@@ -48,8 +49,24 @@ gleanOffFruitSept <-
     }
     biff
   }
-  cont.df$Smaller <- unlist(with(cont.df, tapply(Mort, Ndx, smallest)))
-  ignore.rows <- with(cont.df, Row[Smaller])
+  smallest2 <- function(x){
+    biff <- logical(length(x)) # sometimes only 1 which will be also a min
+    if(length(x) > 1){
+      xmax <- max(x, na.rm = TRUE)
+      wx <- which(x != xmax)
+      biff[wx] <- TRUE
+    }
+    biff
+  }
+##  cont.df$Smaller <- (with(cont.df, tapply(Mort, Ndx, smallest, simplify = FALSE))) # incorrect
+##
+  cont.df$Smaller2 <- logical(nrow(cont.df))
+  for(i in unique(cont.df$Ndx)){
+    cont.i <- cont.df[cont.df$Ndx == i,]
+    small.i <- smallest2(cont.i$Mort)
+    cont.df$Smaller2[cont.df$Ndx == i] <- small.i
+  }
+  ignore.rows <- with(cont.df, Row[Smaller2])
   xx <- xx[!xx$Row %in% ignore.rows, ] %>%
     arrange(SLS, Temperature, Duration, Rep, Efpc, HC) %>%
       select(SLS, Temperature, Duration, Rep, Efpc, dead, Total)

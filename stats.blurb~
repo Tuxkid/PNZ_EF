@@ -1,0 +1,44 @@
+Mortality data were analysed and presented in figures based on actual
+EF concentrations rather than target concentrations. The effect of EF
+on the mortality of target pests was analysed using a robust version
+of the Generalized Linear Model (GLM) capabilities (Hastie et al 1992)
+in R version 3.2.2 (R Core Development Team 2015). Variance was
+assumed proportional to that for a binomial distribution. The analysis
+assumed that the form of dependence of mortality on concentration was
+that given by a complementary-log-log model, with concentration as the
+explanatory variable.
+
+The assumed form of response was log(-log(1 - p)) = a + bc,
+where p = expected mortality, and c = concentration of EF. 
+
+From the derived coefficients, the LC99 (calculated lethal
+concentration) or the concentration required to produce a mortality of
+99%, was calculated with adjustment for sources of mortality other
+than EF. Two possible sources of extraneous mortality were considered:
+handling and treatment with CO2. The mortality attributed to those
+sources was compared using a simpler binomial GLM which found one to
+be significantly higher than the other on occasions and the opposite
+to be the case on other occasions.  To be on the conservative side,
+whichever was greater was used as the control mortality, cm, in the
+calculation of the LC99 values, cm + (1 - cm) x 0.99. The geometric
+means of the varying number of replicates for each pest, life stage,
+fruit (if with fruit) and temperature combination were calculated
+along with a 95% confidence interval.
+
+LCT99 is simply the LC99 multiplied by the number of hours of exposure
+to ethyl formate.
+
+
+
+
+
+     Hastie, T. J. and Pregibon, D. (1992) _Generalized linear models._
+     Chapter 6 of _Statistical Models in S_ eds J. M. Chambers and T.
+     J. Hastie, Wadsworth & Brooks/Cole.
+
+
+
+     R Core Team (2015). R: A language and environment for statistical
+     computing. R Foundation for Statistical Computing, Vienna, Austria.
+     ISBN 3-900051-07-0, URL http://www.R-project.org/.
+

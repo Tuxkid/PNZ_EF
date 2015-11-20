@@ -36,18 +36,33 @@ gleanOffFruitSept_CTJ <- function(choice = 1)
   xx <- within(xx, Mort <- dead/Total)
   xx <- within(xx, Row <- seq(nrow(xx)))
   cont.df <- xx[xx$Efpc == 0,]
-  smallest <- function(x){
-    biff <- logical(length(x)) # sometimes only 1 which will be also a min
+##   smallest <- function(x){
+##     biff <- logical(length(x)) # sometimes only 1 which will be also a min
+##     if(length(x) > 1){
+##       xmin <- min(x, na.rm = TRUE)
+##       wx <- which(x == xmin)
+##       wx <- wx[1] # necessary for ties: want only one
+##       biff[wx] <- TRUE
+##     }
+##     biff
+##   }
+##   cont.df$Smaller <- unlist(with(cont.df, tapply(Mort, Ndx, smallest)))
+  smallest2 <- function(x){
+    biff <- logical(length(x)) # sometimes only 1 which will be also a max
     if(length(x) > 1){
-      xmin <- min(x, na.rm = TRUE)
-      wx <- which(x == xmin)
-      wx <- wx[1] # necessary for ties: want only one
+      xmax <- max(x, na.rm = TRUE)
+      wx <- which(x != xmax)
       biff[wx] <- TRUE
     }
     biff
   }
-  cont.df$Smaller <- unlist(with(cont.df, tapply(Mort, Ndx, smallest)))
-  ignore.rows <- with(cont.df, Row[Smaller])
+  cont.df$Smaller2 <- logical(nrow(cont.df))
+  for(i in unique(cont.df$Ndx)){
+    cont.i <- cont.df[cont.df$Ndx == i,]
+    small.i <- smallest2(cont.i$Mort)
+    cont.df$Smaller2[cont.df$Ndx == i] <- small.i
+  }    
+  ignore.rows <- with(cont.df, Row[Smaller2])
   xx <- xx[!xx$Row %in% ignore.rows, ] %>%
     arrange(SLS, Temperature, Duration, Rep, Efpc, HC) %>%
       select(SLS, Temperature, Duration, Rep, Efpc, dead, Total)

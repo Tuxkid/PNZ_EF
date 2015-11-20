@@ -1,26 +1,26 @@
-gleanWithFruitSeptAll_CTJ <- function(choice = 1)
+gleanWithFruitSeptAll_CT <- function(choice = 1)
 {
-### Purpose:- Joined reps
+### Purpose:- CT instead of concentration
 ### ----------------------------------------------------------------------
-### Modified from:- gleanWithFruitSeptAll_CT
+### Modified from:- gleanWithFruitSeptAll
 ### ----------------------------------------------------------------------
 ### Arguments:- 
 ### ----------------------------------------------------------------------
-### Author:-   Patrick Connolly, Date:-  2 Oct 2015, 13:25
+### Author:-   Patrick Connolly, Date:-  1 Oct 2015, 14:21
 ### ----------------------------------------------------------------------
 ### Revisions:- 
 
   require(dplyr)
   xx <- septwithFIXall.df
-    xx$Ndx <- substring(as.character(xx$Ndx), 12, 40)
   
   ## which control mortality is greater?
   
+  xx <- within(xx, Mort <- dead/Total)
+  xx <- within(xx, Row <- seq(nrow(xx)))
   cont.df <- xx[xx$Efpc == 0,]
-  treat.df <- xx[xx$Efpc > 0,]
   smallest <- function(x){
     biff <- logical(length(x)) # sometimes only 1 which will be also a min
-    if(length(x) > 1){ # x is vector no more than 2 long
+    if(length(x) > 1){
       xmin <- min(x, na.rm = TRUE)
       wx <- which(x == xmin)
       wx <- wx[1] # necessary for ties: want only one
@@ -28,29 +28,11 @@ gleanWithFruitSeptAll_CTJ <- function(choice = 1)
     }
     biff
   }
-  cont.sum.df <- cont.df %>%
-    select(Ndx, HC, dead, Total) %>%
-      group_by(Ndx, HC) %>%
-        summarise_each(funs(sum), dead, Total) %>%
-          mutate(Mort = dead/Total)
-
-  cont.sum.df$Smaller <- unlist(with(cont.sum.df, tapply(Mort, Ndx, smallest)))
-  cont.sum.df$Efpc <- 0
-  use.cont.df <- cont.sum.df[with(cont.sum.df, !Smaller),] %>%
-    select(Ndx, Efpc, dead, Total)
-  use.treat.df <- treat.df %>%
-    select(Ndx, Efpc, dead, Total)
-
-  use.df <- rbind(as.data.frame(use.cont.df), as.data.frame(use.treat.df)) %>%
-    arrange(Ndx)
-
-  use.df <- within(use.df, SLS <- getbit(Ndx, "\\|", 1))
-  use.df <- within(use.df, Fruit <- getbit(Ndx, "\\|", 2))
-  use.df <- within(use.df, Temperature <- getbit(Ndx, "\\|", 3))
-  use.df <- within(use.df, Duration <- as.numeric(getbit(Ndx, "\\|", 4)))
-  xx <- within(use.df, Rep <- getbit(Ndx, "\\|", 5))
-  xx <- xx %>% arrange(SLS, Fruit, Temperature, Duration, Efpc)
-
+  cont.df$Smaller <- unlist(with(cont.df, tapply(Mort, Ndx, smallest)))
+  ignore.rows <- with(cont.df, Row[Smaller])
+  xx <- xx[!xx$Row %in% ignore.rows, ] %>%
+    arrange(SLS, Fruit, Temperature, Duration, Rep, Efpc, HC) %>%
+      select(SLS, Fruit, Temperature, Duration, Rep, Efpc, dead, Total)
 
 ### Then a normal glean-type function
   cutx <- NULL
@@ -58,7 +40,7 @@ gleanWithFruitSeptAll_CTJ <- function(choice = 1)
   xx <- within(xx, Temp <- paste0(Temperature, "°C"))
   xx <- within(xx, Hours <- paste0(Duration, "h"))
   leg.brief <- with(xx, unique(paste(SLS, casefold(substring(Fruit, 1, 1), upper = TRUE),
-                                     Temp, Hours, sep= "|")))
+                                     Temp, Hours, Rep, sep= "|")))
   maint <- "Mortality of PNZ pests with fruit in ethyl formate after various durations (CT)"
   xlabels <- c(0, 0)
   xaxtitle <- "CT (%-h)"

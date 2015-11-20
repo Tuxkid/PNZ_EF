@@ -1,15 +1,16 @@
-gleanOffFruitSept_CT <- function(choice = 1)
+gleanOffFruitSept <-
+  function(choice = 1)
 {
-### Purpose:- CT product for all species except CM
+### Purpose:- September lot
 ### ----------------------------------------------------------------------
-### Modified from:- gleanOffFruitSept
+### Modified from:- gleanOffFruitJuly
 ### ----------------------------------------------------------------------
 ### Arguments:- 
 ### ----------------------------------------------------------------------
-### Author:-   Patrick Connolly, Date:-  2 Oct 2015, 09:09
+### Author:-   Patrick Connolly, Date:-  3 Sep 2015, 15:51
 ### ----------------------------------------------------------------------
-### Revisions:- 
-
+### Revisions:- as.character(Efnom) fixed 09/09/2015
+###             23/09/2015 added selecting max of Handling and CO2 controls
 
   xx <- sept15Off.df
   xx <- within(xx, EfNom <- as.numeric(as.character(Efnom))) # fixed 9/9/15
@@ -24,11 +25,12 @@ gleanOffFruitSept_CT <- function(choice = 1)
   is.scale <- grep("OS", levels(xx$SLS), ignore.case = TRUE,value = TRUE)
   xx <- within(xx, IsScale <- SLS%in%is.scale)
   xx <- xx[!is.na(xx$Total), ] # won't total unless
+##  browser()
 
   ## Define what is dead
   xx <- within(xx, dead <- Dead)
   xx <- within(xx, dead[IsEgg] <- Unhatched[IsEgg])
-  xx <- within(xx, Dead[IsScale] <- Dead[IsScale] + Moribund[IsScale])
+  xx <- within(xx, dead[IsScale] <- Dead[IsScale] + Moribund[IsScale])
   
   ## Use higher of handling and CO2 controls
   require(dplyr)
@@ -46,7 +48,7 @@ gleanOffFruitSept_CT <- function(choice = 1)
       biff[wx] <- TRUE
     }
     biff
-  } # doesn't work: replace without tapply
+  }
   smallest2 <- function(x){
     biff <- logical(length(x)) # sometimes only 1 which will be also a min
     if(length(x) > 1){
@@ -64,7 +66,7 @@ gleanOffFruitSept_CT <- function(choice = 1)
     small.i <- smallest2(cont.i$Mort)
     cont.df$Smaller2[cont.df$Ndx == i] <- small.i
   }
-
+  
   ignore.rows <- with(cont.df, Row[Smaller2])
   xx <- xx[!xx$Row %in% ignore.rows, ] %>%
     arrange(SLS, Temperature, Duration, Rep, Efpc, HC) %>%
@@ -77,15 +79,16 @@ gleanOffFruitSept_CT <- function(choice = 1)
   idset <- with(use.df, make.id(Efpc))
   cutx <- NULL
   
-  use.df <- within(use.df, Temp <- paste0(Temperature, "Â°C"))
+  use.df <- within(use.df, Temp <- paste0(Temperature, "°C"))
   use.df <- within(use.df, Hours <- paste0(Duration, "h"))
+  ##  use.df <- within(use.df, DAT <- paste0(Assessed, "d"))
   leg.brief <- with(use.df, unique(paste(SLS, Temp,
                                          Hours, Rep, sep= "|")))
-  maint <- "Mortality of PNZ pests off fruit in ethyl formate after various durations (CT)"
+  maint <- "Mortality of PNZ pests off fruit in ethyl formate after various durations"
   xlabels <- c(0, 0)
-  xaxtitle <- "CT (%-h)"
+  xaxtitle <- "Dose (%)"
   with(use.df,
-       list(id = idset, times = Efpc * Duration, total = Total, dead = dead, 
+       list(id = idset, times = Efpc, total = Total, dead = dead, 
             cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
             legend = leg.brief, xlabels = xlabels, takelog = FALSE))
 }

@@ -1,0 +1,74 @@
+Mortality data were analysed and presented in figures based on actual
+EF concentrations rather than target concentrations. The effect of EF
+on the mortality of target pests was analysed using a robust version
+of the Generalized Linear Model (GLM) capabilities (Hastie et al 1992)
+in R version 3.2.2 (R Core Development Team 2015). Variance was
+assumed proportional to that for a binomial distribution. The analysis
+assumed that the form of dependence of mortality on concentration was
+that given by a complementary-log-log model, with concentration as the
+explanatory variable.
+
+The assumed form of response was log(-log(1 - p)) = a + bc,
+where p = expected mortality, and c = concentration of EF. 
+
+From the derived coefficients, a and b, the LC99 (calculated lethal
+concentration) or the concentration of EF required to produce a
+mortality of 99%, adjustment being made for the control mortality, cm.
+LC99 is defined as the concentration necessary to achieve a mortality of
+
+cm + (1 - cm) x 0.99.
+
+To determine cm, two possible sources of extraneous mortality were
+considered: handling and treatment with CO2. The mortality attributed
+to those sources was compared using a simpler binomial GLM which found
+one to be significantly higher than the other for some assays and the
+opposite to be the case for others.  To be confident sufficient allowance
+was made, cm was taken to be whichever was greater.  The geometric
+means of the varying number of replicates for each pest, life stage,
+fruit (if with fruit) and temperature combination were calculated
+along with a 95% confidence interval.
+
+LCT99 is simply the LC99 multiplied by the number of hours of exposure
+to ethyl formate.  In some cases, no LC99 was ascertainable but 100%
+mortality was achieved for some concentrations.  Such data points give
+a less valuable indication of the tolerance to that treatment.  A 100%
+mortality point was considered to be of value only if no higher
+concentrations produced less than 100% in that assay.  In a number of
+assays, neither an LC99 or a 100% mortality point could be calculated.
+
+LC99s and LCT99s were calculated for insects in the absence of fruit
+and, for some of them, in the presence of fruit.  The effect of the
+presence of fruit on the required concentration is indicated by the
+difference between the two.  For each target concentration (2% or 3%),
+equations for the lines described by models pertaining to the
+off-fruit data were used to predict the mortality that would
+correspond to the range of achieved concentrations for the various
+replicates.  Similar models were calculated for the with fruit data.
+Predictions were tabulated and compared with the mortalities achieved.
+Because of the large range of control mortalities, no consistent
+method of calculating the 'true' mortality was appropriate.  The
+standard Abbott's correction is not valid for control mortalities
+beyond 20% and could not be applied to data that had control
+mortalities over 75% in some instances.  Since the aim was to develop
+a treatment that could be used commercially, what is important is the
+combined effect of the carbon dioxide and the ethyl formate,
+adjustment for control mortality was not appropriate.
+
+For the semi-commercial treatments, only one concentration was used.
+The mean mortalities and confidence interval were calculated on the
+complementary log log scale and back-transformed to the percentage
+scale.
+
+
+
+
+     Hastie, T. J. and Pregibon, D. (1992) _Generalized linear models._
+     Chapter 6 of _Statistical Models in S_ eds J. M. Chambers and T.
+     J. Hastie, Wadsworth & Brooks/Cole.
+
+
+
+     R Core Team (2015). R: A language and environment for statistical
+     computing. R Foundation for Statistical Computing, Vienna, Austria.
+     ISBN 3-900051-07-0, URL http://www.R-project.org/.
+

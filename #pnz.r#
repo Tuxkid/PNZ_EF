@@ -739,9 +739,9 @@ ab.sept15OffAll[["concJ"]] <- allfit(data = gleanOffFruitSept_J)
 ab.sept15OffAll[["CTJ"]] <- allfit(data = gleanOffFruitSept_CTJ) 
 
 pdf(file = "EFsept15OffMortality.pdf", width = 255/25.4, height = 195/25.4)
-flyplot(1:173, data = ab.sept15OffAll, choice = "conc", pc = c(line = 99), lt.ld = "LC",
+flyplot(1:183, data = ab.sept15OffAll, choice = "conc", pc = c(line = 99), lt.ld = "LC",
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
-flyplot(1:173, data = ab.sept15OffAll, choice = "CT", pc = c(line = 99), lt.ld = "LCT",
+flyplot(1:183, data = ab.sept15OffAll, choice = "CT", pc = c(line = 99), lt.ld = "LCT",
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
 flyplot(1:73, data = ab.sept15OffAll, choice = "concJ", pc = c(line = 99), lt.ld = "LC",
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)

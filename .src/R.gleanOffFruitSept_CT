@@ -1,6 +1,6 @@
   Listing of: gleanOffFruitSept_CT
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 02/10/2015 
+Last updated: 20/11/2015 
 **************************************
 
 gleanOffFruitSept_CT <-
@@ -52,9 +52,26 @@ structure(function(choice = 1)
       biff[wx] <- TRUE
     }
     biff
+  } # doesn't work: replace without tapply
+  smallest2 <- function(x){
+    biff <- logical(length(x)) # sometimes only 1 which will be also a min
+    if(length(x) > 1){
+      xmax <- max(x, na.rm = TRUE)
+      wx <- which(x != xmax)
+      biff[wx] <- TRUE
+    }
+    biff
   }
-  cont.df$Smaller <- unlist(with(cont.df, tapply(Mort, Ndx, smallest)))
-  ignore.rows <- with(cont.df, Row[Smaller])
+##  cont.df$Smaller <- (with(cont.df, tapply(Mort, Ndx, smallest, simplify = FALSE))) # incorrect
+##
+  cont.df$Smaller2 <- logical(nrow(cont.df))
+  for(i in unique(cont.df$Ndx)){
+    cont.i <- cont.df[cont.df$Ndx == i,]
+    small.i <- smallest2(cont.i$Mort)
+    cont.df$Smaller2[cont.df$Ndx == i] <- small.i
+  }
+
+  ignore.rows <- with(cont.df, Row[Smaller2])
   xx <- xx[!xx$Row %in% ignore.rows, ] %>%
     arrange(SLS, Temperature, Duration, Rep, Efpc, HC) %>%
       select(SLS, Temperature, Duration, Rep, Efpc, dead, Total)
@@ -77,4 +94,4 @@ structure(function(choice = 1)
        list(id = idset, times = Efpc * Duration, total = Total, dead = dead, 
             cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
             legend = leg.brief, xlabels = xlabels, takelog = FALSE))
-}, comment = "02/10/2015")
+}, comment = "20/11/2015")
