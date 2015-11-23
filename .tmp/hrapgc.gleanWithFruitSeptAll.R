@@ -13,7 +13,7 @@ gleanWithFruitSeptAll <- function(choice = 1)
   require(dplyr)
   xx <- septwithFIXall.df
   xx$Ndx <- substring(as.character(xx$Ndx), 12, 40)
-  
+  xx <- within(xx, Ndx <- factor(Ndx)) # otherwise screws up group_by()
   ## which control mortality is greater?
   
   cont.df <- xx[xx$Efpc == 0,]
@@ -35,9 +35,9 @@ gleanWithFruitSeptAll <- function(choice = 1)
       group_by(Ndx, HC) %>%
         summarise_each(funs(sum), dead, Total) %>%
           mutate(Mort = dead/Total)
-
+   
   cont.sum.df$Smaller <- unlist(with(cont.sum.df, tapply(Mort, Ndx, smallest)))
-  browser()
+
   cont.sum.df$Efpc <- 0
   use.cont.df <- cont.sum.df[with(cont.sum.df, !Smaller),] %>%
     select(Ndx, Efpc, dead, Total)
@@ -46,7 +46,7 @@ gleanWithFruitSeptAll <- function(choice = 1)
 
   use.df <- rbind(as.data.frame(use.cont.df), as.data.frame(use.treat.df)) %>%
     arrange(Ndx)
-
+  use.df <- within(use.df, Ndx <- as.character(Ndx)) # no longer want a factor
   use.df <- within(use.df, SLS <- getbit(Ndx, "\\|", 1))
   use.df <- within(use.df, Fruit <- getbit(Ndx, "\\|", 2))
   use.df <- within(use.df, Temperature <- getbit(Ndx, "\\|", 3))

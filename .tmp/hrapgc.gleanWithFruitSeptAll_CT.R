@@ -13,6 +13,7 @@ gleanWithFruitSeptAll_CT <- function(choice = 1)
   require(dplyr)
   xx <- septwithFIXall.df
   xx$Ndx <- substring(as.character(xx$Ndx), 12, 40)
+  xx <- within(xx, Ndx <- factor(Ndx)) # otherwise screws up group_by()
   
   ## which control mortality is greater?
   
@@ -43,6 +44,7 @@ gleanWithFruitSeptAll_CT <- function(choice = 1)
 
   use.df <- rbind(as.data.frame(use.cont.df), as.data.frame(use.treat.df)) %>%
     arrange(Ndx)
+  use.df <- within(use.df, Ndx <- as.character(Ndx)) # no longer want a factor
 
   use.df <- within(use.df, SLS <- getbit(Ndx, "\\|", 1))
   use.df <- within(use.df, Fruit <- getbit(Ndx, "\\|", 2))

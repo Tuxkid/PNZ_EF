@@ -1,0 +1,132 @@
+$`BHLREgg|Kiwifruit|5|2|1`
+[1]  TRUE FALSE
+
+$`BHLREgg|Kiwifruit|5|2|2`
+[1]  TRUE FALSE
+
+$`BHLREgg|Kiwifruit|5|2|3`
+[1]  TRUE FALSE
+
+$`BHLREgg|Kiwifruit|5|3|1`
+[1]  TRUE FALSE
+
+$`BHLREgg|Kiwifruit|5|3|2`
+[1]  TRUE FALSE
+
+$`BHLREgg|Kiwifruit|5|3|3`
+[1]  TRUE FALSE
+
+$`dTSM|kiwifruit|5|2|1`
+[1] FALSE  TRUE
+
+$`dTSM|kiwifruit|5|2|2`
+[1] FALSE  TRUE
+
+$`dTSM|kiwifruit|5|2|3`
+[1] FALSE  TRUE
+
+$`dTSM|kiwifruit|5|3|1`
+[1]  TRUE FALSE
+
+$`dTSM|kiwifruit|5|3|2`
+[1] FALSE  TRUE
+
+$`dTSM|kiwifruit|5|3|3`
+[1] FALSE  TRUE
+
+$`LBAM 5|Apples|15|2|1`
+[1] FALSE  TRUE
+
+$`LBAM 5|Apples|15|2|2`
+[1] FALSE  TRUE
+
+$`LBAM 5|Apples|15|2|3`
+[1]  TRUE FALSE
+
+$`LBAM 5|Apples|15|3|1`
+[1] FALSE  TRUE
+
+$`LBAM 5|Apples|15|3|2`
+[1]  TRUE FALSE
+
+$`LBAM 5|Apples|15|3|3`
+[1]  TRUE FALSE
+
+$`LBAM 5|Kiwifruit|15|2|1`
+[1]  TRUE FALSE
+
+$`LBAM 5|Kiwifruit|15|2|2`
+[1]  TRUE FALSE
+
+$`LBAM 5|Kiwifruit|15|3|1`
+[1]  TRUE FALSE
+
+$`LBAM 5|Kiwifruit|15|3|2`
+[1] FALSE  TRUE
+
+$`LBAM 5|Kiwifruit|15|3|3`
+[1]  TRUE FALSE
+
+$`LBAM egg|Apples|15|2|1`
+[1] FALSE  TRUE
+
+$`LBAM egg|Apples|15|2|2`
+[1]  TRUE FALSE
+
+$`LBAM egg|Apples|15|2|3`
+[1] FALSE  TRUE
+
+$`LBAM egg|Apples|15|3|1`
+[1] FALSE  TRUE
+
+$`LBAM egg|Apples|15|3|2`
+[1] FALSE  TRUE
+
+$`LBAM egg|Apples|15|3|3`
+[1] FALSE  TRUE
+
+$`LBAM egg|Kiwifruit|15|2|1`
+[1]  TRUE FALSE
+
+$`LBAM egg|Kiwifruit|15|2|2`
+[1]  TRUE FALSE
+
+$`LBAM egg|Kiwifruit|15|3|1`
+[1] FALSE  TRUE
+
+$`LBAM egg|Kiwifruit|15|3|2`
+[1] FALSE  TRUE
+
+$`LBAM egg|Kiwifruit|15|3|3`
+[1] FALSE  TRUE
+
+$`LBAM egg|Kiwifruit|5|2|1`
+[1] FALSE
+
+$`LBAM egg|Kiwifruit|5|2|2`
+[1] FALSE
+
+$`LBAM egg|Kiwifruit|5|2|3`
+[1] FALSE
+
+$`WFT|Apples|15|2|1`
+[1]  TRUE FALSE
+
+$`WFT|Apples|15|2|2`
+[1] FALSE  TRUE
+
+$`WFT|Apples|15|2|3`
+[1]  TRUE FALSE
+
+$`WFT|Apples|15|3|1`
+[1] FALSE  TRUE
+
+$`WFT|Apples|15|3|2`
+[1] FALSE  TRUE
+
+$`WFT|Apples|15|3|3`
+[1]  TRUE FALSE
+
+
+
+

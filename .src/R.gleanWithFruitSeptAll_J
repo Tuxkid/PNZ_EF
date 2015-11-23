@@ -1,6 +1,6 @@
   Listing of: gleanWithFruitSeptAll_J
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 20/11/2015 
+Last updated: 23/11/2015 
 **************************************
 
 gleanWithFruitSeptAll_J <-
@@ -20,7 +20,8 @@ structure(function(choice = 1)
   xx <- septwithFIXall.df
     xx <- septwithFIXall.df
   xx$Ndx <- substring(as.character(xx$Ndx), 12, 40)
-  
+    xx <- within(xx, Ndx <- factor(Ndx)) # otherwise screws up group_by()
+
   ## which control mortality is greater?
   
   cont.df <- xx[xx$Efpc == 0,]
@@ -50,6 +51,7 @@ structure(function(choice = 1)
 
   use.df <- rbind(as.data.frame(use.cont.df), as.data.frame(use.treat.df)) %>%
     arrange(Ndx)
+  use.df <- within(use.df, Ndx <- as.character(Ndx)) # no longer want a factor
 
   use.df <- within(use.df, SLS <- getbit(Ndx, "\\|", 1))
   use.df <- within(use.df, Fruit <- getbit(Ndx, "\\|", 2))
@@ -72,4 +74,4 @@ structure(function(choice = 1)
        list(id = idset, times = Efpc, total = Total, dead = dead, 
             cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
             legend = leg.brief, xlabels = xlabels, takelog = FALSE))
-}, comment = "20/11/2015")
+}, comment = "23/11/2015")

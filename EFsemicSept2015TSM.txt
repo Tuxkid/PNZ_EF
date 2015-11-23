@@ -1,0 +1,328 @@
+Date	Pest	Species	Lifestage	SLS	Fruit	BBB	Assessed	Temperature	Efnom	Efpc	CO2	Duration	Sample	Unhatched	Live_Hatched	Dead	Moribund	Total
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control single shot	0	0	2	1		8	1	0	9
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control single shot	0	0	2	1		102	3	0	105
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control single shot	0	0	2	1		102	0	0	102
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control single shot	0	0	2	1		59	0	0	59
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control single shot	0	0	2	2		27	0	0	27
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control single shot	0	0	2	2		101	0	0	101
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control single shot	0	0	2	2		102	0	0	102
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control single shot	0	0	2	2		71	0	0	71
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control single shot	0	0	2	3		87	2	0	89
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control single shot	0	0	2	3		105	0	0	105
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control single shot	0	0	2	3		99	5	0	104
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control single shot	0	0	2	3		80	0	0	80
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	1		0	108	0	108
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	1		0	101	0	101
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	1		0	88	0	88
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	1		0	58	0	58
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	2		0	32	0	32
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	2		1	162	0	163
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	2		0	104	0	104
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	2		0	55	0	55
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	3		0	40	0	40
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	3		0	73	0	73
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	3		0	3	0	3
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	4		0	114	0	114
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	4		0	112	0	112
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	4		0	56	0	56
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	4		0	39	0	39
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	5		0	106	0	106
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	5		0	106	0	106
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	5		0	125	0	125
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	5		0	80	0	80
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	6		0	82	0	82
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	6		0	120	0	120
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	6		0	112	0	112
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	6		0	45	0	45
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	7		0	69	0	69
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	7		0	52	0	52
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	7		0	76	0	76
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	7		0	37	0	37
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	8		0	27	0	27
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	8		0	122	0	122
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	8		0	55	0	55
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	8		0	30	0	30
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	9		0	10	0	10
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	9		0	98	0	98
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	9		0	38	0	38
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.31	14.8	2	9		0	7	0	7
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	1		1	0	0	1
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	1		96	17	0	113
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	1		90	14	0	104
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	1		85	15	0	100
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	2		143	0	0	143
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	2		99	1	0	100
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	2		74	3	0	77
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	2		34	4	0	38
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	3		82	2	0	84
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	3		108	10	0	118
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	3		72	2	0	74
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	3		21	0	0	21
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	1		0	101	0	101
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	1		0	111	0	111
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	1		0	78	0	78
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	1		0	49	0	49
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	2		0	115	0	115
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	2		0	128	0	128
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	2		0	90	0	90
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	2		0	84	0	84
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	3		0	113	0	113
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	3		0	117	0	117
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	3		0	59	0	59
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	3		0	33	0	33
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	4		0	29	0	29
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	4		0	102	0	102
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	4		0	116	0	116
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	4		0	48	0	48
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	5		0	82	0	82
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	5		0	103	0	103
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	5		0	179	0	179
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	5		0	76	0	76
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	6		0	126	0	126
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	6		0	144	0	144
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	6		0	82	0	82
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	6		0	51	0	51
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	7		0	14	0	14
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	7		0	83	0	83
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	7		0	117	0	117
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	7		0	27	0	27
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	8		0	13	0	13
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	8		0	103	0	103
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	8		0	73	0	73
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	8		0	46	0	46
+6/05/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	9		0	53	0	53
+6/05/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	9		0	108	0	108
+6/05/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	9		0	102	0	102
+6/05/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.79	22.8	2	9		0	56	0	56
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control single shot	0	0	2	1		51	0	0	51
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control single shot	0	0	2	1		36	0	0	36
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control single shot	0	0	2	1		39	17	0	56
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control single shot	0	0	2	1		51	57	0	108
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control single shot	0	0	2	2		46	0	0	46
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control single shot	0	0	2	2		53	5	0	58
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control single shot	0	0	2	2		67	7	0	74
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control single shot	0	0	2	2		109	11	0	120
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control single shot	0	0	2	3		63	0	0	63
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control single shot	0	0	2	3		102	0	0	102
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control single shot	0	0	2	3		15	0	0	15
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control single shot	0	0	2	3		13	21	0	34
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	1		0	102	0	102
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	1		0	123	0	123
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	1		0	55	0	55
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	1		0	73	0	73
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	2		0	40	0	40
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	2		0	168	0	168
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	2		0	7	0	7
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	2		0	37	0	37
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	3		0	37	0	37
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	3		0	110	0	110
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	3		0	4	0	4
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	3		0	137	0	137
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	4		0	113	0	113
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	4		0	79	0	79
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	4		0	10	0	10
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	4		0	122	0	122
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	5		0	26	0	26
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	5		0	104	0	104
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	5		0	35	0	35
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% single shot	1.15	16.1	2	5		0	144	0	144
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	1		104	26	0	130
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	1		68	17	0	85
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	1		59	65	0	124
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	1		24	0	0	24
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	2		100	0	0	100
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	2		132	0	0	132
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	2		25	52	0	77
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	2		61	0	0	61
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	3		151	0	0	151
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	3		114	0	0	114
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	3		44	67	0	111
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	Control TU 75%	0	0	2	3		49	6	0	55
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	1		0	23	0	23
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	1		0	102	0	102
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	1		0	46	0	46
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	1		0	111	0	111
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	2		0	117	0	117
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	2		0	103	0	103
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	2		0	28	0	28
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	2		0	130	0	130
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	3		0	42	0	42
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	3		0	101	0	101
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	3		0	35	0	35
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	3		0	101	0	101
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	4		0	98	0	98
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	4		0	22	0	22
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	4		0	2	0	2
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	4		0	127	0	127
+8/07/2015	Summer TSM	Two spotted mite	Larvae	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	5		0	46	0	46
+8/07/2015	Summer TSM	Two spotted mite	Nymphs	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	5		0	98	0	98
+8/07/2015	Summer TSM	Two spotted mite	Adult male	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	5		0	43	0	43
+8/07/2015	Summer TSM	Two spotted mite	Adult female	TSM	Apples	bins	1	5	2% TU 75%	1.73	20.1	2	5		0	106	0	106
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control 3% single shot	0	0	2	1		429	22	0	451
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	3% single shot	1.66	15.8	2	1		376	90	2	468
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control 3% single shot	0	0	2	2		373	34	0	407
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	3% single shot	1.66	15.8	2	3		454	136	2	592
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	Control 3% single shot	0	0	2	3		521	8	0	529
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	3% single shot	1.66	15.8	2	2		422	72	0	494
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	3% single shot	1.66	15.8	2	4		509	93	1	603
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	3% single shot	1.66	15.8	2	7		774	79	0	853
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	3% single shot	1.66	15.8	2	5		234	54	0	288
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	3% single shot	1.66	15.8	2	6		369	69	0	438
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	3% single shot	1.66	15.8	2	8		336	346	2	684
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	3% single shot	1.66	15.8	2	9		351	132	2	485
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	Control continuous	0	0	3	1		472	20	0	492
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	Control continuous	0	0	3	2		727	12	0	739
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	Control continuous	0	0	3	3		486	32	0	518
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	2% continuous	1.92	21.4	3	3		27	150	119	296
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	2% continuous	1.92	21.4	3	1		13	954	29	996
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	2% continuous	1.92	21.4	3	2		27	506	66	599
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	2% continuous	1.92	21.4	3	5		91	275	20	386
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	2% continuous	1.92	21.4	3	4		83	192	28	303
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	2% continuous	1.92	21.4	3	6		407	668	28	1103
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	2% continuous	1.92	21.4	3	7		126	134	0	260
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	2% continuous	1.92	21.4	3	8		15	405	108	528
+13/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	1	5	2% continuous	1.92	21.4	3	9		44	609	79	732
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control single shot	0	0	3	1		545	33	0	578
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control single shot	0	0	3	2		230	31	0	261
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control single shot	0	0	3	3		273	18	0	291
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.14	13.6	3	1		369	44	2	415
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.14	13.6	3	2		304	16	0	320
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.14	13.6	3	3		268	12	0	280
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.14	13.6	3	4		444	50	0	494
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.14	13.6	3	5		522	68	0	590
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.14	13.6	3	7		441	76	1	518
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.14	13.6	3	6		431	43	0	474
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.14	13.6	3	8		391	63	2	456
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.14	13.6	3	9		248	49	0	297
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 50%	0	0	3	1		353	15	0	368
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	15.4	3	1		535	51	2	588
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 50%	0	0	3	2		234	8	0	242
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 50%	0	0	3	3		534	38	0	572
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	15.4	3	2		282	36	2	320
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	15.4	3	3		438	48	0	486
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	15.4	3	4		299	44	2	345
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	15.4	3	5		234	64	0	298
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	15.4	3	6		250	133	0	383
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	15.4	3	7		634	120	0	754
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	15.4	3	8		522	55	1	578
+14/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	15.4	3	9		328	93	1	422
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 75%	0	0	3	1		527	34	0	561
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 75%	0	0	3	2		501	88	0	589
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 75%	0	0	3	3		471	80	0	551
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.78	21.5	3	1		110	284	19	413
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.78	21.5	3	3		157	109	3	269
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.78	21.5	3	2		219	124	15	358
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.78	21.5	3	4		118	197	9	324
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.78	21.5	3	5		89	155	15	259
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.78	21.5	3	6		398	139	0	537
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.78	21.5	3	7		179	276	0	455
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.78	21.5	3	8		149	159	11	319
+15/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.78	21.5	3	9		216	217	4	437
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	Control single shot	0	0	3	1		315	22	0	337
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	Control single shot	0	0	3	2		221	16	0	237
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	Control single shot	0	0	3	3		290	53	0	343
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% single shot	1.08	13.8	3	5		361	115	0	476
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% single shot	1.08	13.8	3	1		378	33	6	417
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% single shot	1.08	13.8	3	2		205	75	11	291
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% single shot	1.08	13.8	3	3		427	148	0	575
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% single shot	1.08	13.8	3	4		332	72	2	406
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% single shot	1.08	13.8	3	6		188	59	0	247
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% single shot	1.08	13.8	3	7		353	59	0	412
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% single shot	1.08	13.8	3	8		425	158	0	583
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% single shot	1.08	13.8	3	9		224	87	0	311
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	Control continuous	0	0	3	1		383	42	0	425
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	Control continuous	0	0	3	2		296	22	0	318
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	Control continuous	0	0	3	3		385	22	0	407
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% continuous	1.93	19.9	3	1		0	493	4	497
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% continuous	1.93	19.9	3	2		1	310	1	312
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% continuous	1.93	19.9	3	3		7	396	12	415
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% continuous	1.93	19.9	3	4		3	210	2	215
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% continuous	1.93	19.9	3	5		6	306	3	315
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% continuous	1.93	19.9	3	6		0	515	1	516
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% continuous	1.93	19.9	3	7		3	577	0	580
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% continuous	1.93	19.9	3	8		27	388	2	417
+16/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	4	15	2% continuous	1.93	19.9	3	9		3	189	2	194
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	Control TU 50%	0	0	3	1		184	20	0	204
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	Control TU 50%	0	0	3	2		267	27	0	294
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	Control TU 50%	0	0	3	3		208	12	0	220
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 50%	1.5	20.2	3	1		106	329	0	435
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 50%	1.5	20.2	3	2		46	352	0	398
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 50%	1.5	20.2	3	3		17	141	8	166
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 50%	1.5	20.2	3	4		22	302	9	333
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 50%	1.5	20.2	3	5		22	197	6	225
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 50%	1.5	20.2	3	6		10	148	2	160
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 50%	1.5	20.2	3	7		56	462	0	518
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 50%	1.5	20.2	3	8		22	230	4	256
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 50%	1.5	20.2	3	9		17	238	3	258
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	Control TU 75%	0	0	3	1		180	6	0	186
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	Control TU 75%	0	0	3	2		282	8	0	290
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	Control TU 75%	0	0	3	3		167	8	0	175
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 75%	1.8	19.7	3	1		15	400	0	415
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 75%	1.8	19.7	3	2		20	274	0	294
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 75%	1.8	19.7	3	3		4	187	7	198
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 75%	1.8	19.7	3	4		6	276	15	297
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 75%	1.8	19.7	3	5		20	211	1	232
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 75%	1.8	19.7	3	6		17	235	3	255
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 75%	1.8	19.7	3	7		15	262	8	285
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 75%	1.8	19.7	3	8		25	263	11	299
+17/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	bins	3	15	2% TU 75%	1.8	19.7	3	9		16	379	0	395
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.11	14	3	6		83	16	0	99
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.11	14	3	7		225	26	0	251
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.11	14	3	9		127	39	0	166
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.11	14	3	4		127	17	0	144
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.11	14	3	5		190	20	2	212
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control single shot	0	0	3	3		121	2	0	123
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.11	14	3	1		336	31	0	367
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.11	14	3	2		94	6	0	100
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control single shot	0	0	3	2		348	35	0	383
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.11	14	3	3		220	21	0	241
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control single shot	0	0	3	1		286	10	0	296
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% single shot	1.11	14	3	8		217	7	0	224
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% continuous	1.92	21.1	3	9		9	87	7	103
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% continuous	1.92	21.1	3	7		8	88	7	103
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% continuous	1.92	21.1	3	8		3	84	5	92
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% continuous	1.92	21.1	3	5		27	130	11	168
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% continuous	1.92	21.1	3	6		29	331	10	370
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% continuous	1.92	21.1	3	2		6	90	19	115
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% continuous	1.92	21.1	3	3		10	129	23	162
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% continuous	1.92	21.1	3	4		22	116	7	145
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control continuous	0	0	3	3		168	16	0	184
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% continuous	1.92	21.1	3	1		8	148	7	163
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control continuous	0	0	3	1		205	2	0	207
+20/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control continuous	0	0	3	2		291	36	0	327
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 50%	0	0	3	1		239	9	0	248
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 50%	0	0	3	2		258	11	0	269
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 50%	0	0	3	3		282	18	0	300
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	19.2	3	1		124	62	6	192
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	19.2	3	2		175	117	10	302
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	19.2	3	3		98	155	0	253
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	19.2	3	4		260	170	0	430
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	19.2	3	5		210	80	4	294
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	19.2	3	6		186	81	11	278
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	19.2	3	7		328	108	4	440
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	19.2	3	8		203	64	1	268
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 50%	1.56	19.2	3	9		288	138	0	426
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 75%	0	0	3	1		157	4	0	161
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 75%	0	0	3	2		397	12	0	409
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	Control TU 75%	0	0	3	3		350	3	0	353
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.8	22.8	3	1		215	47	4	266
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.8	22.8	3	2		219	64	19	302
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.8	22.8	3	3		186	179	5	370
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.8	22.8	3	4		159	150	10	319
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.8	22.8	3	5		117	158	5	280
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.8	22.8	3	6		135	59	4	198
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.8	22.8	3	7		159	213	3	375
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.8	22.8	3	8		140	121	3	264
+21/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box	2	5	2% TU 75%	1.8	22.8	3	9		178	176	12	366
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	Control single shot	0	0	3	1		220	9	0	229
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	Control single shot	0	0	3	2		230	11	0	241
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	2% single shot	1.05	12.5	3	2		335	48	1	384
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	2% single shot	1.05	12.5	3	3		433	43	0	476
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	2% single shot	1.05	12.5	3	8		394	38	0	432
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	2% single shot	1.05	12.5	3	9		230	38	0	268
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	Control single shot	0	0	3	3		507	10	0	517
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	2% single shot	1.05	12.5	3	1		255	74	0	329
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	2% single shot	1.05	12.5	3	4		277	46	0	323
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	2% single shot	1.05	12.5	3	5		230	67	0	297
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	2% single shot	1.05	12.5	3	6		246	45	0	291
+23/04/2015	dTSM	diapausing two spotted mite	Adult	dTSM	Kiwifruit	box not forced	5	15	2% single shot	1.05	12.5	3	7		332	41	0	373
