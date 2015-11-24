@@ -535,6 +535,18 @@ semicom.df <- read.delim("EFsemicSept2015.txt")
 semicomLBAM.df <- semicom.df[with(semicom.df, Pest == "LBAM"),]
 sept15LBAMsemic.df <- sieve(semicomLBAM.df) # >> PredictionLBAM_SemiCommercial_EF4.xls
 sept15semic.df <- sieve(semicom.df, "Prediction_SemiCommercial_EF4.xls") # >> Prediction_SemiCommercial_EF4.xls
+## Join OMB and OMB Mix
+
+semicom.df <- within(semicom.df, SLS <- as.character(SLS))
+semicom.df <- within(semicom.df, SLS <- gsub("OMB Mix", "OMB", SLS))
+semicom.df <- within(semicom.df, SLS <- factor(SLS))
+
+## TSM update
+semicomTSM.df <- read.delim("EFsemicSept2015TSM.txt") # contains dTSM also
+semicom.df.int <- semicom.df[as.character(semicom.df$SLS) != "dTSM",]
+
+semicom.df5 <- merge(semicom.df.int, semicomTSM.df, all = TRUE)
+sept15semic5.df <- sieve(semicom.df5, "Prediction_SemiCommercial_EF5.xls") # >> Prediction_SemiCommercial_EF5.xls
 
 
 ###################################################################################
@@ -609,9 +621,9 @@ dev.off() # CT lot in same file
 sepWithCI.df <- mean.lt(ab.sept15WithAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2,
                         omit = c(22, 30:43), df.out = TRUE) # 
 sepWithCI_CT.df <- mean.lt(ab.sept15WithAll, "CT", leg.beg = 0, leg.end= 2, rnd = 2,
-                        omit = c(22, 30:43), df.out = TRUE) # 
+                        omit = c(22, 30:43), df.out = TRUE) # redone all with 22/11/2015
 
-## First consistent 100% points 
+## First consistent 100% points -- not necessary to redo
 ab.sept15With100$conc <- df2ablist(get100mortAll(gleanWithFruitSeptAll))
 ab.sept15With100$CT <- df2ablist(get100mortAll(gleanWithFruitSeptAll_CT))
 
@@ -739,9 +751,9 @@ ab.sept15OffAll[["concJ"]] <- allfit(data = gleanOffFruitSept_J)
 ab.sept15OffAll[["CTJ"]] <- allfit(data = gleanOffFruitSept_CTJ) 
 
 pdf(file = "EFsept15OffMortality.pdf", width = 255/25.4, height = 195/25.4)
-flyplot(1:173, data = ab.sept15OffAll, choice = "conc", pc = c(line = 99), lt.ld = "LC",
+flyplot(1:183, data = ab.sept15OffAll, choice = "conc", pc = c(line = 99), lt.ld = "LC",
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
-flyplot(1:173, data = ab.sept15OffAll, choice = "CT", pc = c(line = 99), lt.ld = "LCT",
+flyplot(1:183, data = ab.sept15OffAll, choice = "CT", pc = c(line = 99), lt.ld = "LCT",
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
 flyplot(1:73, data = ab.sept15OffAll, choice = "concJ", pc = c(line = 99), lt.ld = "LC",
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)

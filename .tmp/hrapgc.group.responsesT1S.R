@@ -13,7 +13,7 @@ group.responsesT1S <-
 ### ----------------------------------------------------------------------
 ### Author:-   Patrick Connolly, Date:- 14 Oct 2015, 08:42
 ### ----------------------------------------------------------------------
-### Revisions:- 
+### Revisions:- 25/11/15 added 'change ME to Egg'
 
 
   require(RColorBrewer)
@@ -131,6 +131,9 @@ group.responsesT1S <-
       box(bty = "]")      
        axis(1, cex.axis = ax.cex, mgp = mgp - c(0, x.mgp, 0))     
 ### Draw X and Y labels
+
+      ## change ME to Egg
+      sl <- gsub("ME", "Egg", sl)
       mtext(side = 1, line = xlab.line, text = xtitle, cex = lab.cex)
       mtext(side = 2, line = ylab.line, text = paste("% Mortality,", yfun, "scale"),
             cex = lab.cex)

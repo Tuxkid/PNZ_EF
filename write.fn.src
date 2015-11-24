@@ -1,1 +1,5 @@
-write.function(sieve)
+write.function(gleanOffFruitSept)
+write.function(gleanOffFruitSept_CTJ)
+write.function(gleanOffFruitSept_J)
+write.function(gleanWithFruitSeptCM)
+write.function(gleanWithFruitSeptCM_J)

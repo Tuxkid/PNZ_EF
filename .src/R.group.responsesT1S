@@ -1,6 +1,6 @@
   Listing of: group.responsesT1S
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 15/10/2015 
+Last updated: 24/11/2015 
 **************************************
 
 group.responsesT1S <-
@@ -18,7 +18,7 @@ structure(function(xx = june15Off.df, xtitle = "Dose (%)", main = "", yfun = "cl
 ### ----------------------------------------------------------------------
 ### Author:-   Patrick Connolly, Date:- 14 Oct 2015, 08:42
 ### ----------------------------------------------------------------------
-### Revisions:- 
+### Revisions:- 25/11/15 added 'change ME to Egg'
 
 
   require(RColorBrewer)
@@ -136,6 +136,9 @@ structure(function(xx = june15Off.df, xtitle = "Dose (%)", main = "", yfun = "cl
       box(bty = "]")      
        axis(1, cex.axis = ax.cex, mgp = mgp - c(0, x.mgp, 0))     
 ### Draw X and Y labels
+
+      ## change ME to Egg
+      sl <- gsub("ME", "Egg", sl)
       mtext(side = 1, line = xlab.line, text = xtitle, cex = lab.cex)
       mtext(side = 2, line = ylab.line, text = paste("% Mortality,", yfun, "scale"),
             cex = lab.cex)
@@ -153,4 +156,4 @@ structure(function(xx = june15Off.df, xtitle = "Dose (%)", main = "", yfun = "cl
 
     }
   }
-}, comment = "15/10/2015")
+}, comment = "24/11/2015")

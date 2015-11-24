@@ -12,13 +12,18 @@ gleanWithFruitSeptCM_J <- function(choice = 1)
 
   require(dplyr)
   xx <- septwithFIXcm.df
+
+
   
   ## which control mortality is greater?  
   xx <- within(xx, Mort <- dead/Total)
   xx <- within(xx, Row <- seq(nrow(xx)))
   xx <- within(xx, Ndx <- paste(Placement, Rep, sep = "|"))
+  xx <- within(xx, Ndx <- factor(Ndx)) # otherwise screws up group_by()
+  xx <- within(xx, Efpc <- fact2num(Efpc))
  ## browser()
   cont.df <- xx[xx$Efpc == 0,]
+  treat.df <- xx[xx$Efpc > 0,]
   smallest <- function(x){
     biff <- logical(length(x)) # sometimes only 1 which will be also a min
     if(length(x) > 1){
@@ -29,10 +34,29 @@ gleanWithFruitSeptCM_J <- function(choice = 1)
     }
     biff
   }
-  cont.df$Smaller <- unlist(with(cont.df, tapply(Mort, Ndx, smallest)))
-  ignore.rows <- with(cont.df, Row[Smaller])
-  xx <- xx[!xx$Row %in% ignore.rows, ] %>%
-    arrange(Placement, Efpc, HC) %>%
+  ## Get overall mortalites for both controls
+  cont.sum.df <- cont.df %>%
+    select(Ndx, HC, dead, Total) %>%
+      group_by(Ndx, HC) %>%
+        summarise_each(funs(sum), dead, Total) %>%
+          mutate(Mort = dead/Total)
+   
+  cont.sum.df$Smaller <- unlist(with(cont.sum.df, tapply(Mort, Ndx, smallest)))
+  cont.sum.df$Efpc <- 0
+  use.cont.df <- cont.sum.df[with(cont.sum.df, !Smaller),] %>%
+    select(Ndx, Efpc, dead, Total)
+  use.treat.df <- treat.df %>%
+    select(Ndx, Efpc, dead, Total)
+
+  use.df <- merge(use.cont.df, use.treat.df, all = TRUE) %>%
+    arrange(Ndx)
+## Fish out Ndx pieces
+  use.df <- within(use.df, Ndx <- as.character(Ndx))
+  use.df <- within(use.df, Placement <- getbit(Ndx, "\\|", 1))
+  use.df <- within(use.df, Rep <- getbit(Ndx, "\\|", 2))
+
+  xx <- use.df %>%
+    arrange(Placement, Efpc) %>%
       select(Placement, Efpc, dead, Total)
 
 ### Then a normal glean-type function

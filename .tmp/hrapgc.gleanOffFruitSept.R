@@ -1,7 +1,7 @@
 gleanOffFruitSept <-
   function(choice = 1)
 {
-### Purpose:- September lot
+### Purpose:- September lot (subsequently added to)
 ### ----------------------------------------------------------------------
 ### Modified from:- gleanOffFruitJuly
 ### ----------------------------------------------------------------------
@@ -11,6 +11,7 @@ gleanOffFruitSept <-
 ### ----------------------------------------------------------------------
 ### Revisions:- as.character(Efnom) fixed 09/09/2015
 ###             23/09/2015 added selecting max of Handling and CO2 controls
+###             25/11/2015 CM calculations fixed (copied from With-fruit lot
 
   xx <- sept15Off.df
   xx <- within(xx, EfNom <- as.numeric(as.character(Efnom))) # fixed 9/9/15
@@ -25,8 +26,7 @@ gleanOffFruitSept <-
   is.scale <- grep("OS", levels(xx$SLS), ignore.case = TRUE,value = TRUE)
   xx <- within(xx, IsScale <- SLS%in%is.scale)
   xx <- xx[!is.na(xx$Total), ] # won't total unless
-##  browser()
-
+##  
   ## Define what is dead
   xx <- within(xx, dead <- Dead)
   xx <- within(xx, dead[IsEgg] <- Unhatched[IsEgg])
@@ -35,10 +35,14 @@ gleanOffFruitSept <-
   ## Use higher of handling and CO2 controls
   require(dplyr)
   xx <- within(xx, Ndx <- paste(SLS, Temperature, Duration, Rep, sep = "|"))
+   xx <- within(xx, Ndx <- factor(Ndx)) # otherwise screws up group_by()
   xx <- xx %>% arrange(Ndx)
   xx <- within(xx, Mort <- dead/Total)
   xx <- within(xx, Row <- seq(nrow(xx)))
   cont.df <- xx[xx$Efpc == 0,]
+  treat.df <- xx[xx$Efpc > 0,]
+
+  ## browser()
   smallest <- function(x){
     biff <- logical(length(x)) # sometimes only 1 which will be also a min
     if(length(x) > 1){
@@ -47,33 +51,34 @@ gleanOffFruitSept <-
       wx <- wx[1] # necessary for ties: want only one
       biff[wx] <- TRUE
     }
+    if(length(biff[biff]) > 1)
+      cat("funny business\n")
     biff
   }
-  smallest2 <- function(x){
-    biff <- logical(length(x)) # sometimes only 1 which will be also a min
-    if(length(x) > 1){
-      xmax <- max(x, na.rm = TRUE)
-      wx <- which(x != xmax)
-      biff[wx] <- TRUE
-    }
-    biff
-  }
-##  cont.df$Smaller <- (with(cont.df, tapply(Mort, Ndx, smallest, simplify = FALSE))) # incorrect
-##
-  cont.df$Smaller2 <- logical(nrow(cont.df))
-  for(i in unique(cont.df$Ndx)){
-    cont.i <- cont.df[cont.df$Ndx == i,]
-    small.i <- smallest2(cont.i$Mort)
-    cont.df$Smaller2[cont.df$Ndx == i] <- small.i
-  }
-  ignore.rows <- with(cont.df, Row[Smaller2])
-  xx <- xx[!xx$Row %in% ignore.rows, ] %>%
-    arrange(SLS, Temperature, Duration, Rep, Efpc, HC) %>%
-      select(SLS, Temperature, Duration, Rep, Efpc, dead, Total)
+  ## Get overall mortalites for both controls
+  cont.sum.df <- cont.df %>%
+    select(Ndx, HC, dead, Total) %>%
+      group_by(Ndx, HC) %>%
+        summarise_each(funs(sum), dead, Total) %>%
+          mutate(Mort = dead/Total)
+   
+  cont.sum.df$Smaller <- unlist(with(cont.sum.df, tapply(Mort, Ndx, smallest)))
+  cont.sum.df$Efpc <- 0
+  use.cont.df <- cont.sum.df[with(cont.sum.df, !Smaller),] %>%
+    select(Ndx, Efpc, dead, Total)
+  use.treat.df <- treat.df %>%
+    select(Ndx, Efpc, dead, Total)
 
-  use.df <- xx %>%
-    tbl_df %>% arrange(SLS, Temperature, Duration, Rep, Efpc) 
+  use.df <- merge(use.cont.df, use.treat.df, all = TRUE) %>%
+    arrange(Ndx)
+  use.df <- within(use.df, Ndx <- as.character(Ndx)) # no longer want a factor
+  use.df <- within(use.df, SLS <- getbit(Ndx, "\\|", 1))
+  use.df <- within(use.df, Temperature <- as.numeric(getbit(Ndx, "\\|", 2)))
+  use.df <- within(use.df, Duration <- getbit(Ndx, "\\|", 3))
+  use.df <- within(use.df, Rep <- getbit(Ndx, "\\|", 4))
+  use.df <- use.df %>% arrange(SLS, Temperature, Duration, Rep, Efpc)
 
+  
 ### Then a normal glean function
   idset <- with(use.df, make.id(Efpc))
   cutx <- NULL

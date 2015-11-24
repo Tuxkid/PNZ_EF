@@ -23,53 +23,60 @@ gleanOffFruitSept_CTJ <- function(choice = 1)
   is.scale <- grep("OS", levels(xx$SLS), ignore.case = TRUE,value = TRUE)
   xx <- within(xx, IsScale <- SLS%in%is.scale)
   xx <- xx[!is.na(xx$Total), ] # won't total unless
-
+##  
   ## Define what is dead
   xx <- within(xx, dead <- Dead)
   xx <- within(xx, dead[IsEgg] <- Unhatched[IsEgg])
-  xx <- within(xx, Dead[IsScale] <- Dead[IsScale] + Moribund[IsScale])
+  xx <- within(xx, dead[IsScale] <- Dead[IsScale] + Moribund[IsScale])
   
   ## Use higher of handling and CO2 controls
   require(dplyr)
   xx <- within(xx, Ndx <- paste(SLS, Temperature, Duration, Rep, sep = "|"))
+   xx <- within(xx, Ndx <- factor(Ndx)) # otherwise screws up group_by()
   xx <- xx %>% arrange(Ndx)
   xx <- within(xx, Mort <- dead/Total)
   xx <- within(xx, Row <- seq(nrow(xx)))
   cont.df <- xx[xx$Efpc == 0,]
-##   smallest <- function(x){
-##     biff <- logical(length(x)) # sometimes only 1 which will be also a min
-##     if(length(x) > 1){
-##       xmin <- min(x, na.rm = TRUE)
-##       wx <- which(x == xmin)
-##       wx <- wx[1] # necessary for ties: want only one
-##       biff[wx] <- TRUE
-##     }
-##     biff
-##   }
-##   cont.df$Smaller <- unlist(with(cont.df, tapply(Mort, Ndx, smallest)))
-  smallest2 <- function(x){
-    biff <- logical(length(x)) # sometimes only 1 which will be also a max
+  treat.df <- xx[xx$Efpc > 0,]
+
+  ## browser()
+  smallest <- function(x){
+    biff <- logical(length(x)) # sometimes only 1 which will be also a min
     if(length(x) > 1){
-      xmax <- max(x, na.rm = TRUE)
-      wx <- which(x != xmax)
+      xmin <- min(x, na.rm = TRUE)
+      wx <- which(x == xmin)
+      wx <- wx[1] # necessary for ties: want only one
       biff[wx] <- TRUE
     }
+    if(length(biff[biff]) > 1)
+      cat("funny business\n")
     biff
   }
-  cont.df$Smaller2 <- logical(nrow(cont.df))
-  for(i in unique(cont.df$Ndx)){
-    cont.i <- cont.df[cont.df$Ndx == i,]
-    small.i <- smallest2(cont.i$Mort)
-    cont.df$Smaller2[cont.df$Ndx == i] <- small.i
-  }    
-  ignore.rows <- with(cont.df, Row[Smaller2])
-  xx <- xx[!xx$Row %in% ignore.rows, ] %>%
-    arrange(SLS, Temperature, Duration, Rep, Efpc, HC) %>%
-      select(SLS, Temperature, Duration, Rep, Efpc, dead, Total)
+  ## Get overall mortalites for both controls
+  cont.sum.df <- cont.df %>%
+    select(Ndx, HC, dead, Total) %>%
+      group_by(Ndx, HC) %>%
+        summarise_each(funs(sum), dead, Total) %>%
+          mutate(Mort = dead/Total)
+   
+  cont.sum.df$Smaller <- unlist(with(cont.sum.df, tapply(Mort, Ndx, smallest)))
+  cont.sum.df$Efpc <- 0
+  use.cont.df <- cont.sum.df[with(cont.sum.df, !Smaller),] %>%
+    select(Ndx, Efpc, dead, Total)
+  use.treat.df <- treat.df %>%
+    select(Ndx, Efpc, dead, Total)
 
-  use.df <- xx %>%
-    tbl_df %>% arrange(SLS, Temperature, Duration, Efpc) 
+  use.df <- merge(use.cont.df, use.treat.df, all = TRUE) %>%
+    arrange(Ndx)
+  use.df <- within(use.df, Ndx <- as.character(Ndx)) # no longer want a factor
+  use.df <- within(use.df, SLS <- getbit(Ndx, "\\|", 1))
+  use.df <- within(use.df, Temperature <- as.numeric(getbit(Ndx, "\\|", 2)))
+  use.df <- within(use.df, Duration <- as.numeric(getbit(Ndx, "\\|", 3)))
+  use.df <- within(use.df, Rep <- getbit(Ndx, "\\|", 4))
+  use.df <- use.df %>% arrange(SLS, Temperature, Duration, Efpc)
 
+
+  
 ### Then a normal glean function
   idset <- with(use.df, make.id(Efpc))
   cutx <- NULL
