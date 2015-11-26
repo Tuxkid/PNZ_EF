@@ -1,6 +1,6 @@
   Listing of: gleanWithFruitSeptAll_J
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 23/11/2015 
+Last updated: 26/11/2015 
 **************************************
 
 gleanWithFruitSeptAll_J <-
@@ -55,7 +55,7 @@ structure(function(choice = 1)
 
   use.df <- within(use.df, SLS <- getbit(Ndx, "\\|", 1))
   use.df <- within(use.df, Fruit <- getbit(Ndx, "\\|", 2))
-  use.df <- within(use.df, Temperature <- getbit(Ndx, "\\|", 3))
+  use.df <- within(use.df, Temperature <- as.numeric(getbit(Ndx, "\\|", 3)))
   use.df <- within(use.df, Duration <- as.numeric(getbit(Ndx, "\\|", 4)))
   xx <- within(use.df, Rep <- getbit(Ndx, "\\|", 5))
   xx <- xx %>% arrange(SLS, Fruit, Temperature, Duration, Efpc)
@@ -74,4 +74,4 @@ structure(function(choice = 1)
        list(id = idset, times = Efpc, total = Total, dead = dead, 
             cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
             legend = leg.brief, xlabels = xlabels, takelog = FALSE))
-}, comment = "23/11/2015")
+}, comment = "26/11/2015")

@@ -22,6 +22,7 @@ collectLCs <- function(adjust.cont = TRUE,
   rownames(xOCT) <- gsub("ME", "egg", rownames(xOCT))
   
   ## Off fruit
+  browser()
   off.df <- data.frame(LC99est = as.numeric(xO$lt.mean),
                        Min100mort = as.numeric(xO100$lt.mean),
                        LCT99est = as.numeric(xOCT$lt.mean),

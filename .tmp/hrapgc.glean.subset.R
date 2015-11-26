@@ -3,7 +3,7 @@ glean.subset <- function(x, k = 1)
 ### Purpose:- Subsets data gathered by a glean function
 ### ----------------------------------------------------------------------
 ### Modified from:- x: glean function
-###                 k: id/s required
+###                 k: id/s required --  NULL for all of them
 ### ----------------------------------------------------------------------
 ### Arguments:- 
 ### ----------------------------------------------------------------------
@@ -14,6 +14,8 @@ glean.subset <- function(x, k = 1)
   xx <- x()
   xx.df <- with(xx, data.frame(id, times, dead, total))
   id.tab <- table(xx$id)
+  if(is.null(k))
+    k <- unique(xx$id) # i.e. all of them
   xx.df$legend <- rep(xx$legend, id.tab)
   xx.df[xx.df$id %in% k,]  
 }

@@ -16,21 +16,37 @@ collectLCs2 <- function(adjust.cont = FALSE,
 ### Author:-   Patrick Connolly, Date:- 23 Oct 2015, 11:15
 ### ----------------------------------------------------------------------
 ### Revisions:- Include means, not just range plus observed mortality
-
-
-  ## Standardize egg in identifiers
+###             26/11/2015 lots of changes to tidy off.df
+  
+## Standardize egg in identifiers
   rownames(xO) <- gsub("ME", "egg", rownames(xO))
   rownames(xOCT) <- gsub("ME", "egg", rownames(xOCT))
+  rownames(xO100) <- gsub("ME", "egg", rownames(xO100))
+  rownames(xOCT100) <- gsub("ME", "egg", rownames(xOCT100))
   
+  all.row.names <- unique(c(rownames(xO), rownames(xOCT),
+                            rownames(xO100), rownames(xOCT100)))  
   ## Off fruit
-  off.df <- data.frame(LC99est = as.numeric(xO$lt.mean),
-                       Min100mort = as.numeric(xO100$lt.mean),
-                       LCT99est = as.numeric(xOCT$lt.mean),
-                       Min100mortCT = as.numeric(xOCT100$lt.mean))
-  rownames(off.df) <- rownames(xO)
+  off.df <- data.frame(LC99est = as.numeric(xO[all.row.names, ]$lt.mean),
+                       Min100mort = as.numeric(xO100[all.row.names, ]$lt.mean),
+                       LCT99est = as.numeric(xOCT[all.row.names, ]$lt.mean),
+                       Min100mortCT = as.numeric(xOCT100[all.row.names, ]$lt.mean))
+  rownames(off.df) <- all.row.names
+  keep.col.names <- names(off.df)
   off.df <- within(off.df, Min100mort[is.nan(Min100mort)] <- NA)
   off.df <- within(off.df, Min100mortCT[is.nan(Min100mortCT)] <- NA)
-  
+### Get identifiers to resort rows
+  off.df <- within(off.df, SLS <- getbit(all.row.names, "\\|", 1))
+  off.df <- within(off.df, temp <- getbit(all.row.names, "\\|", 2))
+  off.df <- within(off.df, temp <- as.numeric(gsub("[A-z]", "", temp)))
+  off.df <- within(off.df, duration <- getbit(all.row.names, "\\|", 3))
+  off.df <- within(off.df, duration <- as.numeric(gsub("[A-z]", "", duration)))
+  off.df$Ndx <- all.row.names
+  off.df <- off.df %>%
+    arrange(SLS, temp, duration)
+  rownames(off.df) <- off.df$Ndx # no longer local dataframe
+  off.df <- off.df[, keep.col.names]
+
   ## With fruit: have to use a matrix
   with.mat <- matrix(nrow = nrow(xW100), ncol = 4)
   dimnames(with.mat) <- list(rownames(xW100), names(off.df))
@@ -42,6 +58,8 @@ collectLCs2 <- function(adjust.cont = FALSE,
   with.id <- rownames(with.df)
   with.df <- within(with.df, Min100mort[is.nan(Min100mort)] <- NA)
   with.df <- within(with.df, Min100mortCT[is.nan(Min100mortCT)] <- NA)
+  with.df <- within(with.df, LC99est[is.nan(LC99est)] <- NA)
+  with.df <- within(with.df, LCT99est[is.nan(LCT99est)] <- NA)
   
   ## remove A| and K| from rownames
   ## With help from Rhelp
@@ -94,7 +112,6 @@ collectLCs2 <- function(adjust.cont = FALSE,
   for(i in seq(with.id)){
     id.i <- with.id[i]
     dat.with.i <- mort.dat.with[mort.dat.with$id == i,]
-    browser()
     ## slope and intercept info
     slope.i.with <- ab.with$slope[i]
     intercept.i.with <- ab.with$intercept[i]
@@ -169,7 +186,7 @@ collectLCs2 <- function(adjust.cont = FALSE,
            PredictedOff_mean, PredictedOff_lo, PredictedOff_hi,
            AchievedEFwith_mean, AchievedEFwith_lo, AchievedEFwith_hi,
            PredictedWith_mean, PredictedWith_lo, PredictedWith_hi)
-  xlout <- "Predictions_With.OffFruit_EF2.xls"
+  xlout <- "Predictions_With.OffFruit_EF3.xls"
 #browser()
   
 ### Write out predictions, the off/with LC99 estimates, and the confidence limit of each

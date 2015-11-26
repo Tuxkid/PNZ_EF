@@ -1,6 +1,6 @@
   Listing of: collectLCs
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 05/10/2015 
+Last updated: 26/11/2015 
 **************************************
 
 collectLCs <-
@@ -28,6 +28,7 @@ structure(function(adjust.cont = TRUE,
   rownames(xOCT) <- gsub("ME", "egg", rownames(xOCT))
   
   ## Off fruit
+  browser()
   off.df <- data.frame(LC99est = as.numeric(xO$lt.mean),
                        Min100mort = as.numeric(xO100$lt.mean),
                        LCT99est = as.numeric(xOCT$lt.mean),
@@ -181,4 +182,4 @@ structure(function(adjust.cont = TRUE,
            "With fruit CT LC99CI", "With fruit 100% CT LC99CI"),
            BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 2)
   out.df  
-}, comment = "05/10/2015")
+}, comment = "26/11/2015")

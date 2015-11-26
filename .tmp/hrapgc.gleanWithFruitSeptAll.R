@@ -49,8 +49,8 @@ gleanWithFruitSeptAll <- function(choice = 1)
   use.df <- within(use.df, Ndx <- as.character(Ndx)) # no longer want a factor
   use.df <- within(use.df, SLS <- getbit(Ndx, "\\|", 1))
   use.df <- within(use.df, Fruit <- getbit(Ndx, "\\|", 2))
-  use.df <- within(use.df, Temperature <- getbit(Ndx, "\\|", 3))
-  use.df <- within(use.df, Duration <- getbit(Ndx, "\\|", 4))
+  use.df <- within(use.df, Temperature <- as.numeric(getbit(Ndx, "\\|", 3)))
+  use.df <- within(use.df, Duration <- as.numeric(getbit(Ndx, "\\|", 4)))
   xx <- within(use.df, Rep <- getbit(Ndx, "\\|", 5))
   xx <- xx %>% arrange(SLS, Fruit, Temperature, Duration, Rep, Efpc)
 ### Then a normal glean-type function

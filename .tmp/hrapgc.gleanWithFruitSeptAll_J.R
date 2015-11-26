@@ -49,7 +49,7 @@ gleanWithFruitSeptAll_J <- function(choice = 1)
 
   use.df <- within(use.df, SLS <- getbit(Ndx, "\\|", 1))
   use.df <- within(use.df, Fruit <- getbit(Ndx, "\\|", 2))
-  use.df <- within(use.df, Temperature <- getbit(Ndx, "\\|", 3))
+  use.df <- within(use.df, Temperature <- as.numeric(getbit(Ndx, "\\|", 3)))
   use.df <- within(use.df, Duration <- as.numeric(getbit(Ndx, "\\|", 4)))
   xx <- within(use.df, Rep <- getbit(Ndx, "\\|", 5))
   xx <- xx %>% arrange(SLS, Fruit, Temperature, Duration, Efpc)

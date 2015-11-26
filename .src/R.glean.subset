@@ -1,6 +1,6 @@
   Listing of: glean.subset
   Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 20/11/2015 
+Last updated: 26/11/2015 
 **************************************
 
 glean.subset <-
@@ -9,7 +9,7 @@ structure(function(x, k = 1)
 ### Purpose:- Subsets data gathered by a glean function
 ### ----------------------------------------------------------------------
 ### Modified from:- x: glean function
-###                 k: id/s required
+###                 k: id/s required --  NULL for all of them
 ### ----------------------------------------------------------------------
 ### Arguments:- 
 ### ----------------------------------------------------------------------
@@ -20,6 +20,8 @@ structure(function(x, k = 1)
   xx <- x()
   xx.df <- with(xx, data.frame(id, times, dead, total))
   id.tab <- table(xx$id)
+  if(is.null(k))
+    k <- unique(xx$id) # i.e. all of them
   xx.df$legend <- rep(xx$legend, id.tab)
   xx.df[xx.df$id %in% k,]  
-}, comment = "20/11/2015")
+}, comment = "26/11/2015")
