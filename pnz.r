@@ -591,12 +591,12 @@ sepOffCI_CT.df <- mean.lt(ab.sept15OffAll, "CT", leg.beg = 0, leg.end= 2, rnd = 
 ### 25/11/15 redo those 2 with fixed CM and more data
 sepOffCI.df <- mean.lt(ab.sept15OffAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2, df.out = TRUE,
                        omit = c(1:15, 19, 26:28, 33:46, 63:64, 78, 80, 82:86, 103, 113, 114,
-                         116:117, 129:130, 137:138, 141:148, 150, 165:180)) # 
+                         116:117, 129:130, 137:138, 141:148, 150, 152, 165:180)) # 
 sepOffCI_CT.df <- mean.lt(ab.sept15OffAll, "CT", leg.beg = 0, leg.end= 2, rnd = 2, df.out = TRUE,
                        omit = c(1:15, 19, 26:28, 33:46, 63:64, 78, 80, 82:86, 103, 113, 114,
-                         116:117, 129:130, 137:138, 141:148, 150, 165:180)) #
+                         116:117, 129:130, 137:138, 141:148, 150, 152, 165:180)) #
 
-
+WriteXLS(c("sepOffCI.df", "sepOffCI_CT.df"), "OffCI_CTfixed.xls", c("LTCIs", "LCTCIs"), row.names = TRUE, BoldHeaderRow = TRUE)
 
 
 ## First consistent 100% points 

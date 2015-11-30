@@ -73,12 +73,11 @@ gleanOffFruitSept_CT <- function(choice = 1)
     arrange(Ndx)
   use.df <- within(use.df, Ndx <- as.character(Ndx)) # no longer want a factor
   use.df <- within(use.df, SLS <- getbit(Ndx, "\\|", 1))
-  use.df <- within(use.df, Temperature <- getbit(Ndx, "\\|", 2))
+  use.df <- within(use.df, Temperature <- as.numeric(getbit(Ndx, "\\|", 2)))
   use.df <- within(use.df, Duration <- as.numeric(getbit(Ndx, "\\|", 3)))
   use.df <- within(use.df, Rep <- getbit(Ndx, "\\|", 4))
   use.df <- use.df %>% arrange(SLS, Temperature, Duration, Rep, Efpc)
 
- 
 ### Then a normal glean function
   idset <- with(use.df, make.id(Efpc))
   cutx <- NULL
