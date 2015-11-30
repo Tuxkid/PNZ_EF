@@ -1,10 +1,5 @@
-  Listing of: group.responsesCT1S
-  Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 30/11/2015 
-**************************************
-
 group.responsesCT1S <-
-structure(function(xx = sept15Off.df, xtitle = "CT (%-hr)", main = "", yfun = "cloglog", 
+  function(xx = sept15Off.df, xtitle = "CT (%-hr)", main = "", yfun = "cloglog", 
            plimits = c(0.04, 0.9995), xlab.line = 2, x.mgp = 0.1,
            x.range = c(0, 6), want = 1, ab.list = ab.sept15OffAll, 
            rha = "Temperature", ylab.line = 1.6, lab.cex = .9, ax.cex = 0.85,
@@ -134,8 +129,6 @@ structure(function(xx = sept15Off.df, xtitle = "CT (%-hr)", main = "", yfun = "c
       
       box(bty = "]")      
        axis(1, cex.axis = ax.cex, mgp = mgp - c(0, x.mgp, 0))     
-      ## change ME to Egg
-      sl <- gsub("ME", "Egg", sl)
 ### Draw X and Y labels
       mtext(side = 1, line = xlab.line, text = xtitle, cex = lab.cex)
       mtext(side = 2, line = ylab.line, text = paste("% Mortality,", yfun, "scale"),
@@ -154,4 +147,4 @@ structure(function(xx = sept15Off.df, xtitle = "CT (%-hr)", main = "", yfun = "c
 
     }
   }
-}, comment = "30/11/2015")
+}

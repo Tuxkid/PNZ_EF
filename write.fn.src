@@ -1,7 +1,1 @@
-write.function(collectLCs)
-write.function(collectLCs2)
-write.function(glean.subset)
-write.function(gleanWithFruitSeptAll)
-write.function(gleanWithFruitSeptAll_CT)
-write.function(gleanWithFruitSeptAll_CTJ)
-write.function(gleanWithFruitSeptAll_J)
+write.function(group.responsesCT1S)

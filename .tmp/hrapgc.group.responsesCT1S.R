@@ -129,6 +129,8 @@ group.responsesCT1S <-
       
       box(bty = "]")      
        axis(1, cex.axis = ax.cex, mgp = mgp - c(0, x.mgp, 0))     
+      ## change ME to Egg
+      sl <- gsub("ME", "Egg", sl)
 ### Draw X and Y labels
       mtext(side = 1, line = xlab.line, text = xtitle, cex = lab.cex)
       mtext(side = 2, line = ylab.line, text = paste("% Mortality,", yfun, "scale"),

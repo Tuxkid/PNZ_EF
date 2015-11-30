@@ -672,6 +672,7 @@ group.responsesT1S(sept15Off.df, ab.list = ab.sept15OffAll, want = 3)  ## > Line
 system("pdf2png Lines_forLBAM_5_5CS")    ## > Lines_forLBAM_5_5CS.png  
 system("pdf2png Lines_forLBAM_5_15CS")   ## > Lines_forLBAM_5_15CS.png 
 
+## 24/11/2015
 group.responsesT1S(sept15Off.df, ab.list = ab.sept15OffAll, want = 4)  ## > Lines_forLBAM_ME_5CS.pdf
 group.responsesT1S(sept15Off.df, ab.list = ab.sept15OffAll, want = 6)  ## > Lines_forLBAM_ME_15CS.pdf
 system("pdf2png Lines_forLBAM_ME_5CS")    ## >   Lines_forLBAM_ME_5CS.png
@@ -683,6 +684,14 @@ group.responsesCT1S(sept15Off.df, want = 1, ab.list = ab.sept15OffAll)  ## > Lin
 group.responsesCT1S(sept15Off.df, want = 3, ab.list = ab.sept15OffAll)  ## > Lines_forLBAM_5_15CTS.pdf 
 system("pdf2png Lines_forLBAM_5_5CTS")    ## > Lines_forLBAM_5_5CTS.png  
 system("pdf2png Lines_forLBAM_5_15CTS")   ## > Lines_forLBAM_5_15CTS.png 
+
+## 30/11/2015
+group.responsesCT1S(sept15Off.df, ab.list = ab.sept15OffAll, want = 4)  ## > Lines_forLBAM_ME_5CTS.pdf
+group.responsesCT1S(sept15Off.df, ab.list = ab.sept15OffAll, want = 6)  ## > Lines_forLBAM_ME_15CTS.pdf
+system("pdf2png Lines_forLBAM_ME_5CTS")    ## >   Lines_forLBAM_ME_5CTS.png
+system("pdf2png Lines_forLBAM_ME_15CTS")   ## >  Lines_forLBAM_ME_15CTS.png   
+
+
 
 ## Lots of lines
 group.responsesD2hS(sept15Off.df, ab.list = ab.sept15OffAll, store = 5)   ## > Lines_for5C_2hS.pdf
