@@ -144,9 +144,10 @@ group.responsesT1S <-
       for(i in names(concsD))
         try(clipline(c(concsD0[i], concsD[i]), c(-3, 2), interceptsD[i], slopesD[i],
                      col = colours[i], lwd = 3))
-      bar.legs(.7, .3, labs = gsub("ME", "Egg", names(concsD)), cols = colours[names(concsD)], pchs = NULL,
+      bar.legs(.7, .3, labs = names(concsD), cols = colours[names(concsD)], pchs = NULL,
                leg.cex = ax.cex,
                ltys = rep(1, length(concsD)), line.leng = .1, line.lwd = 3)
+
 
 
     }

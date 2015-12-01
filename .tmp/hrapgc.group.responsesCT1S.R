@@ -75,10 +75,11 @@ group.responsesCT1S <-
         names(concsD0) <- durationsDh
 ## enough information to do complot-type plot
 ###      browser()
-      ##  Adjust slopes by dividing by the corresponding duration
-      slopesD <- slopesD/durationsD
-      ##  Adjust concs by multiplying by the corresponding duration
-      concsD <- concsD*durationsD
+##       ##  Adjust slopes by dividing by the corresponding duration
+##       slopesD <- slopesD/durationsD
+##       ##  Adjust concs by multiplying by the corresponding duration
+##       concsD <- concsD*durationsD
+###################### already done by selecting the right ab.list.  Don't do again       
 
 ### Calculate adjustments for the space on the y-axis:
       ylow <- g(plimits[1])
@@ -135,17 +136,18 @@ group.responsesCT1S <-
       mtext(side = 1, line = xlab.line, text = xtitle, cex = lab.cex)
       mtext(side = 2, line = ylab.line, text = paste("% Mortality,", yfun, "scale"),
             cex = lab.cex)
-      mtext(side = 3, text = gsub("5", "5*", sl), cex = main.cex, adj = 0)
+      mtext(side
+            = 3, text = gsub("5", "5*", sl), cex = main.cex, adj = 0)
       mtext(side = 3, text = paste0(D, "°C"), adj = 1, cex = lab.cex)
       
 ### Draw each mortality line and a legend
       for(i in names(concsD))
         try(clipline(c(concsD0[i], concsD[i]), c(-3, 2), interceptsD[i], slopesD[i],
                      col = colours[i], lwd = 3))
-      bar.legs(.7, .3, labs = names(concsD), cols = colours[names(concsD)], pchs = NULL,
-               leg.cex = ax.cex,
+      bar.legs(.7, .3, labs = gsub("ME", "Egg", names(concsD)),
+               cols = colours[names(concsD)], pchs = NULL,
+               leg.cex = ax.cex, # ifelse bit added 1/12/15
                ltys = rep(1, length(concsD)), line.leng = .1, line.lwd = 3)
-
 
     }
   }
