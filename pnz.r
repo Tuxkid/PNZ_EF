@@ -610,8 +610,42 @@ sepOff100CI.df <- mean.lt(ab.sept15Off100, "conc", leg.beg = 0, lt = 100,
 sepOff100CI_CT.df <- mean.lt(ab.sept15Off100, "CT", leg.beg = 0, lt = 100,
 ##                            omit = c(1:15, 25:38, 52:64, 81:82, 101:103, 121, 145,156:161),
                            leg.end= 2, rnd = 2, df.out = TRUE) # 
-
 ######################################################################################
+##
+## 2/12/15 Modify WFT lot to use 2 different SLSs, i.e.  disaggregate what's been
+##    done before --- just for joined plots
+##
+## <wft tinkering>
+######################################################################################
+
+sept15OffRedo <- read.delim("EFOffSept2015.txt")
+sept15OffWFT4.df <- read.delim("WFT4h.txt")
+sept15OffRedo <- within(sept15OffRedo, Species <- as.character(Species))
+sept15OffRedo <- within(sept15OffRedo, Lifestage <- as.character(Lifestage))
+sept15OffRedo <- within(sept15OffRedo, SLS <- as.character(SLS))
+sept15OffRedo <- within(sept15OffRedo, Species[Species == "Western flower thrips"] <- "WFT")
+sept15OffRedo <- within(sept15OffRedo, Species[Species == "Western Flower thrip"] <- "WFT")
+sept15OffWFT4.df <- within(sept15OffWFT4.df, Species <- "WFT")
+sept15OffWFT4.df <- within(sept15OffWFT4.df, Lifestage <- as.character(Lifestage))
+
+sept15OffRedo.df <- merge(sept15OffRedo, sept15OffWFT4.df, all = TRUE)
+sept15OffRedo.df <- merge(sept15OffRedo, septOct15Off.df, all = TRUE)
+sept15OffRedo.df <- within(sept15OffRedo.df, SLS[Species == "WFT"] <- paste("WFT",
+                                                   substring(Lifestage[Species == "WFT"], 1, 1)))
+sept15OffRedo.df <- make.factors(sept15OffRedo.df, c("Species", "Lifestage", "SLS"))
+ab.sept15OffAllRedo <- list()
+ab.sept15OffAllRedo[["concJ"]] <- allfit(data = gleanOffFruitSept_JRedo) 
+ab.sept15OffAllRedo[["CTJ"]] <- allfit(data = gleanOffFruitSept_CTJRedo) 
+
+pdf(file = "EFsept15OffMortalityJoined.pdf", width = 255/25.4, height = 195/25.4)
+
+flyplot(1:173, data = ab.sept15OffAllRedo, choice = "concJ", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:173, data = ab.sept15OffAllRedo, choice = "CTJ", pc = c(line = 99), lt.ld = "LCT",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off()
+## </wft tinkering>
+
 
 ### With fruit 
 
@@ -634,9 +668,15 @@ flyplot(1:15, data = ab.sept15WithAll, choice = "CTJ", pc = c(line = 99), lt.ld 
 dev.off() # CT lot in same file 
 
 sepWithCI.df <- mean.lt(ab.sept15WithAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2,
-                        omit = c(6, 26, 40, 43), df.out = TRUE) # 
+                        omit = c(6, 16, 26, 40, 43), df.out = TRUE) # 
 sepWithCI_CT.df <- mean.lt(ab.sept15WithAll, "CT", leg.beg = 0, leg.end= 2, rnd = 2,
-                        omit = c(6, 26, 40, 43), df.out = TRUE) # redone all with 22/11/2015
+                        omit = c(6, 16, 26, 40, 43), df.out = TRUE) # redone all with 22/11/2015
+## redone 2/12/15 to exclude 16
+
+WriteXLS(c("sepWithCI.df", "sepWithCI_CT.df"), "WithFruitCIsFixed.xls", c("LC99_CI", "LCT99_CI"),
+         row.names = TRUE, BoldHeaderRow = TRUE)
+
+
 
 ## First consistent 100% points -- not necessary to redo
 ab.sept15With100$conc <- df2ablist(get100mortAll(gleanWithFruitSeptAll))

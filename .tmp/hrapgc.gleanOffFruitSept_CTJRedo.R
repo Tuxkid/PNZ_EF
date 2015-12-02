@@ -1,18 +1,16 @@
-gleanOffFruitSept_J <- function(choice = 1)
+gleanOffFruitSept_CTJRedo <- function(choice = 1)
 {
-### Purpose:- Replicates joined
+### Purpose:- redone WFT
 ### ----------------------------------------------------------------------
-### Modified from:- gleanOffFruitSept
+### Modified from:- gleanOffFruitSept_CTJ
 ### ----------------------------------------------------------------------
 ### Arguments:- 
 ### ----------------------------------------------------------------------
-### Author:-   Patrick Connolly, Date:-  2 Oct 2015, 09:34
+### Author:-   Patrick Connolly, Date:-  2 Dec 2015, 15:47
 ### ----------------------------------------------------------------------
-### Revisions:-
-###             23/09/2015 added selecting max of Handling and CO2 controls
-###             25/11/2015 CM calculations fixed (copied from With-fruit lot
+### Revisions:- 
 
-  xx <- sept15Off.df
+  xx <- sept15OffRedo.df
   xx <- within(xx, EfNom <- as.numeric(as.character(Efnom))) # fixed 9/9/15
   ## Indicate which is handling control
   xx <- within(xx, HC <- is.na(EfNom))
@@ -77,19 +75,21 @@ gleanOffFruitSept_J <- function(choice = 1)
   use.df <- within(use.df, Rep <- getbit(Ndx, "\\|", 4))
   use.df <- use.df %>% arrange(SLS, Temperature, Duration, Efpc)
 
- ### Then a normal glean function
+
+  
+### Then a normal glean function
   idset <- with(use.df, make.id(Efpc))
   cutx <- NULL
   
-  use.df <- within(use.df, Temp <- paste0(Temperature, "°C"))
+  use.df <- within(use.df, Temp <- paste0(Temperature, "Â°C"))
   use.df <- within(use.df, Hours <- paste0(Duration, "h"))
   ##  use.df <- within(use.df, DAT <- paste0(Assessed, "d"))
   leg.brief <- with(use.df, unique(paste(SLS, Temp, Hours, sep= "|")))
-  maint <- "Mortality of PNZ pests off fruit in ethyl formate after various durations (joined)"
+  maint <- "Mortality of PNZ pests off fruit in ethyl formate after various CTs (joined)"
   xlabels <- c(0, 0)
-  xaxtitle <- "Dose (%)"
+  xaxtitle <- "CT (%-h)"
   with(use.df,
-       list(id = idset, times = Efpc, total = Total, dead = dead, 
+       list(id = idset, times = Efpc * Duration, total = Total, dead = dead, 
             cutx = cutx, offset = 0, xaxtitle = xaxtitle, maint = maint, 
             legend = leg.brief, xlabels = xlabels, takelog = FALSE))
 }
