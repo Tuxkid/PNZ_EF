@@ -645,6 +645,8 @@ flyplot(1:173, data = ab.sept15OffAllRedo, choice = "CTJ", pc = c(line = 99), lt
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
 dev.off()
 ## </wft tinkering>
+
+## Appendix 8/12/15
 pdf(file = "Appendix.pdf", width = 225/25.4, height = 165/25.4, pointsize = 11)
 flyplot(1:173, data = ab.sept15OffAllRedo, choice = "concJ", pc = c(line = 99), lt.ld = "LC",
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
@@ -652,11 +654,21 @@ flyplot(1:115, data = ab.sept15WithAll, choice = "concJ", pc = c(line = 99), lt.
         range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
 dev.off()
 
+## 9/12/15
+pdf(file = "Appendix.pdf", width = 220/25.4, height = 165/25.4, pointsize = 11)
+flyplot(c(7:14, 21:61), data = ab.sept15OffAllRedo, choice = "concJ", pc = c(line = 99),
+        lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(c(3:4, 7:8, 12:13), data = ab.sept15WithAll, choice = "concJ", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off()
+
+system("pdf2png Appendix")
 
 
 ### With fruit 
 
-gseptwithFIXall.df <- fix.septWith(xx = sept15With.df) # lots of fixes
+septwithFIXall.df <- fix.septWith(xx = sept15With.df) # lots of fixes
 ab.sept15WithAll <- list()
 ab.sept15WithAll[["conc"]] <- allfit(data = gleanWithFruitSeptAll)
 ab.sept15WithAll$CT <- allfit(data = gleanWithFruitSeptAll_CT)
