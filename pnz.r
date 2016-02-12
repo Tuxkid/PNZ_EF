@@ -699,8 +699,8 @@ sepWith100CI_CT.df <- mean.lt(ab.sept15With100, "CT", leg.beg = 0, lt = 100,
 collectLCs() ## >> PredictionAll_With.OffFruit_EF.xls
 
 collectLCs(adjust.cont = TRUE) ## >> Predictions_With.OffFruit_EF_controlAdjust.xls
-collectLCs(adjust.cont = FALSE) ## >> Predictions_With.OffFruit_EF.xls
-
+collectLCs(adjust.cont = FALSE) ## >> Predictions_With.OffFruit_EF.xl
+s
 
 ##########    13/10/2015
 ##
@@ -874,6 +874,51 @@ git commit
 git remote add origin https://github.com/Tuxkid/PNZ_EF.git 
 git push -u origin master
 
+########################################################################
+#############
+##
+## 12/2/2016 "Additional data to poke in with the above
+##
+##
+
+feb16Off.df <- read.delim("AdditionalOff.txt")
+biff.rows <- with(sept15Off.df, SLS == "BHLREgg" & Temperature == 15 &
+                                Duration == 2)
+
+NewTotalOff.df <- rbind(sept15Off.df[!biff.rows, ], feb16Off.df)
+  
+## Overwrite sept15Off.df and rerun
+sept15Off.df <- NewTotalOff.df
 
 
 
+ab.feb16OffAll <- list()
+ab.feb16OffAll[["conc"]] <- allfit(data = gleanOffFruitSept) 
+ab.feb16OffAll[["CT"]] <- allfit(data = gleanOffFruitSept_CT) 
+ab.feb16OffAll[["concJ"]] <- allfit(data = gleanOffFruitSept_J) 
+ab.feb16OffAll[["CTJ"]] <- allfit(data = gleanOffFruitSept_CTJ) 
+
+pdf(file = "EFfeb16OffMortality.pdf", width = 255/25.4, height = 195/25.4)
+flyplot(1:189, data = ab.feb16OffAll, choice = "conc", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:189, data = ab.feb16OffAll, choice = "CT", pc = c(line = 99), lt.ld = "LCT",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:64, data = ab.feb16OffAll, choice = "concJ", pc = c(line = 99), lt.ld = "LC",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+flyplot(1:64, data = ab.feb16OffAll, choice = "CTJ", pc = c(line = 99), lt.ld = "LCT",
+        range.strategy = "individual", byrow = TRUE, lt.rnd = 2)
+dev.off()
+
+
+
+## confidence intervals for All off fruit
+mean.lt(ab.feb16OffAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2, border = TRUE,
+        insect = "PNZ pests", lt.ld = "LC") # 
+mean.lt(ab.feb16OffAll, 1, leg.beg = 0, leg.end= 2, rnd = 2, 
+        insect = "everything", xlout = "Feb2016CIs.xls") # 
+
+
+feb16OffCI.df <- mean.lt(ab.feb16OffAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2, df.out = TRUE,
+                       omit = c(1:15, 25:38, 52:64, 81:82, 101:103, 121, 145,156:161)) # 
+feb16OffCI_CT.df <- mean.lt(ab.feb16OffAll, "CT", leg.beg = 0, leg.end= 2, rnd = 2, df.out = TRUE,
+                       omit = c(1:15, 25:38, 52:64, 81:82, 101:103, 121, 145,156:161)) #

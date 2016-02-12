@@ -1,0 +1,25 @@
+Pest	Species	Lifestage	SLS	LS.Assessed	Assessed	Temperature	Efnom	Efpc	CO2	Duration	Rep	Unhatched	Live_Hatched	Dead	Moribund	Total
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	Control	0	0	2	1	59	79	0	0	138
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	0	0	24	2	1	44	88	0	0	132
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	0.25	0.13	1.22	2	1	35	147		0	182
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	0.5	0.39	3.95	2	1	63	132		0	195
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	1	0.97	9	2	1	67	81		0	148
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	1.5	1.46	13	2	1	85	4		0	89
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	2	1.92	18	2	1	161	2		0	163
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	2.5	2.4	24	2	1	201	0		0	201
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	Control	0	0	2	2	39	178		0	217
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	0	0	18.8	2	2	80	79		0	159
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	0.25	0.24	3	2	2	47	147		0	194
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	0.5	0.42	4.75	2	2	76	77		0	153
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	1	0.87	9	2	2	128	83		0	211
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	1.5	1.42	13.2	2	2	135	26		0	161
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	2	1.84	18	2	2	161	15		0	176
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	2.5	2.25	22.5	2	2	160	16		0	176
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	Control	0	0	2	3	0	251		0	251
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	0	0	14.8	2	3	68	70		0	138
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	0.25	0.22	2.55	2	3	58	54		0	112
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	0.5	0.43	4.9	2	3	29	157		0	186
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	1	0.94	9.7	2	3	57	184		0	241
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	1.5	1.44	14.6	2	3	105	33		0	138
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	2	1.82	19	2	3	152	41		0	193
+C.ob	brownheaded leaf roller	egg	BHLREgg		9	15	2.5	2.25	24.5	2	3	233	0		0	233
