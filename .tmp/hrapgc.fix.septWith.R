@@ -144,13 +144,12 @@ fix.septWith <- function(xx = sept15With.df, rm.codling = TRUE)
                     filter(!is.na(Total))
   use.df <- within(use.df,
                    Ndx <- paste(Date, SLS, Fruit, Temperature, Duration, Rep, sep = "|"))
-##   if(FALSE){
+  if(FALSE){
     
     WriteXLS(c("fixed.cont.df", "contrmissing.dfB4", "contronly.df", "use.df"), "MissingAll.xls",
              c("AllControls", "NoControls", "ControlsOnly", "ReadyToUse"),
              BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 4)
-##  }
-  
+ }
 
   ## Check if there's any difference between "Controls"
   if(FALSE){

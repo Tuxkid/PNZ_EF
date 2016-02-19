@@ -35,8 +35,7 @@ gleanWithFruitSeptAll <- function(choice = 1)
       group_by(Ndx, HC) %>%
         summarise_each(funs(sum), dead, Total) %>%
           mutate(Mort = dead/Total)
-   
-  cont.sum.df$Smaller <- unlist(with(cont.sum.df, tapply(Mort, Ndx, smallest)))
+   cont.sum.df$Smaller <- unlist(with(cont.sum.df, tapply(Mort, Ndx, smallest)))
 
   cont.sum.df$Efpc <- 0
   use.cont.df <- cont.sum.df[with(cont.sum.df, !Smaller),] %>%

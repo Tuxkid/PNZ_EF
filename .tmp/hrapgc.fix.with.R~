@@ -1,22 +1,16 @@
-  Listing of: fix.septWith
-  Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 15/02/2016 
-**************************************
-
-fix.septWith <-
-structure(function(xx = sept15With.df, rm.codling = TRUE)
-{
-### Purpose:- Generalise to all species
+fix.with <- function(xx = feb16WithAll.df){
+### Purpose:- Slightly more generic
 ### ----------------------------------------------------------------------
-### Modified from:- septLBAMwith
+### Modified from:- fix.septLBAMwith
 ### ----------------------------------------------------------------------
-### Arguments:- rm.codling: remove codling data (it's unusable)
+### Arguments:-
 ### ----------------------------------------------------------------------
-### Author:-   Patrick Connolly, Date:- 30 Sep 2015, 14:20
+### Author:-   Patrick Connolly, Date:- 17 Feb 2016, 16:02
 ### ----------------------------------------------------------------------
-### Revisions:- 
+### Revisions:-                                                           
 
   require(dplyr)
+  
   if(class(xx$Date) != "Date")
     xx <- within(xx, Date <- as.Date(as.character(Date), format = "%d/%m/%Y"))
 ##   xx <- within(xx, Test <- as.numeric((Efnom)))
@@ -26,17 +20,6 @@ structure(function(xx = sept15With.df, rm.codling = TRUE)
   xx <- within(xx, HC <- is.na(Efnom)) # no CO2 (handling control)
   xx <- within(xx, Efnom[is.na(Efnom)] <- 0) # no EF either
   xx <- within(xx, Dead[is.na(Dead)] <- 0) # one empty cell should be zero
-  ## Tidy up SLS levels
-  xx <- within(xx, SLS <- as.character(SLS))
-  xx <- within(xx, SLS[SLS == "CM5"] <- "CM 5")
-  xx <- within(xx, SLS[SLS == "Cm5"] <- "CM 5")
-  xx <- within(xx, SLS[SLS == "Cm 5"] <- "CM 5")
-  xx <- within(xx, SLS[SLS == "CM Eggs"] <- "CM Egg")
-  xx <- within(xx, SLS[SLS == "CM eggs"] <- "CM Egg")
-  if(rm.codling)
-    xx <- xx[-grep("CM", xx$SLS),]
-  xx <- within(xx, SLS <- as.factor(SLS))
-
   is.egg <- grep("egg", levels(xx$Lifestage), ignore.case = TRUE, value = TRUE)
   xx <- within(xx, IsEgg <- Lifestage%in%is.egg)
   is.scale <- grep("OS", unique(xx$SLS), ignore.case = TRUE, value = TRUE)
@@ -53,7 +36,7 @@ structure(function(xx = sept15With.df, rm.codling = TRUE)
     arrange(Date, SLS, Fruit, Temperature, Duration, Rep, Efpc) %>%
       select(Date, SLS, Fruit, Temperature, Duration, Rep, Efnom, Efpc, HC, dead, Total, Row)
   idcols <- names(xxx %>%
-                  select(Date, SLS, Fruit, Temperature, Duration, Rep))
+      select(Date, SLS, Fruit, Temperature, Duration, Rep))
   respcols <- names(xxx %>%
                     select(dead, Total, Row))
 
@@ -86,14 +69,14 @@ structure(function(xx = sept15With.df, rm.codling = TRUE)
       ## check if any combinations have not controls
       if(nrow(hand.i) == 0){
         hand.i <- treat.i[1, ]
-        hand.i[, respcols] <- NA ##!!!! suspect
-        hand.i[, c("Efnom", "Efpc", "HC")] <- c(0, 0, 1)
+        hand.i[, respcols] <- NA
+        hand.i[, c("Efpc", "HC")] <- c(0, 1)
       }
       cont.i <- rbind(hand.i) # get controls back together
       if(nrow(co2.i) == 0){
         co2.i <- treat.i[1, ]
         co2.i[, respcols] <- NA
-        co2.i[, c("Efnom", "Efpc", "HC")] <- c(0, 0, 0)
+        co2.i[, c("Efpc", "HC")] <- c(0, 0)
       }
       cont.i <- rbind(cont.i, co2.i)# get controls back together
       cont.i <- within(cont.i, HC <- as.logical(HC)) # coerced to numeric above
@@ -150,12 +133,12 @@ structure(function(xx = sept15With.df, rm.codling = TRUE)
                     filter(!is.na(Total))
   use.df <- within(use.df,
                    Ndx <- paste(Date, SLS, Fruit, Temperature, Duration, Rep, sep = "|"))
-  if(FALSE){
+ ##  if(FALSE){
     
-    WriteXLS(c("fixed.cont.df", "contrmissing.dfB4", "contronly.df", "use.df"), "MissingAll.xls",
-             c("AllControls", "NoControls", "ControlsOnly", "ReadyToUse"),
-             BoldHeaderRow = TRUE, FreezeRow = 3, FreezeCol = 4)
- }
+    WriteXLS(c("fixed.cont.df", "contrmissing.dfB4", "contronly.df", "use.df"), "MissingWith.xls",
+             c("AllControls", "NoControls", "ControlsOnly", "ReadyToUse"))
+ ## }
+  
 
   ## Check if there's any difference between "Controls"
   if(FALSE){
@@ -188,4 +171,4 @@ structure(function(xx = sept15With.df, rm.codling = TRUE)
     aa[with(aa, HC > CO2),] # shows about 1/3 have HC > CO2 
   }
   use.df
-}, comment = "15/02/2016")
+}
