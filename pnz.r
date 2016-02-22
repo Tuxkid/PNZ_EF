@@ -918,12 +918,25 @@ mean.lt(ab.feb16OffAll, 1, leg.beg = 0, leg.end= 2, rnd = 2,
 
 
 feb16OffCI.df <- mean.lt(ab.feb16OffAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2, df.out = TRUE,
-                       omit = c(1:15, 25:38, 52:64, 81:82, 101:103, 121, 145,156:161)) # 
-feb16OffCI_CT.df <- mean.lt(ab.feb16OffAll, "CT", leg.beg = 0, leg.end= 2, rnd = 2, df.out = TRUE,
-                       omit = c(1:15, 25:38, 52:64, 81:82, 101:103, 121, 145,156:161)) #
+                       omit = c(1:12, 19:38, 45:73, 77:83, 94:97, 107:127, 154, 158:189))
+
+mean.lt(ab.feb16OffAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2, df.out = FALSE,
+        rm.deg = FALSE, xlout = "OffFruit_LCs_CI_Feb16.xls", insect = "Zespri pests",
+        lt.ld = "LC",
+        omit = c(1:12, 19:38, 45:73, 77:83, 94:97, 107:127, 154, 158:189))
 
 
+
+feb16OffCI_CT.df <- mean.lt(ab.feb16OffAll, "CT", leg.beg = 0, leg.end= 2, rnd = 2,
+                            df.out = TRUE,
+                            omit = c(1:15, 25:38, 52:64, 81:82, 101:103, 121, 145,156:161)) #
+
+############################################################################################
+##
 ## Additional With-fruit added 15/2/2016
+##
+##############################################
+
 feb16With.df <- read.delim("Feb16WithAddition.txt") # in containers of fruit
 names(sept15With.df)
 feb16With.df <- within(feb16With.df, Efpc[Efnom == "control"] <- 0)# data
@@ -945,7 +958,9 @@ withFixedFeb16 <- fix.with(feb16WithAll.df) # lots of fixes
 withFixedFeb16 <- withFixedFeb16[!with(withFixedFeb16, as.character(SLS) %in%
                                                        c("CM5", "CM Egg")),]
 
-septwithFIXall.df <- withFixedFeb16 # overwrite to use same glean functions
+septwithFIXall.df <-  # overwrite to use same glean functions
+    withFixedFeb16[!with(withFixedFeb16,
+                         as.character(SLS) %in% c("CM5", "CM Egg")),]
 ab.feb16WithAll <- list()
 ab.feb16WithAll[["conc"]] <- allfit(data = gleanWithFruitSeptAll)
 ab.feb16WithAll$CT <- allfit(data = gleanWithFruitSeptAll_CT)
@@ -967,6 +982,16 @@ dev.off() # CT lot in same file
 
 
 sepWithCI.df <- mean.lt(ab.feb16WithAll, "conc", leg.beg = 0, leg.end= 2, rnd = 2,
-                        omit = c(6, 16, 26, 40, 43), df.out = TRUE) # 
+                        omit = c(1:12, 19:38, 45:73, 77:83, 94:97, 107:127, 154, 158:189),
+                        df.out = TRUE) #
+
+
+
 sepWithCI_CT.df <- mean.lt(ab.feb16WithAll, "CT", leg.beg = 0, leg.end= 2, rnd = 2,
                         omit = c(6, 16, 26, 40, 43), df.out = TRUE) # 
+
+## Multiple line plots:
+group.responsesD2hS_akFeb16(store = 5) # >> Lines_for5C_2hS_kiwifruit_Feb16.pdf
+group.responsesD2hS_akFeb16(store = 15) # >> Lines_for15C_2hS_kiwifruit_Feb16.pdf
+
+

@@ -1,10 +1,4 @@
-  Listing of: mean.lt
-  Located in: /home/hrapgc/Rstuff/lisa/ethylformat/PNZ
-Last updated: 23/02/2016 
-**************************************
-
-mean.lt <-
-structure(function(start.list = ab.soluble, choose = 1, lt = 99, intv = 95, new.order = F,
+mean.lt <- function(start.list = ab.soluble, choose = 1, lt = 99, intv = 95, new.order = F,
            leg.beg = NULL, leg.end = 4, insect = "interesting critters", rm.deg = TRUE,
          fit = NULL, sub = NULL, rnd = 1, lt.ld = "LT", xlout = NULL, df.out = FALSE,
            two.tables = F, borders = F, omit = NULL)
@@ -155,4 +149,5 @@ structure(function(start.list = ab.soluble, choose = 1, lt = 99, intv = 95, new.
                           hsep = " | ", csep = "-+-") else tab.mat(one.table)
     }
   }
-}, comment = "23/02/2016")
+}
+
