@@ -26,7 +26,9 @@ group.responsesD2hS_akFeb16 <-
 ##   AP <- sls.all[c(2, 4, 6:11)] # apple pests
 ##   KP <- sls.all[c(1, 3, 5:7, 11)] # kiwifruit pests
   AP <- c("CM5", "CM Egg", "LBAM 5", "LBAM ME", "OS", "TSM Egg", "WAA", "WFT") # apple pests
-  KP <- c("BHLREgg", "CMBEgg", "dTSM", "LBAM 5", "LBAM ME", "WFT") # kiwifruit pests
+  ## KP <- c("BHLREgg", "CMBEgg", "dTSM", "LBAM 5", "LBAM ME", "WFT") # kiwifruit pests
+#### That one is incorrect
+    KP <- c("BHLREgg", "CMBEgg", "dTSM", "LBAM 5", "LBAM ME", "OS") # kiwifruit pests
 ## Fish out the ones we're using in this plot  (but keep information for all sls
   xx <- xx %>% tbl_df %>% filter(Temperature == store, Duration == hours)
 ##   sls <- sort(unique(as.character(xx$SLS))) ## SLSs in this plot
